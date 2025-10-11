@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+Sitemap: https://ezgimuzik.com/sitemap.xml
+
+# Google bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+# Crawl delay
+Crawl-delay: 0
