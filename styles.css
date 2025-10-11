@@ -2315,8 +2315,6 @@ body {
     border: 1px solid rgba(251, 191, 36, 0.4);
     margin: 0;
     text-transform: uppercase;
-    box-shadow: 0 0 20px rgba(251, 191, 36, 0.15),
-                inset 0 1px 0 rgba(255,255,255,0.1);
     position: relative;
     overflow: hidden;
 }
@@ -2477,7 +2475,7 @@ body {
 }
 
 .proof-icon {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-left: 0.3rem;
     color: #fbbf24;
     font-family: 'Material Symbols Outlined', sans-serif;
@@ -2506,27 +2504,27 @@ body {
 }
 
 .proof-rating {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 700;
     color: #ffffff;
     line-height: 1;
 }
 
 .proof-reviews {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     color: rgba(255, 255, 255, 0.7);
     font-weight: 500;
 }
 
 .proof-number {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 700;
     color: #ffffff;
     line-height: 1;
 }
 
 .proof-label {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     color: rgba(255, 255, 255, 0.7);
     font-weight: 500;
 }
@@ -6616,6 +6614,24 @@ small {
     background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
 }
 
+.contact-map {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.contact-map h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 1.5rem;
+}
+
+.contact-map iframe {
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+}
+
 .contact-urgency {
     display: inline-block;
     font-size: 1rem;
@@ -7053,6 +7069,18 @@ small {
     .urgency-offer {
         font-size: 0.85rem;
         padding: 0.5rem 0.9rem;
+    }
+    
+    .contact-map {
+        margin-top: 2rem;
+    }
+    
+    .contact-map h3 {
+        font-size: 1.25rem;
+    }
+    
+    .contact-map iframe {
+        height: 300px;
     }
 }
 
