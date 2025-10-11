@@ -2514,7 +2514,6 @@ body {
     margin-bottom: 0;
     z-index: 1;
     min-height: 100vh;
-    max-height: 100vh;
     overflow: hidden;
 }
 
@@ -5095,7 +5094,7 @@ body {
     
     .hero {
         padding: 56px 8px 32px;
-        min-height: 100vh;
+        min-height: auto;
         overflow-x: hidden;
         display: block;
         align-items: stretch;
@@ -5155,8 +5154,13 @@ body {
     
     .hero-stage {
         order: 2;
-        height: 400px;
+        height: 300px;
         margin-top: 24px;
+        position: relative;
+        overflow: visible;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     
     .hero-top-section {
@@ -5410,20 +5414,67 @@ body {
     
     
     .hero-image {
-        height: 400px;
+        height: 300px;
         margin-top: 0;
         position: relative;
-        overflow: hidden;
+        overflow: visible;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     
     .hero-instrument-image {
-        max-height: 400px;
-        width: auto;
-        object-fit: contain;
+        max-height: 250px !important;
+        width: auto !important;
+        object-fit: contain !important;
+        opacity: 0 !important;
+        visibility: visible !important;
+        display: block !important;
+        position: absolute !important;
+        z-index: 10 !important;
+        top: 10% !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        transition: opacity 0.6s ease-in-out !important;
     }
     
     .hero-image-1 {
+        opacity: 1 !important;
+        visibility: visible !important;
+        display: block !important;
+        position: absolute !important;
+        top: 10% !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        z-index: 100 !important;
+        max-height: 250px !important;
+        width: auto !important;
         animation: fadeInOut 36s ease-in-out infinite, float 5s ease-in-out infinite;
+    }
+    
+    .hero-image-2 {
+        opacity: 0;
+        animation: fadeInOut 36s ease-in-out infinite 6s, float 5s ease-in-out infinite 0.5s;
+    }
+    
+    .hero-image-3 {
+        opacity: 0;
+        animation: fadeInOut 36s ease-in-out infinite 12s, float 5s ease-in-out infinite 1s;
+    }
+    
+    .hero-image-4 {
+        opacity: 0;
+        animation: fadeInOut 36s ease-in-out infinite 18s, float 5s ease-in-out infinite 1.5s;
+    }
+    
+    .hero-image-5 {
+        opacity: 0;
+        animation: fadeInOut 36s ease-in-out infinite 24s, float 5s ease-in-out infinite 2s;
+    }
+    
+    .hero-image-6 {
+        opacity: 0;
+        animation: fadeInOut 36s ease-in-out infinite 30s, float 5s ease-in-out infinite 2.5s;
     }
     
     .hero-image-2 {
@@ -5697,11 +5748,63 @@ body {
     }
     
     .hero-image {
-        height: 300px;
+        height: 250px;
+        position: relative;
+        overflow: visible;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     
     .hero-stage {
-        height: 300px;
+        height: 250px;
+        position: relative;
+        overflow: visible;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .hero-instrument-image {
+        max-height: 200px;
+        opacity: 0;
+        visibility: visible;
+        display: block;
+        position: absolute;
+        z-index: 10;
+        top: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: opacity 0.6s ease-in-out;
+    }
+    
+    .hero-image-1 {
+        opacity: 1 !important;
+    }
+    
+    .hero-image-2 {
+        opacity: 0;
+        animation: fadeInOut 36s ease-in-out infinite 6s, float 5s ease-in-out infinite 0.5s;
+    }
+    
+    .hero-image-3 {
+        opacity: 0;
+        animation: fadeInOut 36s ease-in-out infinite 12s, float 5s ease-in-out infinite 1s;
+    }
+    
+    .hero-image-4 {
+        opacity: 0;
+        animation: fadeInOut 36s ease-in-out infinite 18s, float 5s ease-in-out infinite 1.5s;
+    }
+    
+    .hero-image-5 {
+        opacity: 0;
+        animation: fadeInOut 36s ease-in-out infinite 24s, float 5s ease-in-out infinite 2s;
+    }
+    
+    .hero-image-6 {
+        opacity: 0;
+        animation: fadeInOut 36s ease-in-out infinite 30s, float 5s ease-in-out infinite 2.5s;
     }
     
     .pie-chart-card {
@@ -5750,7 +5853,7 @@ body {
 @media (max-width: 320px) {
     .hero {
         padding: 12px 4px 24px;
-        min-height: 100vh;
+        min-height: auto;
     }
     
     .hero-content {
@@ -5803,11 +5906,63 @@ body {
     }
     
     .hero-image {
-        height: 250px;
+        height: 200px;
+        position: relative;
+        overflow: visible;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     
     .hero-stage {
-        height: 250px;
+        height: 200px;
+        position: relative;
+        overflow: visible;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .hero-instrument-image {
+        max-height: 150px;
+        opacity: 0;
+        visibility: visible;
+        display: block;
+        position: absolute;
+        z-index: 10;
+        top: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: opacity 0.6s ease-in-out;
+    }
+    
+    .hero-image-1 {
+        opacity: 1 !important;
+    }
+    
+    .hero-image-2 {
+        opacity: 0;
+        animation: fadeInOut 36s ease-in-out infinite 6s, float 5s ease-in-out infinite 0.5s;
+    }
+    
+    .hero-image-3 {
+        opacity: 0;
+        animation: fadeInOut 36s ease-in-out infinite 12s, float 5s ease-in-out infinite 1s;
+    }
+    
+    .hero-image-4 {
+        opacity: 0;
+        animation: fadeInOut 36s ease-in-out infinite 18s, float 5s ease-in-out infinite 1.5s;
+    }
+    
+    .hero-image-5 {
+        opacity: 0;
+        animation: fadeInOut 36s ease-in-out infinite 24s, float 5s ease-in-out infinite 2s;
+    }
+    
+    .hero-image-6 {
+        opacity: 0;
+        animation: fadeInOut 36s ease-in-out infinite 30s, float 5s ease-in-out infinite 2.5s;
     }
     
     .nav-actions {
