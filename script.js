@@ -83,20 +83,28 @@ document.addEventListener('DOMContentLoaded', function() {
                 current += increment;
                 if (current < target) {
                     if (element.classList.contains('proof-rating')) {
-                        element.textContent = current.toFixed(1);
+                        element.textContent = current.toFixed(1) + '/5';
                     } else if (element.classList.contains('proof-reviews')) {
                         element.textContent = Math.floor(current) + ' Yorum';
-                    } else {
-                        element.textContent = Math.floor(current).toLocaleString();
+                    } else if (element.classList.contains('proof-number')) {
+                        if (target >= 1000) {
+                            element.textContent = Math.floor(current).toLocaleString() + '+';
+                        } else {
+                            element.textContent = Math.floor(current) + '+';
+                        }
                     }
                     requestAnimationFrame(updateCounter);
                 } else {
                     if (element.classList.contains('proof-rating')) {
-                        element.textContent = target.toFixed(1);
+                        element.textContent = target.toFixed(1) + '/5';
                     } else if (element.classList.contains('proof-reviews')) {
                         element.textContent = target + ' Yorum';
-                    } else {
-                        element.textContent = target.toLocaleString();
+                    } else if (element.classList.contains('proof-number')) {
+                        if (target >= 1000) {
+                            element.textContent = target.toLocaleString() + '+';
+                        } else {
+                            element.textContent = target + '+';
+                        }
                     }
                 }
             };
