@@ -2500,54 +2500,6 @@ body {
     transition: var(--transition);
 }
 
-/* Breadcrumb Navigation */
-.breadcrumb {
-    position: sticky;
-    top: 80px;
-    background: rgba(15, 23, 42, 0.95);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 12px 0;
-    z-index: 999;
-}
-
-.breadcrumb-list {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.breadcrumb-list li {
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.7);
-}
-
-.breadcrumb-list li.separator {
-    color: rgba(255, 255, 255, 0.3);
-    margin: 0 4px;
-}
-
-.breadcrumb-list li.current {
-    color: rgba(255, 255, 255, 1);
-    font-weight: 600;
-}
-
-.breadcrumb-list a {
-    color: rgba(255, 255, 255, 0.7);
-    text-decoration: none;
-    transition: color 0.2s;
-}
-
-.breadcrumb-list a:hover {
-    color: rgba(255, 255, 255, 1);
-}
-
 /* Hero Section */
 .hero {
     background: 
@@ -2606,17 +2558,26 @@ body {
 }
 
 .eyebrow-text {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     font-size: 14px;
     font-weight: 600;
     letter-spacing: 1px;
     color: #fbbf24;
-    background: rgba(251, 191, 36, 0.1);
+    background: rgba(49, 46, 129, 0.4);
     padding: 8px 16px;
     border-radius: 24px;
-    border: 1px solid rgba(251, 191, 36, 0.3);
+    border: 1px solid rgba(251, 191, 36, 0.4);
     margin: 0;
+    text-transform: uppercase;
     position: relative;
+    overflow: hidden;
+}
+
+.eyebrow-text::before {
+    content: "⭐";
+    margin-right: 0.5rem;
 }
 
 @keyframes badgeShimmer {
@@ -2627,9 +2588,9 @@ body {
 .hero-text h1 {
     font-family: var(--font-display); 
     letter-spacing: -0.02em; 
-    font-size: 3.5rem;
-    font-weight: 900;
-    line-height: 1.2;
+    font-size: 4rem; /* decreased from 4.2rem */
+    font-weight: 900; /* bolder */
+    line-height: 1.1;
     color: #ffffff;
     margin-top: 0;
     margin-bottom: 1.5rem;
@@ -2868,64 +2829,39 @@ body {
     }
 }
 
-/* Hero CTA Section */
-.hero-cta-section {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-}
-
-.hero-trust-badges {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-}
-
-.trust-badge {
+/* Hero CTA and FUDs Group */
+.hero-cta-fuds-group {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 8px 16px;
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.95);
-    font-weight: 500;
+    gap: 2rem;
+    margin-top: 1.5rem;
 }
 
-.trust-badge .material-icons {
-    font-size: 18px;
-    color: #10b981;
-}
-
-/* Hero Benefits */
-.hero-benefits {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-}
-
-.benefit-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 16px;
-    color: rgba(255, 255, 255, 0.9);
-    font-weight: 500;
-}
-
-.benefit-item .material-icons {
-    color: #10b981;
-    font-size: 22px;
+.hero-cta {
     flex-shrink: 0;
 }
 
-/* Secondary CTA */
+.hero-fuds {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    margin-top: 0;
+}
 
-/* Hero FUDs - Removed */
+.fud-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.9);
+    font-weight: 500;
+    padding: 0.2rem 0;
+}
+
+.fud-item .material-icons {
+    color: #10b981;
+    font-size: 18px;
 
 /* Store Location */
 .store-location {
@@ -5311,34 +5247,6 @@ body {
         max-width: 100%;
     }
     
-    .hero-cta-section {
-        margin-top: 1.5rem;
-        margin-bottom: 1.5rem;
-    }
-    
-    .hero-trust-badges {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .trust-badge {
-        font-size: 12px;
-        padding: 6px 12px;
-    }
-    
-    .hero-benefits {
-        gap: 0.5rem;
-    }
-    
-    .benefit-item {
-        font-size: 14px;
-        gap: 10px;
-    }
-    
-    .benefit-item .material-icons {
-        font-size: 20px;
-    }
-    
     .hero-subtitle {
         /* Fluid subtitle sizing */
         font-size: clamp(12px, 3vw, 15px);
@@ -5780,32 +5688,6 @@ body {
         font-size: clamp(13px, 3.5vw, 16px);
         line-height: 1.5;
         padding: 0 16px;
-    }
-    
-    .hero-cta-section {
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-    }
-    
-    .hero-trust-badges {
-        flex-direction: column;
-        gap: 0.75rem;
-    }
-    
-    .trust-badge {
-        font-size: 11px;
-        padding: 5px 10px;
-        width: 100%;
-        justify-content: center;
-    }
-    
-    .benefit-item {
-        font-size: 13px;
-        gap: 8px;
-    }
-    
-    .benefit-item .material-icons {
-        font-size: 18px;
     }
     
     /* CTA buttons - flexible sizing */
