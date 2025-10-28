@@ -2500,6 +2500,54 @@ body {
     transition: var(--transition);
 }
 
+/* Breadcrumb Navigation */
+.breadcrumb {
+    position: sticky;
+    top: 80px;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 12px 0;
+    z-index: 999;
+}
+
+.breadcrumb-list {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.breadcrumb-list li {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.breadcrumb-list li.separator {
+    color: rgba(255, 255, 255, 0.3);
+    margin: 0 4px;
+}
+
+.breadcrumb-list li.current {
+    color: rgba(255, 255, 255, 1);
+    font-weight: 600;
+}
+
+.breadcrumb-list a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.breadcrumb-list a:hover {
+    color: rgba(255, 255, 255, 1);
+}
+
 /* Hero Section */
 .hero {
     background: 
