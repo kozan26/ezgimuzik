@@ -2627,6 +2627,9 @@ body {
     margin-bottom: 24px;
     line-height: 1.7;
     max-width: 680px;
+    hyphens: auto;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 /* Hero Social Proof */
