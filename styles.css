@@ -2628,16 +2628,22 @@ body {
     line-height: 1.7;
     max-width: 680px;
     word-break: keep-all;
+    orphans: 3;
+    widows: 3;
+    text-align: left;
 }
 
 .hero-subtitle-line {
     display: inline;
-    white-space: nowrap;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 769px) {
     .hero-subtitle-line {
-        white-space: normal;
+        display: inline-block;
+    }
+    
+    .hero-subtitle {
+        text-wrap: balance;
     }
 }
 
