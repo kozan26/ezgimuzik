@@ -2627,9 +2627,18 @@ body {
     margin-bottom: 24px;
     line-height: 1.7;
     max-width: 680px;
-    hyphens: auto;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
+    word-break: keep-all;
+}
+
+.hero-subtitle-line {
+    display: inline;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .hero-subtitle-line {
+        white-space: normal;
+    }
 }
 
 /* Hero Social Proof */
