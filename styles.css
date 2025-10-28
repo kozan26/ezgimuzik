@@ -2600,13 +2600,11 @@ body {
 
 .no-break {
     white-space: nowrap;
-    display: inline-block;
 }
 
 @media (max-width: 768px) {
     .no-break {
         white-space: normal;
-        display: inline;
     }
 }
 
@@ -2617,6 +2615,13 @@ body {
     margin-bottom: 24px;
     line-height: 1.7;
     max-width: 680px;
+}
+
+.hero-text h1 .highlight-white {
+    color: #ffffff;
+    -webkit-text-fill-color: #ffffff;
+    background-clip: unset;
+    -webkit-background-clip: unset;
 }
 
 .hero-text h1 .highlight-orange {
