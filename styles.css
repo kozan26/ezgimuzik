@@ -8231,77 +8231,10 @@ small {
         display: none !important;
     }
     
-    /* Show all instruments on mobile with cycling animation */
-    .hero-image-1 {
-        position: absolute !important;
-        top: 10% !important;
-        left: 50% !important;
-        transform: translateX(-50%) !important;
-        z-index: 100 !important;
+    /* Use same fadeInOutDesktop animation on mobile but with smaller size */
+    .hero-instrument-image {
         max-height: 250px !important;
-        width: auto !important;
-        transform-origin: center bottom !important;
-        animation: mobileFadeInOut 18s ease-in-out infinite, mobileFloat 4s ease-in-out infinite !important;
-    }
-    
-    .hero-image-2 {
-        position: absolute !important;
-        top: 10% !important;
-        left: 50% !important;
-        transform: translateX(-50%) !important;
-        z-index: 100 !important;
-        max-height: 250px !important;
-        width: auto !important;
-        transform-origin: center bottom !important;
-        animation: mobileFadeInOut 18s ease-in-out infinite 3s, mobileFloat 4s ease-in-out infinite 0.5s !important;
-    }
-    
-    .hero-image-3 {
-        position: absolute !important;
-        top: 10% !important;
-        left: 50% !important;
-        transform: translateX(-50%) !important;
-        z-index: 100 !important;
-        max-height: 250px !important;
-        width: auto !important;
-        transform-origin: center bottom !important;
-        animation: mobileFadeInOut 18s ease-in-out infinite 6s, mobileFloat 4s ease-in-out infinite 1s !important;
-    }
-    
-    .hero-image-4 {
-        position: absolute !important;
-        top: 10% !important;
-        left: 50% !important;
-        transform: translateX(-50%) !important;
-        z-index: 100 !important;
-        max-height: 250px !important;
-        width: auto !important;
-        transform-origin: center bottom !important;
-        animation: mobileFadeInOut 18s ease-in-out infinite 9s, mobileFloat 4s ease-in-out infinite 1.5s !important;
-    }
-    
-    .hero-image-5 {
-        position: absolute !important;
-        top: 10% !important;
-        left: 50% !important;
-        transform: translateX(-50%) !important;
-        z-index: 100 !important;
-        max-height: 250px !important;
-        width: auto !important;
-        transform-origin: center bottom !important;
-        animation: mobileFadeInOut 18s ease-in-out infinite 12s, mobileFloat 4s ease-in-out infinite 2s !important;
-    }
-    
-    .hero-image-6 {
-        position: absolute !important;
-        top: 10% !important;
-        left: 50% !important;
-        transform: translateX(-50%) !important;
-        z-index: 100 !important;
-        max-height: 250px !important;
-        width: auto !important;
-        transform-origin: center bottom !important;
-        animation: mobileFadeInOut 18s ease-in-out infinite 15s, mobileFloat 4s ease-in-out infinite 2.5s !important;
+        max-width: 90% !important;
     }
     
     /* Add smooth transitions to hero container on mobile */
