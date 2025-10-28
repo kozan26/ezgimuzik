@@ -2595,6 +2595,17 @@ body {
     margin-top: 0;
     margin-bottom: 1.5rem;
     text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+    word-break: keep-all;
+}
+
+.no-break {
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .no-break {
+        white-space: normal;
+    }
 }
 
 .hero-subtitle { 
