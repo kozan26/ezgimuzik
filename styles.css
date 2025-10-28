@@ -3251,18 +3251,23 @@ body {
     transform-origin: center center;
 }
 
-/* Default: all instruments visible but hidden with opacity */
+/* Default: hide all instruments using dimensions */
 .hero-instrument-image {
     display: block;
     opacity: 0;
     visibility: hidden;
+    width: 0;
+    height: 0;
     pointer-events: none;
+    overflow: hidden;
 }
 
 /* Only show first instrument initially */
 .hero-image-1 {
     opacity: 1;
     visibility: visible;
+    width: auto;
+    height: auto;
     animation: fadeInOutDesktop 30s ease-in-out infinite, float 4s ease-in-out infinite;
     animation-fill-mode: both, forwards;
     z-index: 10;
@@ -3493,43 +3498,57 @@ body {
     0% {
         opacity: 0;
         visibility: hidden;
-        z-index: 1;
+        width: 0;
+        height: 0;
+        z-index: 0;
         transform: translateX(-50%) translateY(0px);
     }
     1% {
         opacity: 0;
         visibility: visible;
-        z-index: 10;
+        width: auto;
+        height: auto;
+        z-index: 100;
         transform: translateX(-50%) translateY(0px);
     }
     3% {
         opacity: 1;
         visibility: visible;
-        z-index: 10;
+        width: auto;
+        height: auto;
+        z-index: 100;
         transform: translateX(-50%) translateY(0px);
     }
     12% {
         opacity: 1;
         visibility: visible;
-        z-index: 10;
+        width: auto;
+        height: auto;
+        z-index: 100;
         transform: translateX(-50%) translateY(0px);
     }
     14% {
         opacity: 0;
         visibility: visible;
-        z-index: 10;
+        width: auto;
+        height: auto;
+        z-index: 100;
         transform: translateX(-50%) translateY(0px);
     }
     15% {
         opacity: 0;
         visibility: hidden;
-        z-index: 1;
+        width: 0;
+        height: 0;
+        z-index: 0;
         transform: translateX(-50%) translateY(0px);
     }
     100% {
         opacity: 0;
         visibility: hidden;
-        z-index: 1;
+        width: 0;
+        height: 0;
+        z-index: 0;
         transform: translateX(-50%) translateY(0px);
     }
 }
