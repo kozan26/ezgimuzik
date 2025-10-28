@@ -319,7 +319,6 @@ body {
     white-space: nowrap;
     position: relative;
     background: rgba(255, 255, 255, 0.1);
-    -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 16px;
@@ -2581,6 +2580,10 @@ body {
     margin-right: 0.5rem;
 }
 
+.eyebrow-text::after {
+    display: none;
+}
+
 @keyframes badgeShimmer {
     0% { left: -100%; }
     50%, 100% { left: 100%; }
@@ -2596,17 +2599,6 @@ body {
     margin-top: 0;
     margin-bottom: 1.5rem;
     text-shadow: 0 2px 20px rgba(0,0,0,0.3);
-    word-break: keep-all;
-}
-
-.no-break {
-    white-space: nowrap;
-}
-
-@media (max-width: 768px) {
-    .no-break {
-        white-space: normal;
-    }
 }
 
 .hero-subtitle { 
@@ -2616,13 +2608,6 @@ body {
     margin-bottom: 24px;
     line-height: 1.7;
     max-width: 680px;
-}
-
-.hero-text h1 .highlight-white {
-    color: #ffffff;
-    -webkit-text-fill-color: #ffffff;
-    background-clip: unset;
-    -webkit-background-clip: unset;
 }
 
 .hero-text h1 .highlight-orange {
@@ -2646,21 +2631,6 @@ body {
     margin-bottom: 24px;
     line-height: 1.7;
     max-width: 680px;
-    word-break: keep-all;
-    orphans: 3;
-    widows: 3;
-    text-align: left;
-}
-
-.hero-subtitle-line {
-    display: inline;
-    white-space: nowrap;
-}
-
-@media (max-width: 768px) {
-    .hero-subtitle-line {
-        white-space: normal;
-    }
 }
 
 /* Hero Social Proof */
@@ -2682,7 +2652,6 @@ body {
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.25);
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
 }
 
@@ -2729,7 +2698,6 @@ body {
     display: flex;
     align-items: center;
     background: rgba(255, 255, 255, 0.06);
-    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
@@ -2898,6 +2866,11 @@ body {
 .fud-item .material-icons {
     color: #10b981;
     font-size: 18px;
+}
+
+/* Secondary CTA */
+
+/* Hero FUDs - Removed */
 
 /* Store Location */
 .store-location {
@@ -3111,7 +3084,6 @@ body {
 
 .testimonial-glass-card {
     background: rgba(15, 23, 42, 0.9);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
     backdrop-filter: blur(20px) saturate(180%);
     border: 1px solid rgba(249, 115, 22, 0.3);
     border-left: 4px solid #f97316;
@@ -3237,64 +3209,48 @@ body {
 .hero-instrument-image {
     position: absolute;
     top: 10%;
-    left: 50%;
-    width: 0;
-    height: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
     object-position: center;
     max-height: 500px;
-    max-width: 100%;
     will-change: opacity, transform;
     filter: drop-shadow(6px 6px 8px rgba(0,0,0,0.4));
-    transition: opacity 0.6s ease-in-out;
-    transform: translateX(-50%) translateY(calc(var(--scroll, 0) * 0.06px));
-    transform-origin: center center;
-    display: block;
     opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    overflow: hidden;
+    transition: opacity 0.6s ease-in-out;
+    transform: translateY(calc(var(--scroll, 0) * 0.06px)) rotate(-3deg);
 }
 
-/* Only show first instrument initially */
 .hero-image-1 {
-    opacity: 1;
-    visibility: visible;
-    width: auto;
-    height: auto;
-    animation: fadeInOutDesktop 30s ease-in-out infinite, float 4s ease-in-out infinite;
-    animation-fill-mode: both, forwards;
+    /* Allow desktop fade sequencing to control opacity */
+    animation: fadeInOut 30s ease-in-out infinite, float 4s ease-in-out infinite;
     z-index: 10;
 }
 
 .hero-image-2 {
-    animation: fadeInOutDesktop 30s ease-in-out infinite 4.5s, float 4s ease-in-out infinite 0.5s;
-    animation-fill-mode: both, forwards;
-    z-index: 9;
+    opacity: 0;
+    animation: fadeInOut 30s ease-in-out infinite 4.5s, float 4s ease-in-out infinite 0.5s;
 }
 
 .hero-image-3 {
-    animation: fadeInOutDesktop 30s ease-in-out infinite 9s, float 4s ease-in-out infinite 1s;
-    animation-fill-mode: both, forwards;
-    z-index: 8;
+    opacity: 0;
+    animation: fadeInOut 30s ease-in-out infinite 9s, float 4s ease-in-out infinite 1s;
 }
 
 .hero-image-4 {
-    animation: fadeInOutDesktop 30s ease-in-out infinite 13.5s, float 4s ease-in-out infinite 1.5s;
-    animation-fill-mode: both, forwards;
-    z-index: 7;
+    opacity: 0;
+    animation: fadeInOut 30s ease-in-out infinite 13.5s, float 4s ease-in-out infinite 1.5s;
 }
 
 .hero-image-5 {
-    animation: fadeInOutDesktop 30s ease-in-out infinite 18s, float 4s ease-in-out infinite 2s;
-    animation-fill-mode: both, forwards;
-    z-index: 6;
+    opacity: 0;
+    animation: fadeInOut 30s ease-in-out infinite 18s, float 4s ease-in-out infinite 2s;
 }
 
 .hero-image-6 {
-    animation: fadeInOutDesktop 30s ease-in-out infinite 22.5s, float 4s ease-in-out infinite 2.5s;
-    animation-fill-mode: both, forwards;
-    z-index: 5;
+    opacity: 0;
+    animation: fadeInOut 30s ease-in-out infinite 22.5s, float 4s ease-in-out infinite 2.5s;
 }
 
 /* Hero Testimonials */
@@ -3430,10 +3386,10 @@ body {
 
 @keyframes float {
     0%, 100% {
-        transform: translateX(-50%) translateY(0px);
+        transform: translateY(0px);
     }
     50% {
-        transform: translateX(-50%) translateY(-20px);
+        transform: translateY(-20px);
     }
 }
 
@@ -3488,62 +3444,41 @@ body {
     }
 }
 
-@keyframes fadeInOutDesktop {
+@keyframes fadeInOut {
     0% {
         opacity: 0;
+        z-index: 1;
         visibility: hidden;
-        width: 0;
-        height: 0;
-        z-index: 0;
-        transform: translateX(-50%) translateY(0px);
     }
     1% {
         opacity: 0;
+        z-index: 2;
         visibility: visible;
-        width: auto;
-        height: auto;
-        z-index: 100;
-        transform: translateX(-50%) translateY(0px);
     }
     3% {
         opacity: 1;
+        z-index: 2;
         visibility: visible;
-        width: auto;
-        height: auto;
-        z-index: 100;
-        transform: translateX(-50%) translateY(0px);
     }
     12% {
         opacity: 1;
+        z-index: 2;
         visibility: visible;
-        width: auto;
-        height: auto;
-        z-index: 100;
-        transform: translateX(-50%) translateY(0px);
     }
     14% {
         opacity: 0;
+        z-index: 2;
         visibility: visible;
-        width: auto;
-        height: auto;
-        z-index: 100;
-        transform: translateX(-50%) translateY(0px);
     }
     15% {
         opacity: 0;
+        z-index: 1;
         visibility: hidden;
-        width: 0;
-        height: 0;
-        z-index: 0;
-        transform: translateX(-50%) translateY(0px);
     }
     100% {
         opacity: 0;
+        z-index: 1;
         visibility: hidden;
-        width: 0;
-        height: 0;
-        z-index: 0;
-        transform: translateX(-50%) translateY(0px);
     }
 }
 
@@ -4402,8 +4337,8 @@ body {
     align-items: center;
     background: rgba(255, 255, 255, 0.5);
     border-radius: 12px;
-    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .testimonial-author.centered strong {
@@ -5443,7 +5378,6 @@ body {
         max-width: 100%;
         margin: 0 auto;
         background: rgba(255, 255, 255, 0.1);
-        -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px);
         border: 1px solid rgba(255, 255, 255, 0.2);
         border-radius: 12px;
@@ -5552,6 +5486,24 @@ body {
         align-items: center;
         justify-content: center;
     }
+    
+    .hero-instrument-image:not(.hero-image-1) {
+        max-height: 250px !important;
+        width: auto !important;
+        object-fit: contain !important;
+        opacity: 0;
+        visibility: visible !important;
+        display: block !important;
+        position: absolute !important;
+        z-index: 10 !important;
+        top: 10% !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        transition: opacity 0.6s ease-in-out !important;
+    }
+    
+    
+    
     
     .testimonial-mini-card {
         min-width: 280px;
@@ -5816,6 +5768,21 @@ body {
         justify-content: center;
     }
     
+    .hero-instrument-image:not(.hero-image-1) {
+        max-height: 200px;
+        opacity: 0;
+        visibility: visible;
+        display: block;
+        position: absolute;
+        z-index: 10;
+        top: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: opacity 0.6s ease-in-out;
+    }
+    
+    
+    
     .pie-chart-card {
         width: 100px;
         height: 100px;
@@ -5931,6 +5898,21 @@ body {
         align-items: center;
         justify-content: center;
     }
+    
+    .hero-instrument-image:not(.hero-image-1) {
+        max-height: 150px;
+        opacity: 0;
+        visibility: visible;
+        display: block;
+        position: absolute;
+        z-index: 10;
+        top: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: opacity 0.6s ease-in-out;
+    }
+    
+    
     
     .nav-actions {
         gap: 4px;
@@ -6319,7 +6301,6 @@ small {
     background: rgba(255, 255, 255, 0.1);
     padding: 16px 20px;
     border-radius: 12px;
-    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
 }
 
@@ -6343,7 +6324,6 @@ small {
     background: rgba(255, 255, 255, 0.1);
     padding: 12px 20px;
     border-radius: 12px;
-    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
 }
 
@@ -6397,7 +6377,6 @@ small {
     background: rgba(255, 255, 255, 0.2) !important;
     color: white !important;
     border: 2px solid rgba(255, 255, 255, 0.3) !important;
-    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
 }
 
@@ -7271,7 +7250,6 @@ small {
     background: rgba(255, 255, 255, 0.1);
     padding: 1rem;
     border-radius: 0.75rem;
-    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
 }
 
@@ -7319,7 +7297,6 @@ small {
     background: rgba(255, 255, 255, 0.1);
     padding: 0.75rem 1rem;
     border-radius: 2rem;
-    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
 }
 
@@ -8207,10 +8184,101 @@ small {
         display: none !important;
     }
     
-    /* Use same fadeInOutDesktop animation on mobile but with smaller size */
-    .hero-instrument-image {
+    /* Show all instruments on mobile with cycling animation */
+    .hero-image-1 {
+        opacity: 0;
+        visibility: visible !important;
+        display: block !important;
+        position: absolute !important;
+        top: 10% !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        z-index: 100 !important;
         max-height: 250px !important;
-        max-width: 90% !important;
+        width: auto !important;
+        transform-origin: center bottom !important;
+        animation: mobileFadeInOut 18s ease-in-out infinite, mobileFloat 4s ease-in-out infinite !important;
+        transition: all 0.6s ease-in-out !important;
+    }
+    
+    .hero-image-2 {
+        opacity: 0;
+        visibility: visible !important;
+        display: block !important;
+        position: absolute !important;
+        top: 10% !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        z-index: 100 !important;
+        max-height: 250px !important;
+        width: auto !important;
+        transform-origin: center bottom !important;
+        animation: mobileFadeInOut 18s ease-in-out infinite 3s, mobileFloat 4s ease-in-out infinite 0.5s !important;
+        transition: all 0.6s ease-in-out !important;
+    }
+    
+    .hero-image-3 {
+        opacity: 0;
+        visibility: visible !important;
+        display: block !important;
+        position: absolute !important;
+        top: 10% !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        z-index: 100 !important;
+        max-height: 250px !important;
+        width: auto !important;
+        transform-origin: center bottom !important;
+        animation: mobileFadeInOut 18s ease-in-out infinite 6s, mobileFloat 4s ease-in-out infinite 1s !important;
+        transition: all 0.6s ease-in-out !important;
+    }
+    
+    .hero-image-4 {
+        opacity: 0;
+        visibility: visible !important;
+        display: block !important;
+        position: absolute !important;
+        top: 10% !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        z-index: 100 !important;
+        max-height: 250px !important;
+        width: auto !important;
+        transform-origin: center bottom !important;
+        animation: mobileFadeInOut 18s ease-in-out infinite 9s, mobileFloat 4s ease-in-out infinite 1.5s !important;
+        transition: all 0.6s ease-in-out !important;
+    }
+    
+    .hero-image-5 {
+        opacity: 0;
+        visibility: visible !important;
+        display: block !important;
+        position: absolute !important;
+        top: 10% !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        z-index: 100 !important;
+        max-height: 250px !important;
+        width: auto !important;
+        transform-origin: center bottom !important;
+        animation: mobileFadeInOut 18s ease-in-out infinite 12s, mobileFloat 4s ease-in-out infinite 2s !important;
+        transition: all 0.6s ease-in-out !important;
+    }
+    
+    .hero-image-6 {
+        opacity: 0;
+        visibility: visible !important;
+        display: block !important;
+        position: absolute !important;
+        top: 10% !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        z-index: 100 !important;
+        max-height: 250px !important;
+        width: auto !important;
+        transform-origin: center bottom !important;
+        animation: mobileFadeInOut 18s ease-in-out infinite 15s, mobileFloat 4s ease-in-out infinite 2.5s !important;
+        transition: all 0.6s ease-in-out !important;
     }
     
     /* Add smooth transitions to hero container on mobile */
@@ -8235,6 +8303,4 @@ small {
             transform: translateY(0px);
         }
     }
-}
-
 }
