@@ -319,6 +319,7 @@ body {
     white-space: nowrap;
     position: relative;
     background: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 16px;
@@ -2681,6 +2682,7 @@ body {
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.25);
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
 }
 
@@ -2727,6 +2729,7 @@ body {
     display: flex;
     align-items: center;
     background: rgba(255, 255, 255, 0.06);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
@@ -3108,6 +3111,7 @@ body {
 
 .testimonial-glass-card {
     background: rgba(15, 23, 42, 0.9);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
     backdrop-filter: blur(20px) saturate(180%);
     border: 1px solid rgba(249, 115, 22, 0.3);
     border-left: 4px solid #f97316;
@@ -4361,8 +4365,8 @@ body {
     align-items: center;
     background: rgba(255, 255, 255, 0.5);
     border-radius: 12px;
-    backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
 }
 
 .testimonial-author.centered strong {
@@ -5402,6 +5406,7 @@ body {
         max-width: 100%;
         margin: 0 auto;
         background: rgba(255, 255, 255, 0.1);
+        -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px);
         border: 1px solid rgba(255, 255, 255, 0.2);
         border-radius: 12px;
@@ -6325,6 +6330,7 @@ small {
     background: rgba(255, 255, 255, 0.1);
     padding: 16px 20px;
     border-radius: 12px;
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
 }
 
@@ -6348,6 +6354,7 @@ small {
     background: rgba(255, 255, 255, 0.1);
     padding: 12px 20px;
     border-radius: 12px;
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
 }
 
@@ -6401,6 +6408,7 @@ small {
     background: rgba(255, 255, 255, 0.2) !important;
     color: white !important;
     border: 2px solid rgba(255, 255, 255, 0.3) !important;
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
 }
 
@@ -7274,6 +7282,7 @@ small {
     background: rgba(255, 255, 255, 0.1);
     padding: 1rem;
     border-radius: 0.75rem;
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
 }
 
@@ -7321,6 +7330,7 @@ small {
     background: rgba(255, 255, 255, 0.1);
     padding: 0.75rem 1rem;
     border-radius: 2rem;
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
 }
 
