@@ -2635,15 +2635,12 @@ body {
 
 .hero-subtitle-line {
     display: inline;
+    white-space: nowrap;
 }
 
-@media (min-width: 769px) {
+@media (max-width: 768px) {
     .hero-subtitle-line {
-        display: inline-block;
-    }
-    
-    .hero-subtitle {
-        text-wrap: balance;
+        white-space: normal;
     }
 }
 
