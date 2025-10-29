@@ -2617,10 +2617,6 @@ body {
     -webkit-background-clip: unset;
 }
 
-.hero-text h1 .no-break {
-    white-space: nowrap;
-}
-
 .hero-text h1 .highlight-orange {
     background: linear-gradient(315deg, #fdc830, #f37335);
     -webkit-background-clip: text;
