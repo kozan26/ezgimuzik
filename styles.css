@@ -139,14 +139,8 @@ body {
 .container {
     max-width: var(--container-max-width);
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 12px;
     overflow-x: hidden;
-}
-
-.hero .container {
-    padding: 0 40px;
-    min-width: 1000px;
-    max-width: 1400px;
 }
 
 /* Buttons */
@@ -2524,7 +2518,7 @@ body {
             #1e40af 85%,          /* deep blue */
             #0f172a 100%          /* back to dark */
         );
-    padding: 20px 0 40px;
+    padding: 20px 12px 40px;
     position: relative;
     overflow: hidden;
     display: flex;
@@ -2547,17 +2541,11 @@ body {
 
 .hero-content {
     display: grid;
-    grid-template-columns: minmax(55%, 1fr) minmax(35%, 45%);
-    gap: 60px;
+    grid-template-columns: 60% 40%;
+    gap: 50px;
     align-items: center;
     position: relative;
     z-index: 1;
-}
-
-.hero-text {
-    width: 100%;
-    min-width: 55%;
-    max-width: 100%;
 }
 
 .hero-top-section {
@@ -2619,22 +2607,7 @@ body {
     color: rgba(255,255,255,0.9);
     margin-bottom: 24px;
     line-height: 1.7;
-    width: 100%;
-    max-width: 100%;
-}
-
-.hero-text h1 .highlight-white,
-.hero-text h1 .highlight-orange,
-.hero-text h1 .highlight-green {
-    white-space: nowrap;
-    display: inline-block;
-}
-
-.hero-text h1 .highlight-white {
-    color: #ffffff;
-    -webkit-text-fill-color: #ffffff;
-    background-clip: unset;
-    -webkit-background-clip: unset;
+    max-width: 680px;
 }
 
 .hero-text h1 .highlight-orange {
@@ -5029,18 +5002,7 @@ body {
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-    .hero .container {
-        min-width: 0;
-        max-width: 100%;
-        padding: 0 32px;
-    }
-    
-    .hero-content {
-        min-width: 0;
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-    
+    .hero-content,
     .feature-content {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -5241,12 +5203,6 @@ body {
         padding: 14px 18px;
     }
     
-    .hero .container {
-        padding: 0 20px;
-        min-width: 0;
-        max-width: 100%;
-    }
-    
     .hero-content {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -5254,13 +5210,10 @@ body {
         display: block;
         max-width: 100%;
         overflow-x: hidden;
-        min-width: 0;
     }
     
     .hero-text {
         order: 1;
-        min-width: 0;
-        max-width: 100%;
     }
     
     .hero-stage {
@@ -5298,18 +5251,9 @@ body {
         text-align: center;
         /* Better mobile spacing */
         padding: 0 4px;
-        word-wrap: normal;
-        overflow-wrap: normal;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
         max-width: 100%;
-    }
-    
-    .hero-text h1 .highlight-white,
-    .hero-text h1 .highlight-orange,
-    .hero-text h1 .highlight-green {
-        white-space: nowrap;
-        display: inline-block;
-        word-wrap: normal;
-        overflow-wrap: normal;
     }
     
     .hero-subtitle {
