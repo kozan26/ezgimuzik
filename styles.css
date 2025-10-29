@@ -5023,7 +5023,18 @@ body {
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-    .hero-content,
+    .hero .container {
+        min-width: 0;
+        max-width: 100%;
+        padding: 0 32px;
+    }
+    
+    .hero-content {
+        min-width: 0;
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
     .feature-content {
         grid-template-columns: 1fr;
         gap: 40px;
