@@ -5265,9 +5265,18 @@ body {
         text-align: center;
         /* Better mobile spacing */
         padding: 0 4px;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
+        word-wrap: normal;
+        overflow-wrap: normal;
         max-width: 100%;
+    }
+    
+    .hero-text h1 .highlight-white,
+    .hero-text h1 .highlight-orange,
+    .hero-text h1 .highlight-green {
+        white-space: nowrap;
+        display: inline-block;
+        word-wrap: normal;
+        overflow-wrap: normal;
     }
     
     .hero-subtitle {
