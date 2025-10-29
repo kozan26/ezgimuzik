@@ -139,8 +139,12 @@ body {
 .container {
     max-width: var(--container-max-width);
     margin: 0 auto;
-    padding: 0 12px;
+    padding: 0 24px;
     overflow-x: hidden;
+}
+
+.hero .container {
+    padding: 0 40px;
 }
 
 /* Buttons */
@@ -2518,7 +2522,7 @@ body {
             #1e40af 85%,          /* deep blue */
             #0f172a 100%          /* back to dark */
         );
-    padding: 20px 12px 40px;
+    padding: 20px 0 40px;
     position: relative;
     overflow: hidden;
     display: flex;
@@ -5215,6 +5219,11 @@ body {
     .company-logo {
         font-size: 14px;
         padding: 14px 18px;
+    }
+    
+    .hero .container {
+Identify
+        padding: 0 20px;
     }
     
     .hero-content {
