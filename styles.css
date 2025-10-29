@@ -2610,6 +2610,13 @@ body {
     max-width: 680px;
 }
 
+.hero-text h1 .highlight-white,
+.hero-text h1 .highlight-orange,
+.hero-text h1 .highlight-green {
+    white-space: nowrap;
+    display: inline-block;
+}
+
 .hero-text h1 .highlight-white {
     color: #ffffff;
     -webkit-text-fill-color: #ffffff;
