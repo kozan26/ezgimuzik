@@ -2555,6 +2555,11 @@ body {
     min-width: 920px;
 }
 
+.hero-text {
+    min-width: 50%;
+    max-width: 65%;
+}
+
 .hero-top-section {
     display: flex;
     align-items: baseline;
@@ -2614,7 +2619,8 @@ body {
     color: rgba(255,255,255,0.9);
     margin-bottom: 24px;
     line-height: 1.7;
-    max-width: 680px;
+    min-width: 50%;
+    max-width: 85%;
 }
 
 .hero-text h1 .highlight-white,
