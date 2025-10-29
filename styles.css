@@ -2610,6 +2610,13 @@ body {
     max-width: 680px;
 }
 
+.hero-text h1 .highlight-white {
+    color: #ffffff;
+    -webkit-text-fill-color: #ffffff;
+    background-clip: unset;
+    -webkit-background-clip: unset;
+}
+
 .hero-text h1 .highlight-orange {
     background: linear-gradient(315deg, #fdc830, #f37335);
     -webkit-background-clip: text;
