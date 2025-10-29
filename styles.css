@@ -5263,10 +5263,6 @@ body {
         max-width: 100%;
     }
     
-    .hero-text h1 .no-break {
-        white-space: normal;
-    }
-    
     .hero-subtitle {
         /* Fluid subtitle sizing */
         font-size: clamp(12px, 3vw, 15px);
