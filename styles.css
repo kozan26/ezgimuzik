@@ -2619,8 +2619,8 @@ body {
     color: rgba(255,255,255,0.9);
     margin-bottom: 24px;
     line-height: 1.7;
-    min-width: 50%;
-    max-width: 85%;
+    width: 100%;
+    max-width: 100%;
 }
 
 .hero-text h1 .highlight-white,
