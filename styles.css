@@ -2547,17 +2547,17 @@ body {
 
 .hero-content {
     display: grid;
-    grid-template-columns: 60% 40%;
+    grid-template-columns: minmax(55%, 1fr) minmax(35%, 45%);
     gap: 60px;
     align-items: center;
     position: relative;
     z-index: 1;
-    min-width: 920px;
 }
 
 .hero-text {
-    min-width: 50%;
-    max-width: 65%;
+    width: 100%;
+    min-width: 55%;
+    max-width: 100%;
 }
 
 .hero-top-section {
