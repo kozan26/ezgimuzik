@@ -15,8 +15,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Bolu'nun  Yamaha, Kawai, Marshall yetkili bayisi Ezgi Müzik. İzzet Baysal Caddesi'nde 25+ yıldır gitar, piyano, keman satışı. Ücretsiz deneme, garantili ürünler. 0533 212 74 32">
-    <meta name="keywords" content="müzik mağazası bolu, yamaha yetkili bayi bolu, kawai piyano bolu, marshall amplifikatör bolu, ibanez gitar bolu, enstrüman satış bolu, gitar bolu, piyano bolu, keman bolu, saz bolu, müzik aleti bolu, ezgi müzik, izzet baysal caddesi müzik">
+    <meta name="description" content="Ezgi Müzik - Bolu'nun en güvenilir müzik mağazası. 25+ yıllık tecrübe ile gitar, piyano, keman, saz satışı. Yamaha, Kawai, Marshall yetkili bayisi. İzzet Baysal Caddesi, Bolu. 0533 212 74 32">
+    <meta name="keywords" content="ezgi müzik, ezgi müzik bolu, müzik mağazası bolu, yamaha yetkili bayi bolu, kawai piyano bolu, marshall amplifikatör bolu, ibanez gitar bolu, enstrüman satış bolu, gitar bolu, piyano bolu, keman bolu, saz bolu, müzik aleti bolu, izzet baysal caddesi müzik, ezgimuzik">
     <meta name="author" content="Ezgi Müzik">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="googlebot" content="index, follow">
@@ -56,6 +56,7 @@
     <!-- Preload critical resources -->
     <link rel="preload" href="styles.css" as="style">
     <link rel="preload" href="script.js" as="script">
+    <link rel="preload" href="guitar.png" as="image" fetchpriority="high">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -127,6 +128,7 @@
         "latitude": 40.73037497139083,
         "longitude": 31.59845607591345
       },
+      "hasMap": "https://www.google.com/maps?cid=123456789",
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
@@ -367,6 +369,44 @@
             "@type": "Answer",
             "text": "Telefon veya WhatsApp üzerinden sipariş verebilirsiniz. Ancak enstrümanı denemeden almak riskli olabilir. Mümkünse mağazamıza gelip denemenizi öneriyoruz. Uzaktaysanız kargo ile gönderim yapıyoruz."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "Ezgi Müzik nerede?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ezgi Müzik, Bolu'nun merkez ilçesinde İzzet Baysal Caddesi, Tabaklar Mahallesi, Meydan İşhanı No:6 adresinde bulunmaktadır. Mağazamız Pazartesi-Cumartesi 09:30-19:00 saatleri arasında açıktır."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ezgi Müzik çalışma saatleri nedir?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ezgi Müzik Pazartesi-Perşembe ve Cuma-Cumartesi günleri 09:30-19:00 saatleri arasında hizmet vermektedir. Pazar günü kapalıyız. Randevusuz gelebilirsiniz."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- BreadcrumbList Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Ana Sayfa",
+          "item": "https://ezgimuzik.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Ezgi Müzik Bolu",
+          "item": "https://ezgimuzik.com"
         }
       ]
     }
@@ -478,14 +518,14 @@
                            <div class="wave wave-3"></div>
                            <div class="wave wave-4"></div>
                        </div>
-                   <div class="hero-image">
-                       <img src="guitar.png" alt="Gitar satış Bolu - Ezgi Müzik akustik ve elektro gitar koleksiyonu" class="hero-instrument-image hero-image-1">
-                       <img src="violin.png" alt="Keman satış Bolu - Ezgi Müzik profesyonel keman çeşitleri" class="hero-instrument-image hero-image-2">
-                       <img src="saz.png" alt="Saz satış Bolu - Ezgi Müzik bağlama ve saz enstrümanları" class="hero-instrument-image hero-image-3">
-                       <img src="piano.png" alt="Piyano satış Bolu - Ezgi Müzik dijital ve akustik piyano" class="hero-instrument-image hero-image-4">
-                       <img src="electric-guitar.png" alt="Elektro gitar satış Bolu - Ezgi Müzik elektrik gitar modelleri" class="hero-instrument-image hero-image-5">
-                       <img src="drums.png" alt="Davul satış Bolu - Ezgi Müzik davul ve perküsyon enstrümanları" class="hero-instrument-image hero-image-6">
-                       </div>
+                  <div class="hero-image">
+                      <img src="guitar.png" alt="Ezgi Müzik Bolu - Gitar satış, akustik ve elektro gitar koleksiyonu" class="hero-instrument-image hero-image-1" width="600" height="600" fetchpriority="high">
+                      <img src="violin.png" alt="Ezgi Müzik Bolu - Keman satış, profesyonel keman çeşitleri" class="hero-instrument-image hero-image-2" width="600" height="600" loading="lazy">
+                      <img src="saz.png" alt="Ezgi Müzik Bolu - Saz satış, bağlama ve saz enstrümanları" class="hero-instrument-image hero-image-3" width="600" height="600" loading="lazy">
+                      <img src="piano.png" alt="Ezgi Müzik Bolu - Piyano satış, dijital ve akustik piyano" class="hero-instrument-image hero-image-4" width="600" height="600" loading="lazy">
+                      <img src="electric-guitar.png" alt="Ezgi Müzik Bolu - Elektro gitar satış, elektrik gitar modelleri" class="hero-instrument-image hero-image-5" width="600" height="600" loading="lazy">
+                      <img src="drums.png" alt="Ezgi Müzik Bolu - Davul satış, davul ve perküsyon enstrümanları" class="hero-instrument-image hero-image-6" width="600" height="600" loading="lazy">
+                      </div>
                        <!-- Floating Testimonials -->
                        <div class="hero-testimonial hero-testimonial-1">
                            <div class="testimonial-glass-card">
@@ -532,6 +572,16 @@
 
     <!-- Main Content -->
     <main role="main">
+        <!-- About Ezgi Müzik Bolu Section -->
+        <section class="about-section" style="padding: 40px 0; background: white;">
+            <div class="container">
+                <h2>Ezgi Müzik Bolu - 25+ Yıllık Güvenilir Müzik Mağazası</h2>
+                <p style="font-size: 1.125rem; line-height: 1.7; max-width: 800px; margin: 0 auto; text-align: center; color: #4B5563;">
+                    <strong>Ezgi Müzik</strong>, Bolu'nun İzzet Baysal Caddesi'nde 25 yılı aşkın süredir müzik severlere hizmet veren köklü bir müzik mağazasıdır. <strong>Ezgi Müzik Bolu</strong> olarak Yamaha, Kawai, Marshall gibi dünya çapında ünlü markaların yetkili bayisi olarak gitar, piyano, keman, saz ve tüm müzik enstrümanlarını uygun fiyatlarla sunmaktadır. Ücretsiz deneme imkanı, uzman danışmanlık ve ömür boyu destek hizmetleriyle müzik tutkunlarının yanındayız.
+                </p>
+            </div>
+        </section>
+
         <!-- Authorized Dealer Brands Section -->
     <section class="trusted-brands">
         <div class="container">
@@ -1449,6 +1499,8 @@
                     <h4>Hızlı Linkler</h4>
                     <ul class="footer-links">
                         <li><a href="#contact">İletişim</a></li>
+                        <li><a href="#contact">Ezgi Müzik Bolu İletişim</a></li>
+                        <li><a href="#contact">Bolu Müzik Mağazası</a></li>
                         <li><a href="tel:+905332127432">Telefon</a></li>
                         <li><a href="https://wa.me/905332127432">WhatsApp</a></li>
                     </ul>
