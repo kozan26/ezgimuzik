@@ -763,20 +763,47 @@ body {
     max-width: 600px;
     margin: 0 auto;
 }
-.brands-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 16px;
+/* Marquee */
+.brands-marquee {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
     margin-bottom: 40px;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+.brands-track {
+    display: flex;
+    gap: 12px;
+    width: max-content;
+    animation: marqueeLeft 32s linear infinite;
+}
+.brands-track-2 {
+    animation: marqueeRight 28s linear infinite;
+}
+.brands-track:hover,
+.brands-track-2:hover {
+    animation-play-state: paused;
+}
+@keyframes marqueeLeft {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+@keyframes marqueeRight {
+    0%   { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
 }
 .brand-item {
     background: var(--white);
     border: 1px solid var(--gray-200);
     border-radius: 12px;
-    padding: 16px 12px;
+    padding: 14px 20px;
     text-align: center;
-    transition: var(--ease);
+    flex-shrink: 0;
+    min-width: 140px;
     cursor: default;
+    transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
 }
 .brand-item:hover {
     border-color: var(--primary);
@@ -1760,7 +1787,8 @@ body {
     }
 
     /* Sections */
-    .brands-grid { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 12px; }
+    .brands-track { animation-duration: 20s; }
+    .brands-track-2 { animation-duration: 18s; }
     .pas-content { grid-template-columns: 1fr; }
     .testimonial-grid { grid-template-columns: 1fr; }
     .value-content { grid-template-columns: 1fr; direction: ltr; }
@@ -1802,7 +1830,7 @@ body {
 
     .value-image { min-height: 180px; padding: 20px; }
     .keywords-grid { grid-template-columns: 1fr; }
-    .brands-grid { grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); }
+    .brand-item { min-width: 120px; padding: 12px 14px; }
 
     .section-header h2 { font-size: 1.5rem; }
     .section-header p  { font-size: .95rem; }
