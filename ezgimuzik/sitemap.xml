@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://ezgimuzik.com/</loc>
+    <lastmod>2025-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://ezgimuzik.com/guitar.png</image:loc>
+      <image:title>Gitar - Ezgi Müzik Bolu</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ezgimuzik.com/piano.png</image:loc>
+      <image:title>Piyano - Ezgi Müzik Bolu</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ezgimuzik.com/violin.png</image:loc>
+      <image:title>Keman - Ezgi Müzik Bolu</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ezgimuzik.com/saz.png</image:loc>
+      <image:title>Saz - Ezgi Müzik Bolu</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ezgimuzik.com/electric-guitar.png</image:loc>
+      <image:title>Elektro Gitar - Ezgi Müzik Bolu</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ezgimuzik.com/drums.png</image:loc>
+      <image:title>Davul - Ezgi Müzik Bolu</image:title>
+    </image:image>
+  </url>
+</urlset>
