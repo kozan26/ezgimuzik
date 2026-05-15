@@ -74,70 +74,20 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Social Proof Counter Animation
+    // Social proof values stay fixed to avoid layout shifts while the hero renders.
     const socialProofBar = document.querySelector('.social-proof-bar');
     if (socialProofBar) {
         const counterElements = socialProofBar.querySelectorAll('[data-target]');
-        let countersStarted = false;
-        
-        const animateCounter = (element, target, duration = 2000) => {
-            const start = 0;
-            const increment = target / (duration / 16); // 60 FPS
-            let current = start;
-            
-            const updateCounter = () => {
-                current += increment;
-                if (current < target) {
-                    if (element.classList.contains('proof-rating')) {
-                        element.textContent = current.toFixed(1) + '/5';
-                    } else if (element.classList.contains('proof-reviews')) {
-                        element.textContent = Math.floor(current) + ' Yorum';
-                    } else if (element.classList.contains('proof-number')) {
-                        if (target >= 1000) {
-                            element.textContent = Math.floor(current).toLocaleString() + '+';
-                        } else {
-                            element.textContent = Math.floor(current) + '+';
-                        }
-                    }
-                    requestAnimationFrame(updateCounter);
-                } else {
-                    if (element.classList.contains('proof-rating')) {
-                        element.textContent = target.toFixed(1) + '/5';
-                    } else if (element.classList.contains('proof-reviews')) {
-                        element.textContent = target + ' Yorum';
-                    } else if (element.classList.contains('proof-number')) {
-                        if (target >= 1000) {
-                            element.textContent = target.toLocaleString() + '+';
-                        } else {
-                            element.textContent = target + '+';
-                        }
-                    }
-                }
-            };
-            
-            updateCounter();
-        };
-        
-        const startCounters = () => {
-            if (countersStarted) return;
-            countersStarted = true;
-            
-            counterElements.forEach(element => {
-                const target = parseFloat(element.getAttribute('data-target'));
-                animateCounter(element, target, 2000);
-            });
-        };
-        
-        const countersObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    startCounters();
-                    countersObserver.disconnect();
-                }
-            });
-        }, { threshold: 0.5 });
-        
-        countersObserver.observe(socialProofBar);
+        counterElements.forEach(element => {
+            const target = parseFloat(element.getAttribute('data-target'));
+            if (element.classList.contains('proof-rating')) {
+                element.textContent = target.toFixed(1) + '/5';
+            } else if (element.classList.contains('proof-reviews')) {
+                element.textContent = `${target} Yorum`;
+            } else if (element.classList.contains('proof-number')) {
+                element.textContent = `${target.toLocaleString('tr-TR')}+`;
+            }
+        });
     }
     
     // Back to top button
