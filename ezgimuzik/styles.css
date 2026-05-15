@@ -76,6 +76,14 @@ body {
     --ease: all 0.3s ease;
 }
 
+.lucide-icon {
+    width: 1em;
+    height: 1em;
+    stroke-width: 2.25;
+    flex-shrink: 0;
+    vertical-align: -0.15em;
+}
+
 /* ── Container ─────────────────────────────────────────────── */
 .container {
     max-width: var(--container-max);
@@ -258,9 +266,9 @@ body {
     align-items: center;
     gap: 8px;
 }
-.logo-text::before {
-    content: "🎵";
-    font-size: 22px;
+.logo-icon {
+    color: var(--primary-light);
+    font-size: 24px;
 }
 
 .logo-tagline {
@@ -297,7 +305,7 @@ body {
     transition: var(--ease);
 }
 .phone-link:hover { color: var(--yellow-400); }
-.phone-link .material-icons {
+.phone-link .lucide-icon {
     font-size: 18px;
     color: var(--accent);
 }
@@ -474,9 +482,7 @@ body {
 .proof-item-link:hover { transform: translateY(-1px); }
 .proof-icon {
     font-size: 1rem;
-    color: var(--yellow-400);
-    font-family: 'Material Symbols Outlined', sans-serif;
-    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    color: var(--yellow-400);
 }
 .proof-rating  { font-size: .9rem; font-weight: 700; color: var(--white); line-height: 1; }
 .proof-reviews { font-size: .7rem; color: rgba(255,255,255,.7); font-weight: 500; }
@@ -519,7 +525,7 @@ body {
 .fud-item:nth-child(1) { animation-delay: .1s; }
 .fud-item:nth-child(2) { animation-delay: .2s; }
 .fud-item:nth-child(3) { animation-delay: .3s; }
-.fud-item .material-icons { color: var(--green-500); font-size: 18px; }
+.fud-item .lucide-icon { color: var(--green-500); font-size: 18px; }
 
 @keyframes slideInUp {
     to { opacity: 1; transform: translateY(0); }
@@ -728,7 +734,6 @@ body {
 .verified-icon {
     font-size: 12px !important;
     color: var(--green-500) !important;
-    font-family: 'Material Symbols Outlined', sans-serif;
 }
 
 /* ── About Section ─────────────────────────────────────────── */
@@ -846,7 +851,7 @@ body {
     font-size: .9rem;
     font-weight: 600;
 }
-.brands-note .material-icons {
+.brands-note .lucide-icon {
     color: var(--primary);
     font-size: 20px;
 }
@@ -919,10 +924,10 @@ body {
     transition: var(--ease);
 }
 .pas-point:hover { background: var(--gray-100); }
-.pas-point .material-icons { font-size: 1.15rem; flex-shrink: 0; }
-.pas-problem   .pas-point .material-icons { color: var(--red-500); }
-.pas-agitation .pas-point .material-icons { color: #f59e0b; }
-.pas-solution  .pas-point .material-icons { color: var(--primary); }
+.pas-point .lucide-icon { font-size: 1.15rem; flex-shrink: 0; }
+.pas-problem   .pas-point .lucide-icon { color: var(--red-500); }
+.pas-agitation .pas-point .lucide-icon { color: #f59e0b; }
+.pas-solution  .pas-point .lucide-icon { color: var(--primary); }
 
 .pas-cta { margin-top: 20px; }
 .pas-cta .btn-secondary {
@@ -1018,7 +1023,7 @@ body {
     font-size: .72rem;
     color: var(--gray-400);
 }
-.testimonial-source .material-icons { font-size: 14px; color: var(--primary); }
+.testimonial-source .lucide-icon { font-size: 14px; color: var(--primary); }
 
 /* ── Value Sections ────────────────────────────────────────── */
 .value-section,
@@ -1069,7 +1074,7 @@ body {
     font-size: .95rem;
     color: var(--gray-700);
 }
-.value-benefit .material-icons { color: var(--primary); font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.value-benefit .lucide-icon { color: var(--primary); font-size: 20px; flex-shrink: 0; margin-top: 1px; }
 .value-cta { display: flex; gap: 12px; flex-wrap: wrap; }
 
 /* Value image panels with alternating gradients */
@@ -1144,7 +1149,7 @@ body {
     transition: var(--ease);
 }
 .step-card:hover .step-icon { transform: scale(1.1) rotate(5deg); }
-.step-icon .material-icons { font-size: 36px; color: var(--white); }
+.step-icon .lucide-icon { font-size: 36px; color: var(--white); }
 .step-number {
     width: 52px; height: 52px;
     background: var(--primary);
@@ -1301,7 +1306,7 @@ body {
     color: rgba(255,255,255,.9);
     font-weight: 500;
 }
-.closing-benefit .material-icons { color: var(--primary-light); font-size: 18px; }
+.closing-benefit .lucide-icon { color: var(--primary-light); font-size: 18px; }
 .closing-social-proof {
     display: flex;
     align-items: center;
@@ -1311,7 +1316,7 @@ body {
     color: rgba(255,255,255,.7);
     margin-bottom: 32px;
 }
-.closing-social-proof .material-icons { color: var(--yellow-400); font-size: 18px; }
+.closing-social-proof .lucide-icon { color: var(--yellow-400); font-size: 18px; }
 .closing-cta { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
 
 /* ── Contact Section ───────────────────────────────────────── */
@@ -1366,7 +1371,7 @@ body {
     display: flex; align-items: center; justify-content: center;
     margin: 0 auto 16px;
 }
-.contact-icon .material-icons { font-size: 26px; color: var(--primary); }
+.contact-icon .lucide-icon { font-size: 26px; color: var(--primary); }
 .contact-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--gray-900); margin: 0 0 10px; }
 .contact-card p { font-size: .9rem; color: var(--gray-600); line-height: 1.6; margin-bottom: 16px; }
 .contact-card p a { color: var(--primary-dark); text-decoration: none; font-weight: 600; }
@@ -1580,7 +1585,7 @@ body {
     font-size: .8rem;
     color: var(--gray-500);
 }
-.footer-trust .material-icons { color: var(--primary); font-size: 16px; }
+.footer-trust .lucide-icon { color: var(--primary); font-size: 16px; }
 
 /* ── Back to Top ───────────────────────────────────────────── */
 .back-to-top {
@@ -1674,7 +1679,7 @@ body {
         gap: 0;
         border-radius: 8px;
     }
-    .nav-actions .phone-link .material-icons { font-size: 18px; }
+    .nav-actions .phone-link .lucide-icon { font-size: 18px; }
 
     .nav-actions .btn-whatsapp {
         font-size: 0 !important;
@@ -1684,7 +1689,7 @@ body {
         gap: 0 !important;
         border-radius: 8px !important;
     }
-    .nav-actions .btn-whatsapp svg {
+    .nav-actions .btn-whatsapp .lucide-icon {
         width: 18px !important;
         height: 18px !important;
         margin: 0 !important;
@@ -1725,7 +1730,7 @@ body {
         border-radius: 10px !important;
         justify-content: flex-start !important;
     }
-    .nav-actions.active .btn-whatsapp svg {
+    .nav-actions.active .btn-whatsapp .lucide-icon {
         width: 18px !important;
         height: 18px !important;
         margin: 0 !important;

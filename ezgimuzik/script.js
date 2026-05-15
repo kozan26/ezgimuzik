@@ -2,6 +2,10 @@
 const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
 const navActions = document.querySelector('.nav-actions');
 
+if (window.lucide) {
+    window.lucide.createIcons();
+}
+
 if (mobileMenuToggle) {
     mobileMenuToggle.addEventListener('click', () => {
         navActions.classList.toggle('active');
