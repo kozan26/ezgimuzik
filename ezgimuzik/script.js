@@ -2,9 +2,14 @@
 const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
 const navActions = document.querySelector('.nav-actions');
 
-if (window.lucide) {
-    window.lucide.createIcons();
+function renderLucideIcons() {
+    if (window.lucide) {
+        window.lucide.createIcons();
+    }
 }
+
+renderLucideIcons();
+document.addEventListener('DOMContentLoaded', renderLucideIcons);
 
 if (mobileMenuToggle) {
     mobileMenuToggle.addEventListener('click', () => {
