@@ -11,6 +11,17 @@ function renderLucideIcons() {
 renderLucideIcons();
 document.addEventListener('DOMContentLoaded', renderLucideIcons);
 
+const releaseInitialScrollLock = () => {
+    document.body.classList.remove('site-loading');
+};
+
+if (document.readyState === 'complete') {
+    releaseInitialScrollLock();
+} else {
+    window.addEventListener('load', releaseInitialScrollLock, { once: true });
+    window.setTimeout(releaseInitialScrollLock, 900);
+}
+
 if (mobileMenuToggle) {
     mobileMenuToggle.addEventListener('click', () => {
         navActions.classList.toggle('active');
