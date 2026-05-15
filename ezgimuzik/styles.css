@@ -350,16 +350,8 @@ html.site-loading body {
 /* ── Hero ──────────────────────────────────────────────────── */
 .hero {
     background:
-        radial-gradient(circle at 86% 23%, oklch(0.74 0.16 52 / .20) 0%, transparent 36%),
-        radial-gradient(circle at 14% 88%, oklch(0.58 0.20 274 / .22) 0%, transparent 38%),
-        linear-gradient(90deg, oklch(0.14 0.04 255 / .88), transparent 48%),
-        linear-gradient(135deg,
-            oklch(0.16 0.045 255) 0%,
-            oklch(0.22 0.055 255) 22%,
-            oklch(0.29 0.13 276) 50%,
-            oklch(0.42 0.17 273) 70%,
-            oklch(0.29 0.12 250) 100%
-        );
+        linear-gradient(90deg, oklch(0.08 0.018 60) 0%, oklch(0.10 0.020 60 / .98) 42%, oklch(0.13 0.045 62 / .92) 100%),
+        oklch(0.08 0.018 60);
     padding: 24px 12px clamp(28px, 4vh, 44px);
     position: relative;
     overflow: clip;
@@ -624,8 +616,21 @@ html.site-loading body {
     align-items: center;
     justify-content: center;
     background: transparent;
-    min-height: clamp(500px, 62vh, 610px);
-    padding-bottom: 120px;
+    min-height: 0;
+    padding-bottom: 0;
+    aspect-ratio: 16 / 9;
+    width: min(100%, 760px);
+    justify-self: end;
+    overflow: hidden;
+    border-radius: 0;
+}
+
+.hero-instrument-video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
 }
 
 /* Sound Waves */
@@ -702,6 +707,7 @@ html.site-loading body {
 
 /* Floating Hero Testimonial Stack */
 .hero-testimonial-stack {
+    display: none;
     position: absolute;
     right: clamp(0px, 2vw, 28px);
     bottom: 18px;
@@ -1727,7 +1733,7 @@ html.site-loading body {
         gap: 32px;
     }
     .hero-top-section { margin-top: 60px; }
-    .hero-stage { margin-top: 8px; min-height: 520px; }
+    .hero-stage { margin-top: 8px; min-height: 0; }
 
     .value-content {
         grid-template-columns: 1fr;
@@ -1896,16 +1902,20 @@ html.site-loading body {
 
     /* Hero stage mobile */
     .hero-stage {
-        height: 460px;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        width: min(100%, 560px);
         margin-top: 8px;
         position: relative;
-        overflow: visible;
+        overflow: hidden;
         min-height: 0;
         padding-bottom: 0;
+        justify-self: center;
     }
 
     /* Hero testimonials: one-card overlay, matching desktop behavior */
     .hero-testimonial-stack {
+        display: none !important;
         position: absolute;
         left: 50%;
         right: auto;
@@ -1913,7 +1923,6 @@ html.site-loading body {
         width: min(calc(100vw - 32px), 350px);
         height: 214px;
         transform: translateX(-50%);
-        display: block;
         pointer-events: none;
         overflow: visible;
     }
@@ -1980,7 +1989,7 @@ html.site-loading body {
     .container { padding: 0 14px; }
 
     .hero-text h1 { font-size: clamp(1.78rem, 9vw, 2.5rem); }
-    .hero-stage { height: 430px; }
+    .hero-stage { height: auto; }
     .hero-testimonial-stack {
         width: min(calc(100vw - 28px), 320px);
         height: 210px;
@@ -2008,6 +2017,6 @@ html.site-loading body {
     .container { padding: 0 10px; }
     .hero-text h1 { font-size: 1.55rem; }
     .logo-text { font-size: 19px; }
-    .hero-stage { height: 390px; }
+    .hero-stage { height: auto; }
     .btn-large { padding: 12px 20px; font-size: 15px; }
 }
