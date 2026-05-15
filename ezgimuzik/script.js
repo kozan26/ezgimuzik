@@ -12,6 +12,7 @@ renderLucideIcons();
 document.addEventListener('DOMContentLoaded', renderLucideIcons);
 
 const releaseInitialScrollLock = () => {
+    document.documentElement.classList.remove('site-loading');
     document.body.classList.remove('site-loading');
 };
 
