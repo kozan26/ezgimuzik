@@ -54,7 +54,7 @@ html.site-loading body {
     --green-500:    oklch(0.63 0.10 145);
     --red-500:      oklch(0.62 0.19 28);
     --yellow-400:   oklch(0.82 0.15 78);
-    --indigo-600:   oklch(0.30 0.05 265);
+    --umber-600:    oklch(0.28 0.05 55);
 
     /* Grays */
     --gray-50:  oklch(0.98 0.006 72);
@@ -243,7 +243,7 @@ html.site-loading body {
     transition: var(--ease);
 }
 .navbar.scrolled {
-    background: rgba(15,23,42,.88);
+    background: oklch(0.10 0.022 60 / .90);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255,255,255,.1);
@@ -657,12 +657,12 @@ html.site-loading body {
     top: 50%; left: 50%;
     transform: translate(-50%,-50%);
     animation: waveExpand 4s ease-out infinite;
-    border: 2px solid rgba(139,92,246,.12);
+    border: 2px solid oklch(0.68 0.13 58 / .12);
 }
-.wave-1 { width: 80px;  height: 80px;  animation-delay: 0s;   border-color: rgba(139,92,246,.2);  }
-.wave-2 { width: 120px; height: 120px; animation-delay: .5s;  border-color: rgba(139,92,246,.15); }
-.wave-3 { width: 160px; height: 160px; animation-delay: 1s;   border-color: rgba(139,92,246,.1);  }
-.wave-4 { width: 200px; height: 200px; animation-delay: 1.5s; border-color: rgba(139,92,246,.06); }
+.wave-1 { width: 80px;  height: 80px;  animation-delay: 0s;   border-color: oklch(0.68 0.13 58 / .20); }
+.wave-2 { width: 120px; height: 120px; animation-delay: .5s;  border-color: oklch(0.68 0.13 58 / .15); }
+.wave-3 { width: 160px; height: 160px; animation-delay: 1s;   border-color: oklch(0.68 0.13 58 / .10); }
+.wave-4 { width: 200px; height: 200px; animation-delay: 1.5s; border-color: oklch(0.68 0.13 58 / .06); }
 
 @keyframes waveExpand {
     0%   { transform: translate(-50%,-50%) scale(.8);  opacity: .8; }
@@ -1200,7 +1200,7 @@ html.site-loading body {
     background: linear-gradient(135deg, oklch(0.36 0.09 48) 0%, oklch(0.63 0.16 40) 52%, oklch(0.82 0.12 72) 100%);
     padding: 32px;
 }
-/* indigo/blue gradient for .value-section-reverse .value-image */
+/* dark umber gradient for .value-section-reverse .value-image */
 .value-section-reverse .value-image {
     background: linear-gradient(135deg, oklch(0.18 0.03 60) 0%, oklch(0.34 0.08 55) 48%, oklch(0.62 0.12 62) 100%);
     padding: 32px;
@@ -1365,8 +1365,9 @@ html.site-loading body {
 .closing-section {
     padding: 100px 20px;
     background:
-        radial-gradient(circle at 30% 50%, rgba(99,102,241,.3) 0%, transparent 60%),
-        linear-gradient(135deg, #1e1b4b 0%, #312e81 30%, #1e3a8a 70%, #0f172a 100%);
+        radial-gradient(circle at 30% 50%, oklch(0.66 0.13 58 / .22) 0%, transparent 58%),
+        radial-gradient(circle at 72% 20%, oklch(0.48 0.12 40 / .18) 0%, transparent 46%),
+        linear-gradient(135deg, oklch(0.10 0.024 60) 0%, oklch(0.16 0.045 54) 36%, oklch(0.22 0.07 48) 72%, oklch(0.08 0.018 60) 100%);
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -1801,7 +1802,7 @@ html.site-loading body {
     .nav-actions.active {
         position: fixed;
         top: 64px; left: 0; right: 0;
-        background: rgba(15,23,42,.97);
+        background: oklch(0.10 0.022 60 / .97);
         backdrop-filter: blur(12px);
         flex-direction: column;
         align-items: stretch;
