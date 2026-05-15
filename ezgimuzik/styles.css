@@ -1776,7 +1776,7 @@ body {
 
     /* Hero stage mobile */
     .hero-stage {
-        height: 280px;
+        height: 430px;
         margin-top: 24px;
         position: relative;
         overflow: visible;
@@ -1784,30 +1784,42 @@ body {
         padding-bottom: 0;
     }
 
-    /* Hero testimonials: static, stacked below instrument */
+    /* Hero testimonials: one-card overlay, matching desktop behavior */
     .hero-testimonial-stack {
-        position: static;
-        width: 100%;
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        pointer-events: auto;
+        position: absolute;
+        left: 50%;
+        right: auto;
+        bottom: 0;
+        width: min(100%, 340px);
+        height: 220px;
+        transform: translateX(-50%);
+        display: block;
+        pointer-events: none;
+        overflow: visible;
     }
     .hero-testimonial {
-        position: static !important;
-        opacity: 1 !important;
-        visibility: visible !important;
-        animation: none !important;
+        position: absolute !important;
+        inset: 0 !important;
+        opacity: 0;
+        visibility: hidden;
         transform: none !important;
-        inset: auto !important;
+    }
+    .hero-testimonial-1 {
+        animation: testimonialFade 12s ease-in-out infinite !important;
+    }
+    .hero-testimonial-2 {
+        animation: testimonialFade 12s ease-in-out infinite 4s !important;
+    }
+    .hero-testimonial-3 {
+        animation: testimonialFade 12s ease-in-out infinite 8s !important;
     }
     .testimonial-glass-card {
         width: 100%;
         max-width: 100%;
         min-width: 0;
-        animation: none;
+        animation: floatSlow 6s ease-in-out infinite;
         margin-top: 0;
+        padding: 18px;
     }
 
     /* Sections */
@@ -1847,7 +1859,14 @@ body {
     .container { padding: 0 14px; }
 
     .hero-text h1 { font-size: clamp(1.4rem, 7vw, 2rem); }
-    .hero-stage { height: 220px; }
+    .hero-stage { height: 410px; }
+    .hero-testimonial-stack {
+        width: min(100%, 320px);
+        height: 220px;
+    }
+    .testimonial-glass-card {
+        padding: 16px;
+    }
 
     .logo-text { font-size: 22px; }
     .btn-hero-cta { width: 100%; }
@@ -1868,6 +1887,6 @@ body {
     .container { padding: 0 10px; }
     .hero-text h1 { font-size: 1.35rem; }
     .logo-text { font-size: 19px; }
-    .hero-stage { height: 180px; }
+    .hero-stage { height: 390px; }
     .btn-large { padding: 12px 20px; font-size: 15px; }
 }
