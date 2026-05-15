@@ -412,10 +412,10 @@ html.site-loading body {
     letter-spacing: .8px;
     text-transform: uppercase;
     color: var(--yellow-400);
-    background: oklch(0.24 0.08 276 / .58);
+    background: linear-gradient(180deg, oklch(0.14 0.032 58 / .82), oklch(0.10 0.022 58 / .86));
     padding: 7px 16px;
     border-radius: 24px;
-    border: 1px solid rgba(251,191,36,.4);
+    border: 1px solid oklch(0.68 0.13 58 / .56);
     position: relative;
     overflow: hidden;
 }
@@ -471,11 +471,11 @@ html.site-loading body {
     display: flex;
     align-items: center;
     gap: 1rem;
-    background: oklch(0.24 0.08 260 / .58);
-    border: 1px solid oklch(0.92 0.02 255 / .14);
+    background: linear-gradient(180deg, oklch(0.12 0.028 58 / .86), oklch(0.08 0.018 58 / .90));
+    border: 1px solid oklch(0.68 0.13 58 / .26);
     border-radius: 18px;
     padding: .75rem 1rem;
-    box-shadow: 0 18px 42px oklch(0.08 0.03 255 / .24);
+    box-shadow: 0 18px 42px oklch(0.05 0.018 58 / .34);
     width: 100%;
     min-height: 78px;
 }
@@ -525,7 +525,7 @@ html.site-loading body {
 .proof-divider {
     width: 1px;
     height: 1.5rem;
-    background: rgba(255,255,255,.2);
+    background: oklch(0.68 0.13 58 / .24);
     flex-shrink: 0;
 }
 
@@ -551,7 +551,7 @@ html.site-loading body {
     height: 34px;
     padding: 7px;
     border-radius: 12px;
-    background: oklch(0.84 0.16 82 / .09);
+    background: oklch(0.66 0.13 58 / .13);
     font-size: 1.2rem;
 }
 .proof-copy {
