@@ -32,14 +32,13 @@ body {
     color: var(--gray-900);
     background: var(--white);
     overflow-x: hidden;
-    overflow-y: auto;
     width: 100%;
 }
 
 html.site-loading,
 html.site-loading body {
     height: 100svh;
-    overflow-y: hidden;
+    overflow: hidden;
 }
 
 /* ── Design Tokens ─────────────────────────────────────────── */

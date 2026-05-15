@@ -20,7 +20,6 @@ if (document.readyState === 'complete') {
     releaseInitialScrollLock();
 } else {
     window.addEventListener('load', releaseInitialScrollLock, { once: true });
-    window.setTimeout(releaseInitialScrollLock, 900);
 }
 
 if (mobileMenuToggle) {
