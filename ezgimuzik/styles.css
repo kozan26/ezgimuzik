@@ -360,6 +360,7 @@ html.site-loading body {
     justify-content: center;
     z-index: 1;
 }
+.hero-background-poster,
 .hero-background-video {
     position: absolute;
     inset: 0;
@@ -369,6 +370,20 @@ html.site-loading body {
     object-fit: cover;
     object-position: center;
     pointer-events: none;
+}
+.hero-background-poster {
+    opacity: 1;
+    transition: opacity .45s ease;
+}
+.hero-background-video {
+    opacity: 0;
+    transition: opacity .45s ease;
+}
+.hero.hero-video-ready .hero-background-video {
+    opacity: 1;
+}
+.hero.hero-video-ready .hero-background-poster {
+    opacity: 0;
 }
 .hero::before {
     content: "";
@@ -889,7 +904,8 @@ html.site-loading body {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    margin-bottom: 40px;
+    margin: -8px 0 32px;
+    padding: 8px 0;
     -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
     mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
 }

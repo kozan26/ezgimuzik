@@ -56,7 +56,7 @@
     <!-- Preload critical resources -->
     <link rel="preload" href="styles.css" as="style">
     <link rel="preload" href="script.js" as="script">
-    <link rel="preload" href="hero-instrument-poster.jpg" as="image" fetchpriority="high">
+    <link rel="preload" href="hero-instrument-poster.png" as="image" fetchpriority="high">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -429,7 +429,8 @@
 
     <!-- Hero Section -->
     <header class="hero" role="banner">
-        <video class="hero-background-video" autoplay muted loop playsinline preload="metadata" poster="hero-instrument-poster.jpg" aria-hidden="true">
+        <img class="hero-background-poster" src="hero-instrument-poster.png" alt="" aria-hidden="true" fetchpriority="high" decoding="async">
+        <video class="hero-background-video" autoplay muted loop playsinline preload="metadata" poster="hero-instrument-poster.png" aria-hidden="true">
             <source src="hero-instrument.mp4" type="video/mp4">
         </video>
         <div class="container">
