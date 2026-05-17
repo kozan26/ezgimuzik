@@ -202,6 +202,12 @@ html.site-loading body {
     text-decoration: none !important;
     white-space: nowrap !important;
 }
+.btn-whatsapp .brand-icon {
+    width: 18px;
+    height: 18px;
+    display: block;
+    flex: 0 0 auto;
+}
 .btn-whatsapp:hover {
     background: #20BA5A !important;
     transform: translateY(-2px) !important;
@@ -2349,6 +2355,11 @@ html.site-loading body {
         height: 18px !important;
         margin: 0 !important;
     }
+    .nav-actions .btn-whatsapp .brand-icon {
+        width: 20px !important;
+        height: 20px !important;
+        margin: 0 !important;
+    }
 
     .mobile-menu-toggle { display: flex; }
 
@@ -2386,6 +2397,11 @@ html.site-loading body {
         justify-content: flex-start !important;
     }
     .nav-actions.active .btn-whatsapp .lucide-icon {
+        width: 18px !important;
+        height: 18px !important;
+        margin: 0 !important;
+    }
+    .nav-actions.active .btn-whatsapp .brand-icon {
         width: 18px !important;
         height: 18px !important;
         margin: 0 !important;
