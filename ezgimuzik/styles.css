@@ -1379,6 +1379,12 @@ html.site-loading body {
     box-shadow: 0 26px 74px oklch(0.20 0.03 58 / .14);
     width: min(100%, 1120px);
     margin: 0 auto;
+    touch-action: pan-y;
+    cursor: grab;
+    user-select: none;
+}
+.value-slider-viewport.is-dragging {
+    cursor: grabbing;
 }
 .value-slider-viewport::after {
     content: "";
@@ -1392,6 +1398,7 @@ html.site-loading body {
 .value-slider-track {
     display: flex;
     transition: transform .45s ease;
+    will-change: transform;
 }
 .value-slide {
     min-width: 100%;

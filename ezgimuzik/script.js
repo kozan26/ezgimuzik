@@ -118,6 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Value slider
     const valueSlider = document.querySelector('[data-value-slider]');
     if (valueSlider) {
+        const viewport = valueSlider.querySelector('.value-slider-viewport');
         const track = valueSlider.querySelector('.value-slider-track');
         const slides = Array.from(valueSlider.querySelectorAll('.value-slide'));
         const prevBtn = valueSlider.querySelector('.value-slider-prev');
@@ -125,6 +126,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const dots = Array.from(document.querySelectorAll('.value-slider-dot'));
         let currentIndex = 0;
         const totalSlides = slides.length;
+        let dragStartX = 0;
+        let dragCurrentX = 0;
+        let dragPointerId = null;
+        let isDragging = false;
 
         const updateSlider = (index) => {
             if (!totalSlides) return;
@@ -140,6 +145,45 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         };
 
+
+        const finishDrag = () => {
+            if (!isDragging) return;
+
+            const deltaX = dragCurrentX - dragStartX;
+            const swipeThreshold = Math.min(90, Math.max(42, window.innerWidth * 0.12));
+
+            isDragging = false;
+            dragPointerId = null;
+            viewport?.classList.remove('is-dragging');
+
+            if (Math.abs(deltaX) >= swipeThreshold) {
+                updateSlider(currentIndex + (deltaX < 0 ? 1 : -1));
+            } else {
+                updateSlider(currentIndex);
+            }
+        };
+
+        if (viewport && window.PointerEvent) {
+            viewport.addEventListener('pointerdown', (event) => {
+                if (event.pointerType === 'mouse' && event.button !== 0) return;
+
+                dragStartX = event.clientX;
+                dragCurrentX = event.clientX;
+                dragPointerId = event.pointerId;
+                isDragging = true;
+                viewport.classList.add('is-dragging');
+                viewport.setPointerCapture(event.pointerId);
+            });
+
+            viewport.addEventListener('pointermove', (event) => {
+                if (!isDragging || event.pointerId !== dragPointerId) return;
+                dragCurrentX = event.clientX;
+            });
+
+            viewport.addEventListener('pointerup', finishDrag);
+            viewport.addEventListener('pointercancel', finishDrag);
+            viewport.addEventListener('lostpointercapture', finishDrag);
+        }
         if (prevBtn) {
             prevBtn.addEventListener('click', () => updateSlider(currentIndex - 1));
         }
