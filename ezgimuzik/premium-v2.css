@@ -495,6 +495,31 @@
     .step-number[data-roman]::after {
         font-size: 3rem;
     }
+    /* Reconcile value-slider: premium.css keeps the slide body dark on all
+       breakpoints, but styles.css's 768px block colored the text for a light
+       card. Restore light-on-dark text so mobile copy stays legible. */
+    .value-slide-body {
+        background: oklch(0.10 0.018 60 / .92);
+        border: 1px solid rgba(255, 255, 255, .08);
+        border-radius: 18px;
+    }
+    .value-slide-body h3 {
+        color: oklch(0.97 0.008 72);
+    }
+    .value-slide-body p {
+        color: oklch(0.88 0.014 72);
+    }
+    .value-slide-list li {
+        color: oklch(0.92 0.012 72);
+    }
+    .value-slide-list .lucide-icon {
+        color: var(--amber-soft);
+    }
+    .value-slide-eyebrow {
+        color: var(--amber-soft);
+        border-color: rgba(255, 255, 255, .14);
+        background: oklch(0.18 0.03 58 / .6);
+    }
 }
 
 /* ── 13. NAVBAR scrolled state matching deep dark ─────── */
@@ -508,6 +533,18 @@
     color: rgba(255, 255, 255, .55);
     font-size: 11px;
     letter-spacing: .22em;
+}
+
+/* ── 14b. Contact phone CTA: deepen copper for WCAG-AA white text ─
+   --amber-deep (L .52) under white text was ~3.9:1. Scoped here so the
+   token stays intact for its other (icon/accent) uses. */
+.contact-buttons .btn-primary {
+    background: oklch(0.45 0.135 48) !important;
+    border-color: oklch(0.45 0.135 48) !important;
+}
+.contact-buttons .btn-primary:hover {
+    background: oklch(0.40 0.13 46) !important;
+    border-color: oklch(0.40 0.13 46) !important;
 }
 
 /* ── 15. Final: ensure h2 em color is consistent everywhere ─ */
