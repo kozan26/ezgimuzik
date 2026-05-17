@@ -114,6 +114,44 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // Value slider
+    const valueSlider = document.querySelector('[data-value-slider]');
+    if (valueSlider) {
+        const track = valueSlider.querySelector('.value-slider-track');
+        const slides = Array.from(valueSlider.querySelectorAll('.value-slide'));
+        const prevBtn = valueSlider.querySelector('.value-slider-prev');
+        const nextBtn = valueSlider.querySelector('.value-slider-next');
+        const dots = Array.from(document.querySelectorAll('.value-slider-dot'));
+        let currentIndex = 0;
+        const totalSlides = slides.length;
+
+        const updateSlider = (index) => {
+            if (!totalSlides) return;
+            currentIndex = ((index % totalSlides) + totalSlides) % totalSlides;
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+            slides.forEach((slide, slideIndex) => {
+                slide.classList.toggle('is-active', slideIndex === currentIndex);
+            });
+            dots.forEach((dot, dotIndex) => {
+                dot.classList.toggle('is-active', dotIndex === currentIndex);
+                dot.setAttribute('aria-selected', dotIndex === currentIndex ? 'true' : 'false');
+            });
+        };
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => updateSlider(currentIndex - 1));
+        }
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => updateSlider(currentIndex + 1));
+        }
+        dots.forEach((dot, dotIndex) => {
+            dot.addEventListener('click', () => updateSlider(dotIndex));
+        });
+
+        updateSlider(0);
+    }
     
     // Back to top button
     const backToTop = document.querySelector('.back-to-top');
