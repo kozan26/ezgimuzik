@@ -14,6 +14,7 @@ html {
     overflow-x: hidden;
     overflow-y: auto;
     width: 100%;
+    scrollbar-gutter: stable;
     scrollbar-width: thin;
     scrollbar-color: #888 #f1f1f1;
 }
@@ -2019,6 +2020,335 @@ html.site-loading body {
     min-height: 420px;
 }
 
+/* Premium pitch reference pass */
+.pas-section,
+.how-it-works,
+.contact-section {
+    background:
+        radial-gradient(circle at 86% 10%, oklch(0.72 0.11 66 / .14), transparent 30%),
+        linear-gradient(180deg, oklch(0.08 0.018 60), oklch(0.12 0.026 56));
+}
+
+.pas-section .section-header,
+.how-it-works .section-header,
+.contact-section .section-header {
+    max-width: 1120px;
+    text-align: left;
+    margin-bottom: clamp(28px, 4vw, 44px);
+}
+
+.pas-section .section-header h2,
+.how-it-works .section-header h2,
+.contact-section .section-header h2 {
+    color: oklch(0.96 0.008 72);
+    max-width: 680px;
+}
+
+.pas-section .section-header p,
+.how-it-works .section-header p,
+.contact-section .section-header p {
+    color: oklch(0.80 0.016 72);
+    max-width: 620px;
+    margin-inline: 0;
+}
+
+.pas-content {
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    gap: 18px;
+    grid-template-columns: 1.12fr .94fr .94fr;
+    overflow: visible;
+}
+
+.pas-column {
+    border: 1px solid oklch(0.62 0.08 62 / .28);
+    border-radius: 24px;
+    padding: clamp(26px, 3.4vw, 42px);
+    background:
+        radial-gradient(circle at 16% 12%, oklch(0.68 0.12 62 / .13), transparent 34%),
+        oklch(0.105 0.020 58 / .94);
+    box-shadow: 0 24px 70px oklch(0.03 0.012 58 / .30);
+}
+
+.pas-column:last-child {
+    border-right: 1px solid oklch(0.62 0.08 62 / .28);
+}
+
+.pas-column::before {
+    display: inline-flex;
+    align-items: center;
+    height: 28px;
+    margin-bottom: 22px;
+    padding: 0 10px;
+    border-radius: 999px;
+    background: oklch(0.90 0.048 72 / .10);
+    border: 1px solid oklch(0.78 0.09 70 / .22);
+    color: oklch(0.82 0.12 72);
+    letter-spacing: .12em;
+}
+
+.pas-column:hover {
+    background:
+        radial-gradient(circle at 18% 12%, oklch(0.72 0.13 66 / .18), transparent 38%),
+        oklch(0.13 0.026 56 / .96);
+}
+
+.pas-icon {
+    width: auto;
+    height: auto;
+    margin-bottom: 18px;
+    background: transparent;
+    color: oklch(0.82 0.12 72);
+    justify-content: flex-start;
+}
+
+.pas-icon .lucide-icon {
+    width: 26px;
+    height: 26px;
+}
+
+.pas-column h3 {
+    font-size: clamp(1.32rem, 2.35vw, 1.9rem);
+    line-height: 1.12;
+    letter-spacing: -.035em;
+    margin-bottom: 22px;
+}
+
+.pas-points {
+    gap: 10px;
+    margin-bottom: 0;
+}
+
+.pas-point {
+    gap: 10px;
+    padding: 0;
+    border-bottom: 0;
+    color: oklch(0.88 0.012 72);
+    font-size: .98rem;
+}
+
+.pas-point .lucide-icon {
+    width: 18px;
+    height: 18px;
+    margin-top: 3px;
+    color: oklch(0.80 0.12 72);
+}
+
+.pas-cta {
+    margin-top: 28px;
+}
+
+.love-wall-section {
+    background:
+        radial-gradient(circle at 78% 4%, oklch(0.80 0.09 72 / .20), transparent 34%),
+        linear-gradient(180deg, oklch(0.985 0.006 72), oklch(0.94 0.014 76));
+}
+
+.love-wall-section .section-header {
+    text-align: left;
+    max-width: 1120px;
+}
+
+.love-wall-section .section-header p {
+    margin-inline: 0;
+}
+
+.love-wall-metrics {
+    justify-content: flex-start;
+    margin: -16px auto 28px;
+    max-width: 1120px;
+}
+
+.testimonial-grid {
+    grid-template-columns: 1.22fr .89fr .89fr;
+    gap: 18px;
+    padding: 0;
+}
+
+.testimonial-card {
+    border-radius: 24px;
+    padding: clamp(22px, 2.8vw, 30px);
+    box-shadow: 0 18px 48px oklch(0.20 0.03 58 / .10);
+}
+
+.testimonial-card-featured {
+    grid-column: span 1;
+    grid-row: span 2;
+    min-height: 100%;
+}
+
+.testimonial-card::before {
+    color: oklch(0.46 0.08 60);
+    letter-spacing: .06em;
+}
+
+.testimonial-quote {
+    font-size: clamp(1.08rem, 1.65vw, 1.32rem);
+    letter-spacing: -.025em;
+}
+
+.testimonial-card-featured .testimonial-quote {
+    font-size: clamp(1.55rem, 3vw, 2.25rem);
+}
+
+.testimonial-text {
+    font-size: .98rem;
+    line-height: 1.76;
+}
+
+.how-it-works {
+    position: relative;
+    overflow: hidden;
+}
+
+.steps-container {
+    gap: 18px;
+    border: 0;
+    border-radius: 0;
+    overflow: visible;
+    box-shadow: none;
+}
+
+.step-card {
+    border: 1px solid oklch(0.72 0.08 66 / .24);
+    border-radius: 28px;
+    background:
+        linear-gradient(180deg, oklch(0.98 0.008 72), oklch(0.94 0.018 76));
+    box-shadow: 0 24px 70px oklch(0.02 0.01 58 / .22);
+}
+
+.step-card:last-child {
+    border-right: 1px solid oklch(0.72 0.08 66 / .24);
+}
+
+.step-card:hover {
+    background: oklch(0.98 0.010 72);
+    transform: translateY(-2px);
+}
+
+.step-icon {
+    border-radius: 999px;
+    background: oklch(0.18 0.04 54);
+}
+
+.step-number {
+    color: oklch(0.43 0.08 58);
+}
+
+.step-card h3 {
+    font-size: clamp(1.18rem, 1.85vw, 1.48rem);
+    letter-spacing: -.025em;
+}
+
+.faq-section {
+    background:
+        radial-gradient(circle at 12% 10%, oklch(0.82 0.08 72 / .12), transparent 28%),
+        linear-gradient(180deg, oklch(0.95 0.014 76), oklch(0.985 0.006 72));
+}
+
+.faq-section .section-header {
+    max-width: 920px;
+    text-align: left;
+}
+
+.faq-section .section-header p {
+    margin-inline: 0;
+}
+
+.faq-container {
+    border-top-color: oklch(0.64 0.08 64 / .36);
+}
+
+.faq-question {
+    padding: 24px 2px;
+}
+
+.faq-question h3 {
+    font-size: clamp(1.08rem, 1.55vw, 1.2rem);
+}
+
+.faq-toggle {
+    background: oklch(0.89 0.045 72);
+}
+
+.contact-section {
+    padding: var(--section-py) 0;
+}
+
+.contact-section .container {
+    grid-template-columns: minmax(320px, .78fr) minmax(520px, 1.22fr);
+    gap: 18px;
+}
+
+.contact-urgency {
+    margin-left: 0;
+    background: oklch(0.90 0.050 72 / .12);
+    border: 1px solid oklch(0.78 0.09 70 / .24);
+    color: oklch(0.88 0.07 76);
+}
+
+.contact-cards {
+    border-radius: 28px;
+    border-color: oklch(0.70 0.070 64 / .34);
+    background: oklch(0.10 0.020 58);
+    box-shadow: 0 28px 84px oklch(0.02 0.012 58 / .34);
+}
+
+.contact-card {
+    padding: clamp(20px, 2.4vw, 30px);
+    border-bottom-color: oklch(0.76 0.05 68 / .16);
+}
+
+.contact-card:first-child,
+.contact-card:nth-child(2),
+.contact-card:hover {
+    background: transparent;
+}
+
+.contact-card h3,
+.contact-card:nth-child(2) h3,
+.contact-card:last-child h3 {
+    color: oklch(0.96 0.006 72);
+    font-size: 1.12rem;
+}
+
+.contact-card p,
+.contact-card:nth-child(2) p,
+.contact-card:last-child p {
+    color: oklch(0.84 0.014 72);
+    font-size: .98rem;
+    line-height: 1.62;
+}
+
+.contact-card p a {
+    color: oklch(0.90 0.08 76);
+}
+
+.contact-icon,
+.contact-card:first-child .contact-icon {
+    background: oklch(0.90 0.050 72 / .12);
+    border: 1px solid oklch(0.78 0.09 70 / .18);
+}
+
+.contact-icon .lucide-icon,
+.contact-card:first-child .contact-icon .lucide-icon {
+    color: oklch(0.82 0.12 72);
+}
+
+.contact-note {
+    background: oklch(0.90 0.050 72 / .12);
+    color: oklch(0.88 0.08 76);
+}
+
+.contact-map {
+    border-radius: 28px;
+    border-color: oklch(0.70 0.070 64 / .34);
+    background: oklch(0.98 0.008 72);
+    box-shadow: 0 28px 84px oklch(0.02 0.012 58 / .22);
+}
+
 /* ── Local SEO Section ─────────────────────────────────────── */
 .local-content-section {
     padding: 64px 0 76px;
@@ -2440,12 +2770,16 @@ html.site-loading body {
     .hero-top-section { justify-content: center; margin-top: 18px; margin-bottom: 16px; }
 
     .hero-text h1 {
-        font-size: clamp(1.95rem, 8.4vw, 3.15rem);
+        font-size: clamp(1.72rem, 8vw, 2.8rem);
         text-align: center;
-        line-height: 1;
+        line-height: .98;
         max-width: min(9.8em, calc(100vw - 32px));
         margin-left: auto;
         margin-right: auto;
+        letter-spacing: -.055em;
+    }
+    .hero-text h1 > span {
+        white-space: normal;
     }
     .hero-subtitle {
         font-size: clamp(.85rem, 3.5vw, 1rem);
@@ -2453,11 +2787,12 @@ html.site-loading body {
         padding: 0 8px;
     }
     .eyebrow-text {
-        font-size: clamp(.7rem, 2.5vw, .8rem);
+        font-size: clamp(.62rem, 2.35vw, .76rem);
         text-align: center;
         max-width: calc(100vw - 32px);
         white-space: normal;
         justify-content: center;
+        padding-inline: 12px;
     }
 
     /* Social proof bar: wrap rows, hide dividers */
@@ -2496,6 +2831,15 @@ html.site-loading body {
         gap: 16px;
         margin-top: 20px;
         max-width: 100%;
+    }
+    .hero-cta {
+        width: 100%;
+        min-width: 0;
+    }
+    .hero-cta .btn-hero-cta {
+        width: 100%;
+        max-width: 100%;
+        padding-inline: 18px;
     }
     .hero-fuds { margin-top: 0; }
     .fud-item { white-space: normal; }
@@ -2677,6 +3021,71 @@ html.site-loading body {
     .faq-question { padding: 18px 4px; }
     .faq-question h3 { font-size: .95rem; }
     .faq-item.active .faq-answer { padding: 0 44px 20px 4px; }
+
+    .pas-section .section-header,
+    .love-wall-section .section-header,
+    .how-it-works .section-header,
+    .faq-section .section-header,
+    .contact-section .section-header {
+        text-align: left;
+        margin-bottom: 24px;
+    }
+
+    .pas-content,
+    .testimonial-grid,
+    .steps-container {
+        gap: 14px;
+    }
+
+    .pas-column,
+    .pas-column:last-child,
+    .step-card,
+    .step-card:last-child {
+        border: 1px solid oklch(0.70 0.070 64 / .28);
+        border-radius: 22px;
+    }
+
+    .pas-column {
+        padding: 24px 22px;
+    }
+
+    .pas-column h3 {
+        font-size: clamp(1.18rem, 6vw, 1.55rem);
+    }
+
+    .love-wall-metrics {
+        justify-content: flex-start;
+        margin: -8px 0 22px;
+    }
+
+    .testimonial-card,
+    .testimonial-card-featured {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .testimonial-card-featured .testimonial-quote {
+        font-size: clamp(1.28rem, 7vw, 1.78rem);
+    }
+
+    .contact-section {
+        padding: 60px 0;
+    }
+
+    .contact-cards,
+    .contact-map {
+        border-radius: 22px;
+    }
+
+    .contact-card {
+        padding: 22px;
+    }
+
+    .contact-buttons .btn-primary,
+    .contact-buttons .btn-whatsapp {
+        width: 100%;
+        justify-content: center;
+    }
 }
 
 /* ============================================================
