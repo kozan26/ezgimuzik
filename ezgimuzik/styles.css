@@ -2584,11 +2584,13 @@ html.site-loading body {
         width: auto;
         max-width: none;
         margin: 0;
+        padding: 32px 28px 40px;
         border-radius: 0;
         border: 0;
         box-shadow: none;
         backdrop-filter: none;
         background: oklch(0.99 0.006 72);
+        justify-content: flex-start;
     }
     .value-slide-eyebrow {
         color: oklch(0.35 0.06 58);
@@ -2607,8 +2609,17 @@ html.site-loading body {
         font-size: .92rem;
         color: oklch(0.27 0.023 72);
     }
+    .value-slide-list {
+        flex: 0 0 auto;
+        gap: 12px;
+        margin-bottom: 26px;
+    }
     .value-slide-list .lucide-icon {
         color: var(--primary);
+    }
+    .value-slide-body .btn-primary {
+        width: 100%;
+        min-height: 54px;
     }
     .value-slider-dots {
         justify-content: center;
