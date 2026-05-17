@@ -35,6 +35,22 @@ body {
     width: 100%;
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-section { order: 1; }
+.trusted-brands { order: 2; }
+.pas-section { order: 3; }
+.love-wall-section { order: 4; }
+.how-it-works { order: 5; }
+.value-section,
+.value-section-reverse { order: 6; }
+.faq-section { order: 7; }
+.closing-section { order: 8; }
+.contact-section { order: 9; }
+
 html.site-loading,
 html.site-loading body {
     height: 100svh;
@@ -202,7 +218,7 @@ html.site-loading body {
     align-items: flex-start;
     background: var(--accent);
     color: var(--white);
-    padding: 13px 24px;
+    padding: 15px 24px;
     border-radius: 12px;
     font-size: 15px;
     font-weight: 700;
@@ -223,8 +239,22 @@ html.site-loading body {
     outline-offset: 4px;
 }
 
-.cta-main { font-size: 15px; font-weight: 800; }
-.cta-sub  { font-size: 11.5px; font-weight: 600; opacity: .9; }
+.cta-main { font-size: 16px; font-weight: 800; }
+.cta-sub  { font-size: 12.5px; font-weight: 650; opacity: .92; }
+
+.btn-hero-secondary {
+    width: 100%;
+    min-height: 44px;
+    border-color: oklch(0.84 0.07 72 / .52);
+    background: oklch(0.12 0.018 58 / .72);
+    color: oklch(0.92 0.018 72);
+}
+
+.btn-hero-secondary:hover {
+    background: oklch(0.18 0.028 56 / .9);
+    color: oklch(0.98 0.006 72);
+    border-color: oklch(0.76 0.10 70);
+}
 
 .cta-glow {
     box-shadow: 0 0 20px oklch(0.68 0.13 58 / .38), 0 8px 24px oklch(0.68 0.13 58 / .24);
@@ -465,14 +495,14 @@ html.site-loading body {
     color: var(--accent-light);
 }
 .highlight-green {
-    color: oklch(0.82 0.12 152);
+    color: oklch(0.86 0.105 72);
 }
 .highlight-white {
     color: var(--white);
 }
 
 .hero-subtitle {
-    font-size: clamp(.98rem, 1.38vw, 1.05rem);
+    font-size: clamp(1.05rem, 1.45vw, 1.16rem);
     color: oklch(0.93 0.010 72);
     line-height: 1.65;
     margin-bottom: 16px;
@@ -610,7 +640,12 @@ html.site-loading body {
     margin-top: 1.2rem;
     max-width: 760px;
 }
-.hero-cta { display: flex; align-items: center; }
+.hero-cta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
 .hero-cta .btn-hero-cta { width: 100%; }
 .hero-fuds {
     display: flex;
@@ -623,8 +658,8 @@ html.site-loading body {
     display: flex;
     align-items: center;
     gap: 9px;
-    font-size: 13px;
-    color: oklch(0.90 0.012 72);
+    font-size: 14px;
+    color: oklch(0.93 0.010 72);
     font-weight: 650;
     padding: .15rem 0;
     white-space: nowrap;
@@ -1091,7 +1126,7 @@ html.site-loading body {
     align-items: center;
     gap: 12px;
     text-align: left;
-    font-size: .92rem;
+    font-size: .98rem;
     color: oklch(0.82 0.012 72);
     padding: 12px 0;
     background: transparent;
@@ -1173,7 +1208,7 @@ html.site-loading body {
     gap: 12px 20px;
     align-items: start;
 }
-.testimonial-card:nth-child(n + 6) {
+.testimonial-card:nth-child(n + 4) {
     display: none;
 }
 .testimonial-card:nth-child(n + 2)::before {
@@ -1210,15 +1245,15 @@ html.site-loading body {
     line-height: 1.06;
 }
 .testimonial-text {
-    font-size: .9rem;
-    color: var(--gray-600);
+    font-size: .98rem;
+    color: oklch(0.36 0.020 72);
     line-height: 1.7;
     margin-bottom: 20px;
     font-style: italic;
 }
 .testimonial-card:first-child .testimonial-text {
     color: oklch(0.94 0.012 72);
-    font-size: 1rem;
+    font-size: 1.04rem;
     line-height: 1.8;
 }
 .testimonial-author {
@@ -1315,8 +1350,8 @@ html.site-loading body {
     margin: 0 0 16px;
 }
 .value-subtitle {
-    font-size: 1.05rem;
-    color: var(--gray-600);
+    font-size: 1.08rem;
+    color: oklch(0.34 0.020 72);
     line-height: 1.7;
     margin-bottom: 24px;
 }
@@ -1330,10 +1365,40 @@ html.site-loading body {
     display: flex;
     align-items: flex-start;
     gap: 10px;
-    font-size: .95rem;
-    color: var(--gray-700);
+    font-size: 1rem;
+    color: oklch(0.28 0.022 72);
 }
 .value-benefit .lucide-icon { color: var(--primary); font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+
+.price-guide {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin: 26px 0 4px;
+}
+
+.price-guide-card {
+    border: 1px solid oklch(0.82 0.036 72);
+    border-radius: 16px;
+    padding: 14px 16px;
+    background: oklch(0.98 0.010 72);
+}
+
+.price-guide-card strong {
+    display: block;
+    color: oklch(0.20 0.026 64);
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 850;
+    margin-bottom: 4px;
+}
+
+.price-guide-card span {
+    display: block;
+    color: oklch(0.42 0.023 72);
+    font-size: .9rem;
+    line-height: 1.45;
+}
 .value-cta { display: flex; gap: 12px; flex-wrap: wrap; }
 
 /* Value image panels use the same cinematic 16:9 language as the hero media. */
@@ -1437,8 +1502,8 @@ html.site-loading body {
     line-height: 1.22;
 }
 .step-card p {
-    font-size: .9rem;
-    color: var(--gray-600);
+    font-size: .98rem;
+    color: oklch(0.36 0.020 72);
     line-height: 1.6;
     margin: 0 0 8px;
 }
@@ -1610,7 +1675,7 @@ html.site-loading body {
 }
 .contact-section .container {
     display: grid;
-    grid-template-columns: minmax(320px, .82fr) minmax(480px, 1.18fr);
+    grid-template-columns: minmax(360px, 1.04fr) minmax(420px, .96fr);
     gap: clamp(18px, 2.6vw, 32px);
     align-items: stretch;
 }
@@ -1670,7 +1735,7 @@ html.site-loading body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-height: 280px;
+    min-height: 310px;
 }
 .contact-card:last-child {
     border-top: 0;
@@ -1696,7 +1761,7 @@ html.site-loading body {
     color: var(--primary-light);
 }
 .contact-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--gray-900); margin: 0 0 10px; }
-.contact-card p { font-size: .92rem; color: var(--gray-600); line-height: 1.6; margin-bottom: 16px; }
+.contact-card p { font-size: 1rem; color: oklch(0.34 0.020 72); line-height: 1.65; margin-bottom: 16px; }
 .contact-card:first-child h3 { color: var(--white); }
 .contact-card:first-child p { color: oklch(0.90 0.012 72); max-width: 360px; }
 .contact-card p a { color: var(--primary-dark); text-decoration: none; font-weight: 600; }
@@ -1748,7 +1813,7 @@ html.site-loading body {
 .contact-map iframe {
     display: block;
     flex: 1;
-    min-height: 520px;
+    min-height: 470px;
 }
 
 /* ── Local SEO Section ─────────────────────────────────────── */
@@ -1863,8 +1928,8 @@ html.site-loading body {
 }
 .footer-logo .logo-text { color: var(--white); }
 .footer-tagline {
-    font-size: .9rem;
-    color: var(--gray-400);
+    font-size: .95rem;
+    color: oklch(0.78 0.014 72);
     line-height: 1.6;
     margin: 0 0 20px;
 }
@@ -1905,7 +1970,7 @@ html.site-loading body {
     flex-direction: column;
     gap: 10px;
 }
-.footer-links li { font-size: .83rem; color: var(--gray-400); line-height: 1.5; }
+.footer-links li { font-size: .9rem; color: oklch(0.74 0.014 72); line-height: 1.55; }
 .footer-links a { color: var(--gray-400); text-decoration: none; transition: color .2s ease; }
 .footer-links a:hover { color: var(--white); }
 .footer-contact {
@@ -1913,7 +1978,7 @@ html.site-loading body {
     flex-direction: column;
     gap: 12px;
 }
-.footer-contact p { font-size: .83rem; color: var(--gray-400); margin: 0; line-height: 1.6; }
+.footer-contact p { font-size: .9rem; color: oklch(0.74 0.014 72); margin: 0; line-height: 1.6; }
 .footer-contact a { color: var(--gray-300); text-decoration: none; }
 .footer-contact a:hover { color: var(--primary-light); }
 .footer-bottom {
@@ -2225,7 +2290,7 @@ html.site-loading body {
     .testimonial-grid { grid-template-columns: 1fr; }
     .testimonial-card:first-child { grid-row: auto; }
     .testimonial-card:nth-child(n + 2) { display: block; }
-    .testimonial-card:nth-child(n + 6) { display: block; }
+    .testimonial-card:nth-child(n + 4) { display: none; }
     .value-content { grid-template-columns: 1fr; direction: ltr; }
     .value-section-reverse .value-content { direction: ltr; }
     .value-image { min-height: 220px; }
@@ -2241,6 +2306,7 @@ html.site-loading body {
     .contact-card:last-child { border-right: 0; border-top: 0; border-bottom: 1px solid oklch(0.88 0.012 72); }
     .contact-card:last-child { border-bottom: 0; }
     .contact-map iframe { min-height: 360px; }
+    .price-guide { grid-template-columns: 1fr; }
     .local-content-grid { grid-template-columns: 1fr; }
     .local-area-card,
     .local-area-card:last-child { border-right: 0; border-bottom: 1px solid oklch(0.86 0.012 72); }
