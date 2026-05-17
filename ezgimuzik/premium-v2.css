@@ -1,0 +1,519 @@
+/* ============================================================
+   EZGI MÜZİK — premium-v2.css
+   Holistic refinement layer (loaded AFTER premium.css)
+   - Color discipline (amber reserved for italic em + CTA hover)
+   - Tonal warmth variation across dark sections
+   - Hero re-balanced, slim stat bar
+   - PAS / Process / Brands typography polish
+   - Closing simplified, no CTA duplication with Contact
+   ============================================================ */
+
+:root {
+    --warm-100: oklch(0.95 0.014 78);
+    --warm-tag-bg: rgba(255, 255, 255, .04);
+    --warm-tag-border: rgba(255, 255, 255, .12);
+    --warm-tag-text: rgba(255, 255, 255, .68);
+}
+
+/* ── 1. COLOR DISCIPLINE ───────────────────────────────── */
+/* Eyebrows: neutral subtle warm white, not amber */
+.section-eyebrow {
+    color: var(--warm-tag-text);
+    font-weight: 600;
+    letter-spacing: .22em;
+}
+.section-eyebrow::before { background: currentColor; opacity: .5; }
+.section-eyebrow--light { color: rgba(255, 255, 255, .55); }
+
+/* Footer h4 + dt labels + distance pills: subtle neutral */
+.footer-column h4,
+.local-directory-row dt,
+.footer-label {
+    color: var(--warm-tag-text);
+}
+.local-area-distance {
+    color: var(--warm-tag-text);
+    background: var(--warm-tag-bg);
+    border-color: var(--warm-tag-border);
+}
+.pas-column-label {
+    color: var(--warm-tag-text);
+}
+
+/* PAS step numbers: subtle white serif, not amber */
+.pas-column::before {
+    color: rgba(255, 255, 255, .35);
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+}
+
+/* Eyebrow inside hero specifically — slightly more present */
+.eyebrow-text {
+    background: rgba(255, 255, 255, .04);
+    border-color: rgba(255, 255, 255, .12);
+    color: rgba(255, 255, 255, .85);
+}
+.eyebrow-text::before {
+    background: var(--amber);
+    box-shadow: 0 0 14px var(--amber);
+}
+
+/* Directory dd links: cream not amber */
+.local-directory-row dd a {
+    color: var(--text-hi);
+    border-bottom-color: rgba(255, 255, 255, .25);
+}
+.local-directory-row dd a:hover {
+    color: var(--cream);
+    border-bottom-color: var(--cream);
+}
+
+/* Brand hover: subtle white, not amber */
+.brand-item:hover .brand-name { color: var(--text-hi); }
+
+/* Process step-time, FAQ accent — italic em stays amber, supporting elements neutral */
+.step-time {
+    color: var(--warm-tag-text);
+    border-color: var(--warm-tag-border);
+    background: var(--warm-tag-bg);
+}
+
+/* Reserved amber usage:
+   - h2 em, h3 em (italic serif accents)
+   - CTA hover states
+   - Hero eyebrow dot
+*/
+
+/* ── 2. TONAL WARMTH VARIATION ─────────────────────────── */
+/* Multiple slightly different dark tones to break monotony */
+
+.about-section {
+    background:
+        radial-gradient(circle at 50% 0%, oklch(0.20 0.040 56 / .25), transparent 50%),
+        oklch(0.085 0.014 60);
+}
+.trusted-brands {
+    background: oklch(0.07 0.010 58);
+    border-top: 1px solid rgba(255, 255, 255, .06);
+    border-bottom: 1px solid rgba(255, 255, 255, .06);
+}
+.pas-section {
+    background:
+        radial-gradient(ellipse at 50% 0%, oklch(0.30 0.06 50 / .22), transparent 65%),
+        linear-gradient(180deg, oklch(0.10 0.018 58), oklch(0.13 0.026 54));
+}
+.love-wall-section {
+    background:
+        radial-gradient(circle at 15% 12%, oklch(0.50 0.10 70 / .12), transparent 36%),
+        radial-gradient(circle at 85% 8%, oklch(0.45 0.10 50 / .12), transparent 38%),
+        linear-gradient(180deg, oklch(0.105 0.022 56), oklch(0.085 0.014 60));
+}
+.how-it-works {
+    background:
+        radial-gradient(ellipse at 50% 100%, oklch(0.25 0.05 54 / .20), transparent 60%),
+        linear-gradient(180deg, oklch(0.085 0.014 60), oklch(0.115 0.024 56));
+}
+.value-slider-section {
+    background:
+        linear-gradient(180deg, oklch(0.115 0.024 56), oklch(0.085 0.014 60));
+}
+.faq-section {
+    background: oklch(0.075 0.012 58);
+}
+.contact-section {
+    background:
+        radial-gradient(circle at 50% 0%, oklch(0.20 0.040 56 / .20), transparent 55%),
+        oklch(0.085 0.014 60);
+}
+.local-content-section {
+    background: oklch(0.10 0.020 56);
+    border-top: 1px solid rgba(255, 255, 255, .06);
+}
+
+/* ── 3. HERO RE-BALANCE ────────────────────────────────── */
+/* CTA + FUDs now come BEFORE the stat bar in markup; style accordingly */
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+.hero-headline-editorial {
+    margin-bottom: clamp(14px, 1.5vw, 20px) !important;
+}
+.hero-subtitle {
+    margin-bottom: clamp(22px, 2.6vw, 32px);
+}
+
+/* CTA + FUDs row sits right under subtitle now */
+.hero-cta-fuds-group {
+    grid-template-columns: minmax(240px, auto) 1fr;
+    align-items: center;
+    gap: clamp(24px, 2.6vw, 40px);
+    margin-top: 0;
+    margin-bottom: clamp(28px, 3vw, 40px);
+    max-width: 720px;
+}
+.hero-cta { width: auto; }
+.hero-cta .btn-hero-cta {
+    width: auto;
+    min-width: 240px;
+    padding: 16px 26px;
+    gap: 16px;
+    background: var(--cream);
+    color: var(--ink);
+    box-shadow: 0 14px 40px oklch(0.04 0.01 60 / .55);
+}
+.hero-cta .btn-hero-cta:hover {
+    background: var(--amber);
+    color: var(--ink);
+}
+.cta-main { font-size: 15px; letter-spacing: -0.01em; }
+
+.hero-fuds {
+    gap: 8px;
+}
+.fud-item {
+    font-size: 13px;
+    color: rgba(255, 255, 255, .68);
+}
+.fud-item .lucide-icon { color: var(--amber-soft); font-size: 15px; }
+
+/* Stat bar — SLIM, no container, inline */
+.hero-social-proof {
+    margin: 0;
+    max-width: 720px;
+}
+.social-proof-bar {
+    grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+    background: transparent;
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, .12);
+    border-bottom: 1px solid rgba(255, 255, 255, .12);
+    border-radius: 0;
+    padding: 18px 4px;
+    box-shadow: none;
+    backdrop-filter: none;
+    min-height: 0;
+    column-gap: 0;
+}
+.proof-item,
+.proof-item-link {
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 12px;
+    padding: 4px 8px;
+    align-items: center;
+}
+.proof-icon {
+    background: transparent;
+    border: 0;
+    width: 22px;
+    height: 22px;
+    padding: 0;
+    color: var(--amber-soft);
+}
+.proof-rating,
+.proof-number {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--cream);
+    letter-spacing: -0.01em;
+}
+.proof-reviews,
+.proof-label {
+    font-size: 11.5px;
+    color: rgba(255, 255, 255, .55);
+    line-height: 1.25;
+    white-space: nowrap;
+}
+.proof-divider {
+    width: 1px;
+    height: 28px;
+    background: rgba(255, 255, 255, .12);
+    align-self: center;
+}
+
+/* Make hero-stage fade-in faster from the right */
+.hero-content {
+    grid-template-columns: minmax(0, 1fr) minmax(360px, 1.05fr);
+    align-items: center;
+}
+
+/* ── 4. PAS — tighter rhythm ──────────────────────────── */
+.pas-content {
+    border-radius: 22px;
+    box-shadow:
+        0 50px 120px oklch(0.02 0.005 60 / .55),
+        inset 0 1px 0 rgba(255, 255, 255, .04);
+}
+.pas-column { padding: clamp(28px, 3vw, 40px) clamp(22px, 2.6vw, 32px); }
+.pas-column-label {
+    font-size: 10.5px;
+    letter-spacing: .22em;
+    margin-bottom: 8px;
+}
+.pas-column::before {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+}
+.pas-column h3 {
+    font-size: clamp(1.08rem, 1.7vw, 1.3rem);
+    margin-bottom: 22px;
+    max-width: 24ch;
+}
+.pas-point {
+    font-size: .92rem;
+    padding: 11px 0;
+    border-bottom-color: rgba(255, 255, 255, .05);
+}
+.pas-point .lucide-icon { font-size: 1rem; opacity: .85; }
+.pas-section .section-header h2 {
+    font-size: clamp(1.9rem, 4vw, 2.6rem);
+}
+
+/* ── 5. PROCESS — bigger Roman numerals as hero ────────── */
+.step-card {
+    padding: clamp(40px, 4.5vw, 60px) clamp(28px, 3vw, 38px);
+}
+.step-number {
+    margin-bottom: 24px;
+    line-height: 1;
+}
+.step-number[data-roman]::after {
+    font-size: clamp(3.4rem, 5.5vw, 4.8rem);
+    color: var(--amber-soft);
+    letter-spacing: -0.02em;
+    opacity: .92;
+}
+.step-card h3 {
+    font-size: clamp(1.15rem, 1.9vw, 1.4rem);
+    margin-bottom: 14px;
+}
+.step-card p {
+    color: var(--text-mid);
+    font-size: .96rem;
+    line-height: 1.65;
+}
+.step-time {
+    margin-top: 24px;
+    padding: 6px 14px;
+    font-size: 11px;
+}
+
+/* ── 6. BRANDS marquee — slower & cleaner ───────────────── */
+.brands-track { animation-duration: 60s; }
+.brands-track-2 { animation-duration: 70s; }
+.brand-item { padding: 6px 26px; }
+.brand-name {
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: .045em;
+    color: rgba(255, 255, 255, .58);
+}
+.brand-item + .brand-item::before {
+    color: rgba(255, 255, 255, .18);
+    left: -3px;
+}
+.brands-note {
+    color: rgba(255, 255, 255, .42);
+    font-size: 11px;
+    letter-spacing: .18em;
+    margin-top: 40px;
+}
+
+/* ── 7. CLOSING — poetic, two-button CTA ─────────────── */
+.closing-section { padding: clamp(96px, 11vw, 140px) 20px; }
+.closing-content h2 {
+    font-size: clamp(2.4rem, 5.4vw, 3.8rem);
+    max-width: 16ch;
+}
+.closing-subtitle {
+    max-width: 52ch;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, .68);
+}
+.closing-benefits {
+    gap: clamp(20px, 2.5vw, 36px);
+    margin-bottom: 36px;
+}
+.closing-benefit { font-size: .94rem; }
+.closing-social-proof {
+    margin-bottom: 36px;
+    font-size: 13px;
+    letter-spacing: .03em;
+}
+.closing-cta {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.closing-cta .btn-primary {
+    background: var(--cream);
+    color: var(--ink);
+    padding: 18px 32px;
+    font-size: 15.5px;
+    font-weight: 700;
+    border-radius: 999px;
+}
+.closing-cta .btn-primary:hover {
+    background: var(--amber);
+    color: var(--ink);
+    transform: translateY(-2px);
+}
+.btn-secondary--light {
+    background: transparent !important;
+    border: 1px solid rgba(255, 255, 255, .22) !important;
+    color: var(--cream) !important;
+    border-radius: 999px !important;
+    padding: 18px 32px !important;
+    font-size: 15.5px !important;
+    font-weight: 600 !important;
+}
+.btn-secondary--light:hover {
+    background: rgba(255, 255, 255, .08) !important;
+    border-color: rgba(255, 255, 255, .35) !important;
+    color: var(--cream) !important;
+}
+
+/* ── 8. CONTACT — relaxed (no longer the "first ask") ─── */
+.contact-section .section-header h2 {
+    font-size: clamp(1.9rem, 4vw, 2.6rem);
+    max-width: 20ch;
+}
+.contact-urgency {
+    background: rgba(255, 255, 255, .04);
+    border-color: rgba(255, 255, 255, .12);
+    color: rgba(255, 255, 255, .68);
+}
+
+/* ── 9. TYPOGRAPHY POLISH ────────────────────────────── */
+
+/* Tagline smaller */
+.logo-tagline {
+    font-size: 12px;
+    letter-spacing: 0.01em;
+    color: rgba(255, 255, 255, .50);
+}
+
+/* FAQ — accent em more visible */
+.faq-section .section-header h2 em {
+    font-size: 1em;
+    letter-spacing: -0.025em;
+}
+
+/* H2 em globally — slightly more pronounced color */
+.section-header h2 em,
+.about-section h2 em,
+.brands-header h2 em,
+.closing-content h2 em,
+.local-cta h3 em,
+.local-content-header h2 em,
+.hero-headline-editorial em {
+    color: var(--amber-soft);
+}
+
+/* Hover-amber on links inside dark blocks */
+.faq-answer .btn-secondary:hover,
+.contact-card p a:hover {
+    color: var(--amber-soft);
+}
+
+/* ── 10. SECTION HEADER alignment polish ─────────────── */
+.section-header {
+    text-align: center;
+}
+.section-header h2 {
+    margin-left: auto;
+    margin-right: auto;
+}
+.section-header p {
+    margin-left: auto;
+    margin-right: auto;
+}
+.contact-section .section-header,
+.local-content-header,
+.pas-section .section-header,
+.section-header--editorial {
+    text-align: left;
+}
+.contact-section .section-header h2,
+.local-content-header h2,
+.pas-section .section-header h2,
+.section-header--editorial h2 {
+    margin-left: 0;
+    margin-right: 0;
+}
+.contact-section .section-header p,
+.local-content-header p,
+.pas-section .section-header p,
+.section-header--editorial p {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Center-eyebrow alignment */
+.section-eyebrow--center { display: inline-flex; }
+.section-header { display: flex; flex-direction: column; align-items: center; }
+.contact-section .section-header,
+.local-content-header,
+.pas-section .section-header,
+.section-header--editorial {
+    align-items: flex-start;
+}
+
+/* ── 11. MAP / CONTACT CARDS tighter ─────────────────── */
+.contact-card { padding: clamp(20px, 2.2vw, 28px); }
+.contact-card h3 {
+    font-size: 1.04rem;
+    margin-bottom: 8px;
+}
+.contact-card p { margin-bottom: 12px; }
+
+/* ── 12. STAT BAR responsive: 2x2 on mobile ──────────── */
+@media (max-width: 768px) {
+    .social-proof-bar {
+        grid-template-columns: 1fr 1fr !important;
+        padding: 14px 8px !important;
+        gap: 8px !important;
+    }
+    .proof-divider { display: none; }
+    .hero-cta-fuds-group {
+        grid-template-columns: 1fr;
+    }
+    .hero-cta .btn-hero-cta {
+        width: 100%;
+        min-width: 0;
+        justify-content: center;
+    }
+    .closing-cta .btn-primary,
+    .btn-secondary--light {
+        width: 100%;
+    }
+    .step-number[data-roman]::after {
+        font-size: 3rem;
+    }
+}
+
+/* ── 13. NAVBAR scrolled state matching deep dark ─────── */
+.navbar.scrolled {
+    background: oklch(0.06 0.010 58 / .92);
+    border-bottom: 1px solid rgba(255, 255, 255, .05);
+}
+
+/* ── 14. Local SEO directory — remove amber from dt ──── */
+.local-directory-row dt {
+    color: rgba(255, 255, 255, .55);
+    font-size: 11px;
+    letter-spacing: .22em;
+}
+
+/* ── 15. Final: ensure h2 em color is consistent everywhere ─ */
+h2 em, h3 em {
+    color: var(--amber-soft) !important;
+    font-family: var(--font-serif) !important;
+    font-style: italic !important;
+    font-weight: 400 !important;
+}
