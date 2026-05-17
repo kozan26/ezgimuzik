@@ -228,6 +228,8 @@ html.site-loading body {
     border: none;
     cursor: pointer;
     line-height: 1.25;
+    white-space: normal;
+    text-align: left;
     box-shadow: 0 8px 24px oklch(0.63 0.16 40 / .34);
 }
 .btn-hero-cta:hover {
@@ -240,8 +242,8 @@ html.site-loading body {
     outline-offset: 4px;
 }
 
-.cta-main { font-size: 15px; font-weight: 800; }
-.cta-sub  { font-size: 11.5px; font-weight: 600; opacity: .9; }
+.cta-main { font-size: 15px; font-weight: 800; white-space: normal; }
+.cta-sub  { font-size: 11.5px; font-weight: 600; opacity: .9; white-space: normal; }
 
 .cta-glow {
     box-shadow: 0 0 20px oklch(0.68 0.13 58 / .38), 0 8px 24px oklch(0.68 0.13 58 / .24);
@@ -287,11 +289,18 @@ html.site-loading body {
     color: var(--white);
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
 }
 .logo-icon {
     color: var(--primary-light);
     font-size: 24px;
+}
+.site-logo-mark {
+    width: 36px;
+    height: 36px;
+    display: block;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 14px oklch(0.10 0.02 58 / .34));
 }
 
 .logo-tagline {
@@ -511,7 +520,7 @@ html.site-loading body {
     padding: .62rem .72rem;
     box-shadow: 0 16px 36px oklch(0.04 0.012 58 / .28);
     width: 100%;
-    min-height: 68px;
+    min-height: 74px;
 }
 .proof-item {
     display: flex;
@@ -579,11 +588,11 @@ html.site-loading body {
     gap: 8px;
 }
 .proof-item {
-    padding: 6px 10px;
+    padding: 8px 10px;
 }
 .proof-icon {
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     padding: 6px;
     border-radius: 10px;
     background: oklch(0.66 0.13 58 / .12);
@@ -596,7 +605,7 @@ html.site-loading body {
 }
 .proof-rating,
 .proof-number {
-    font-size: .94rem;
+    font-size: 1rem;
     font-weight: 800;
     line-height: 1.05;
 }
@@ -606,7 +615,7 @@ html.site-loading body {
 .proof-reviews,
 .proof-label {
     min-width: 0;
-    font-size: .68rem;
+    font-size: .72rem;
     line-height: 1.25;
     color: rgba(255,255,255,.72);
     font-weight: 650;
@@ -962,7 +971,7 @@ html.site-loading body {
     padding: 14px 20px;
     text-align: center;
     flex-shrink: 0;
-    min-width: 140px;
+    min-width: 152px;
     cursor: default;
     transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
 }
@@ -974,7 +983,7 @@ html.site-loading body {
 .brand-name {
     display: block;
     font-family: var(--font-display);
-    font-size: .85rem;
+    font-size: .92rem;
     font-weight: 800;
     color: var(--gray-800);
     letter-spacing: .5px;
@@ -982,9 +991,9 @@ html.site-loading body {
 }
 .brand-category {
     display: block;
-    font-size: .72rem;
-    color: var(--gray-500);
-    font-weight: 500;
+    font-size: .76rem;
+    color: var(--gray-600);
+    font-weight: 600;
 }
 .brands-note {
     display: flex;
@@ -1084,7 +1093,7 @@ html.site-loading body {
 
 .pas-column h3 {
     font-family: var(--font-display);
-    font-size: clamp(1.05rem, 2vw, 1.32rem);
+    font-size: clamp(1.08rem, 2vw, 1.4rem);
     font-weight: 800;
     color: oklch(0.96 0.006 72);
     margin: 0 0 24px;
@@ -1102,7 +1111,7 @@ html.site-loading body {
     align-items: center;
     gap: 12px;
     text-align: left;
-    font-size: .98rem;
+    font-size: 1rem;
     color: oklch(0.82 0.012 72);
     padding: 12px 0;
     background: transparent;
@@ -1209,7 +1218,7 @@ html.site-loading body {
         radial-gradient(circle at 10% 6%, oklch(0.72 0.11 66 / .24), transparent 38%),
         linear-gradient(155deg, oklch(0.10 0.022 58), oklch(0.16 0.04 52));
     border-color: oklch(0.62 0.10 62 / .50);
-    box-shadow: 0 22px 52px oklch(0.12 0.03 58 / .24);
+    box-shadow: 0 26px 64px oklch(0.12 0.03 58 / .28);
     padding: clamp(22px, 3vw, 30px);
 }
 .testimonial-card:hover {
@@ -1240,7 +1249,7 @@ html.site-loading body {
 }
 .testimonial-card-featured .testimonial-quote {
     color: oklch(0.98 0.006 72);
-    font-size: clamp(1.18rem, 2.1vw, 1.55rem);
+    font-size: clamp(1.26rem, 2.3vw, 1.76rem);
     line-height: 1.15;
 }
 .testimonial-text {
@@ -1253,8 +1262,8 @@ html.site-loading body {
 }
 .testimonial-card-featured .testimonial-text {
     color: oklch(0.94 0.012 72);
-    font-size: .96rem;
-    line-height: 1.68;
+    font-size: 1rem;
+    line-height: 1.72;
 }
 .testimonial-author {
     display: flex;
@@ -1324,11 +1333,11 @@ html.site-loading body {
     position: relative;
 }
 .value-slider-nav {
-    width: 44px;
-    height: 44px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    border: 1px solid oklch(0.76 0.04 70);
-    background: oklch(0.99 0.006 72);
+    border: 1px solid oklch(0.75 0.05 66 / .85);
+    background: oklch(0.98 0.01 72 / .92);
     color: oklch(0.30 0.05 58);
     display: inline-flex;
     align-items: center;
@@ -1339,12 +1348,13 @@ html.site-loading body {
     top: 50%;
     transform: translateY(-50%);
     z-index: 4;
-    box-shadow: 0 10px 24px oklch(0.12 0.02 58 / .22);
+    box-shadow: 0 16px 34px oklch(0.12 0.02 58 / .24);
 }
 .value-slider-nav:hover {
     transform: translateY(calc(-50% - 2px));
-    border-color: var(--primary);
+    border-color: oklch(0.68 0.13 58 / .9);
     color: var(--primary-dark);
+    background: oklch(0.97 0.02 72);
 }
 .value-slider-nav:disabled {
     opacity: .45;
@@ -1410,8 +1420,8 @@ html.site-loading body {
     top: clamp(16px, 2.2vw, 24px);
     bottom: clamp(16px, 2.2vw, 24px);
     left: clamp(16px, 2.2vw, 24px);
-    width: min(560px, 56%);
-    padding: clamp(20px, 2.2vw, 30px);
+    width: min(540px, 54%);
+    padding: clamp(18px, 2vw, 26px);
     border-radius: 20px;
     background: oklch(0.12 0.024 58 / .76);
     border: 1px solid oklch(0.78 0.08 68 / .22);
@@ -1455,7 +1465,7 @@ html.site-loading body {
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
     flex: 1;
 }
 .value-slide-list li {
@@ -1463,7 +1473,7 @@ html.site-loading body {
     align-items: flex-start;
     gap: 9px;
     color: oklch(0.94 0.012 72);
-    font-size: .96rem;
+    font-size: .94rem;
     line-height: 1.5;
 }
 .value-slide-list .lucide-icon {
@@ -1731,8 +1741,8 @@ html.site-loading body {
 }
 .faq-question:hover { background: transparent; }
 .faq-question h3 {
-    font-size: clamp(.98rem, 1.4vw, 1.08rem);
-    font-weight: 700;
+    font-size: clamp(1.04rem, 1.45vw, 1.14rem);
+    font-weight: 800;
     color: oklch(0.18 0.020 58);
     margin: 0;
     flex: 1;
@@ -1914,6 +1924,9 @@ html.site-loading body {
 .contact-card:last-child {
     border-bottom: 0;
 }
+.contact-card:nth-child(2) {
+    background: oklch(0.985 0.01 72);
+}
 .contact-card::before {
     content: none;
 }
@@ -1962,8 +1975,12 @@ html.site-loading body {
 }
 .contact-buttons .btn-primary,
 .contact-buttons .btn-whatsapp {
-    font-size: 12px !important;
-    padding: 7px 11px !important;
+    font-size: 13px !important;
+    padding: 9px 14px !important;
+    font-weight: 700 !important;
+}
+.contact-buttons .btn-whatsapp {
+    box-shadow: 0 8px 18px rgba(37, 211, 102, .22) !important;
 }
 .contact-map {
     background: oklch(0.985 0.006 72);
@@ -2103,6 +2120,10 @@ html.site-loading body {
     margin-bottom: 12px;
 }
 .footer-logo .logo-text { color: var(--white); }
+.footer-logo .site-logo-mark {
+    width: 34px;
+    height: 34px;
+}
 .footer-tagline {
     font-size: .92rem;
     color: oklch(0.78 0.014 72);
@@ -2160,7 +2181,7 @@ html.site-loading body {
     flex-direction: column;
     gap: 8px;
 }
-.footer-links li { font-size: .88rem; color: oklch(0.74 0.014 72); line-height: 1.45; }
+.footer-links li { font-size: .9rem; color: oklch(0.74 0.014 72); line-height: 1.45; }
 .footer-links a { color: var(--gray-400); text-decoration: none; transition: color .2s ease; }
 .footer-links a:hover { color: var(--white); }
 .footer-contact {
@@ -2168,7 +2189,7 @@ html.site-loading body {
     flex-direction: column;
     gap: 8px;
 }
-.footer-contact p { font-size: .88rem; color: oklch(0.74 0.014 72); margin: 0; line-height: 1.45; }
+.footer-contact p { font-size: .9rem; color: oklch(0.74 0.014 72); margin: 0; line-height: 1.45; }
 .footer-contact a { color: var(--gray-300); text-decoration: none; }
 .footer-contact a:hover { color: var(--primary-light); }
 .footer-bottom {
@@ -2652,4 +2673,3 @@ html.site-loading body {
     .hero-stage { height: auto; }
     .btn-large { padding: 12px 20px; font-size: 15px; }
 }
-
