@@ -34,14 +34,17 @@ if (mobileMenuToggle) {
 // Smooth Scrolling for Navigation Links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
+        const hash = this.getAttribute('href');
+        if (!hash || hash === '#') return;
+        const target = document.querySelector(hash);
+        if (!target) return;
+
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
+        target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+        window.history.replaceState(null, '', hash);
     });
 });
 
@@ -70,20 +73,29 @@ document.addEventListener('keydown', (e) => {
 // FAQ Accordion Functionality
 document.addEventListener('DOMContentLoaded', function() {
     const faqItems = document.querySelectorAll('.faq-item');
-    
+
+    const setExpandedState = (targetItem, isExpanded) => {
+        targetItem.classList.toggle('active', isExpanded);
+        const targetQuestion = targetItem.querySelector('.faq-question');
+        if (targetQuestion) {
+            targetQuestion.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+        }
+    };
+
     faqItems.forEach(item => {
         const question = item.querySelector('.faq-question');
-        
+        if (!question) return;
+
         question.addEventListener('click', () => {
-            // Close all other FAQ items
+            const willExpand = !item.classList.contains('active');
+
             faqItems.forEach(otherItem => {
                 if (otherItem !== item) {
-                    otherItem.classList.remove('active');
+                    setExpandedState(otherItem, false);
                 }
             });
-            
-            // Toggle current item
-            item.classList.toggle('active');
+
+            setExpandedState(item, willExpand);
         });
     });
     
@@ -91,16 +103,71 @@ document.addEventListener('DOMContentLoaded', function() {
     const socialProofBar = document.querySelector('.social-proof-bar');
     if (socialProofBar) {
         const counterElements = socialProofBar.querySelectorAll('[data-target]');
-        counterElements.forEach(element => {
-            const target = parseFloat(element.getAttribute('data-target'));
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const animationDuration = 1700;
+        const easeOutQuint = (t) => 1 - Math.pow(1 - t, 5);
+
+        const renderValue = (element, value) => {
             if (element.classList.contains('proof-rating')) {
-                element.textContent = target.toFixed(1) + '/5';
+                element.textContent = `${value.toFixed(1)}/5`;
             } else if (element.classList.contains('proof-reviews')) {
-                element.textContent = `${target} Yorum`;
+                element.textContent = `${Math.round(value).toLocaleString('tr-TR')} Yorum`;
             } else if (element.classList.contains('proof-number')) {
-                element.textContent = `${target.toLocaleString('tr-TR')}+`;
+                element.textContent = `${Math.round(value).toLocaleString('tr-TR')}+`;
             }
-        });
+        };
+
+        const getStartValue = (element, target) => {
+            if (element.classList.contains('proof-rating')) {
+                return Math.max(0, target - 0.7);
+            }
+            // Subtle movement: start close to final value.
+            return Math.max(0, target * 0.88);
+        };
+
+        const animateCounter = (element) => {
+            const target = parseFloat(element.getAttribute('data-target') || '0');
+            if (!Number.isFinite(target)) return;
+
+            if (prefersReducedMotion) {
+                renderValue(element, target);
+                return;
+            }
+
+            const startValue = getStartValue(element, target);
+            const startTime = performance.now();
+
+            const tick = (now) => {
+                const progress = Math.min(1, (now - startTime) / animationDuration);
+                const eased = easeOutQuint(progress);
+                const currentValue = startValue + ((target - startValue) * eased);
+                renderValue(element, currentValue);
+                if (progress < 1) requestAnimationFrame(tick);
+            };
+
+            requestAnimationFrame(tick);
+        };
+
+        let hasAnimated = false;
+        const triggerAnimation = () => {
+            if (hasAnimated) return;
+            hasAnimated = true;
+            counterElements.forEach(animateCounter);
+        };
+
+        if ('IntersectionObserver' in window) {
+            const proofObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) return;
+                    triggerAnimation();
+                    observer.disconnect();
+                });
+            }, { threshold: 0.55 });
+
+            proofObserver.observe(socialProofBar);
+        } else {
+            triggerAnimation();
+        }
     }
 
     // Value slider
