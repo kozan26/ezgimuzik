@@ -22,19 +22,7 @@ if (document.readyState === 'complete') {
     window.addEventListener('load', releaseInitialScrollLock, { once: true });
 }
 
-const hero = document.querySelector('.hero');
 const heroVideo = document.querySelector('.hero-background-video');
-
-if (hero && heroVideo) {
-    const revealHeroVideo = () => hero.classList.add('hero-video-ready');
-
-    if (heroVideo.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
-        revealHeroVideo();
-    } else {
-        heroVideo.addEventListener('loadeddata', revealHeroVideo, { once: true });
-        heroVideo.addEventListener('canplay', revealHeroVideo, { once: true });
-    }
-}
 
 if (mobileMenuToggle) {
     mobileMenuToggle.addEventListener('click', () => {

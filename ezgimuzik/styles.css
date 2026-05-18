@@ -381,6 +381,7 @@ html.site-loading body {
 
 /* ── Hero ──────────────────────────────────────────────────── */
 .hero {
+    --hero-media-position: center;
     background: oklch(0.08 0.018 60);
     padding: 24px 12px clamp(28px, 4vh, 44px);
     position: relative;
@@ -391,7 +392,6 @@ html.site-loading body {
     justify-content: center;
     z-index: 1;
 }
-.hero-background-poster,
 .hero-background-video {
     position: absolute;
     inset: 0;
@@ -399,32 +399,22 @@ html.site-loading body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
+    object-position: var(--hero-media-position);
     pointer-events: none;
 }
-.hero-background-poster {
-    opacity: 1;
-    transition: opacity .45s ease;
-}
 .hero-background-video {
-    opacity: 0;
-    transition: opacity .45s ease;
-}
-.hero.hero-video-ready .hero-background-video {
     opacity: 1;
-}
-.hero.hero-video-ready .hero-background-poster {
-    opacity: 0;
+    transition: opacity .3s ease;
 }
 .hero::before {
     content: "";
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(circle at 76% 45%, transparent 0%, oklch(0.04 0.012 60 / .28) 54%, oklch(0.03 0.010 60 / .76) 100%),
-        linear-gradient(90deg, oklch(0.035 0.012 60 / .98) 0%, oklch(0.045 0.014 60 / .94) 36%, oklch(0.06 0.016 60 / .54) 58%, oklch(0.05 0.014 60 / .22) 100%),
-        linear-gradient(180deg, oklch(0.03 0.010 60 / .42), transparent 34%, oklch(0.03 0.010 60 / .58));
-    opacity: 1;
+        radial-gradient(circle at 76% 45%, transparent 0%, oklch(0.04 0.012 60 / .18) 54%, oklch(0.03 0.010 60 / .48) 100%),
+        linear-gradient(90deg, oklch(0.035 0.012 60 / .82) 0%, oklch(0.045 0.014 60 / .74) 36%, oklch(0.06 0.016 60 / .32) 58%, oklch(0.05 0.014 60 / .12) 100%),
+        linear-gradient(180deg, oklch(0.03 0.010 60 / .24), transparent 34%, oklch(0.03 0.010 60 / .34));
+    opacity: .9;
     z-index: 1;
     pointer-events: none;
 }
@@ -2421,14 +2411,13 @@ html.site-loading body {
         overflow: hidden;
         isolation: isolate;
     }
-    .hero-background-poster,
-    .hero-background-video {
-        object-position: 68% center;
+    .hero {
+        --hero-media-position: 68% center;
     }
     .hero::before {
         background:
-            radial-gradient(circle at 70% 34%, transparent 0%, oklch(0.04 0.012 60 / .34) 48%, oklch(0.03 0.010 60 / .84) 100%),
-            linear-gradient(180deg, oklch(0.03 0.010 60 / .50), oklch(0.035 0.012 60 / .76) 48%, oklch(0.03 0.010 60 / .82));
+            radial-gradient(circle at 70% 34%, transparent 0%, oklch(0.04 0.012 60 / .22) 48%, oklch(0.03 0.010 60 / .62) 100%),
+            linear-gradient(180deg, oklch(0.03 0.010 60 / .34), oklch(0.035 0.012 60 / .56) 48%, oklch(0.03 0.010 60 / .62));
     }
     .hero-content {
         display: block;
@@ -2684,9 +2673,8 @@ html.site-loading body {
     .container { padding: 0 14px; }
 
     .hero-text h1 { font-size: clamp(1.78rem, 9vw, 2.5rem); }
-    .hero-background-poster,
-    .hero-background-video {
-        object-position: 72% center;
+    .hero {
+        --hero-media-position: 72% center;
     }
     .hero-stage { height: auto; }
     .hero-testimonial-stack {
