@@ -17,6 +17,118 @@
     --whatsapp: #25D366;
     --whatsapp-hover: #20BA5A;
     --whatsapp-press: #128C7E;
+
+    /* Tipografi ölçeği (~1.25+ adım: display → bölüm h2 → kart h3 → lead → gövde) */
+    --type-display: clamp(2.35rem, 1.5rem + 3.15vw, 3.75rem);
+    --type-section: clamp(1.88rem, 1.32rem + 1.5vw, 2.8rem);
+    --type-subsection: clamp(1.62rem, 1.22rem + 1.15vw, 2.25rem);
+    --type-card-title: clamp(1.1rem, 1.02rem + 0.32vw, 1.28rem);
+    --type-lead: clamp(1.03rem, 0.97rem + 0.22vw, 1.125rem);
+    --type-body: clamp(0.94rem, 0.9rem + 0.14vw, 1rem);
+    --lh-display: 1.08;
+    --lh-heading: 1.12;
+    --lh-tight: 1.18;
+    --lh-body: 1.62;
+    --measure-prose: 65ch;
+
+    /* Buton etkileşimi — tüm CTA’larda aynı tempo (WhatsApp modeli) */
+    --btn-ease: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease;
+    --cta-edge: rgba(0, 0, 0, 0.09);
+    /* Krem CTA hover — sıcak amber vurgusu (dikkat çekici ama düz yüzey) */
+    --btn-cream-hover: var(--amber);
+    --btn-cream-press: oklch(0.78 0.12 58);
+    --btn-cream-border-hover: oklch(0.58 0.11 52 / 0.42);
+    --btn-outline-border: rgba(255, 255, 255, 0.22);
+    --btn-outline-border-hover: rgba(255, 255, 255, 0.38);
+    --btn-outline-fill-hover: rgba(255, 255, 255, 0.08);
+    --btn-outline-fill-press: rgba(255, 255, 255, 0.12);
+}
+
+/* ── 0. TİPOGRAFİ HİYERARŞİSİ (tek ölçek; premium-v2 son söz) ─ */
+.hero-headline-editorial {
+    font-size: var(--type-display) !important;
+    line-height: var(--lh-display) !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.042em !important;
+}
+
+.hero-subtitle {
+    font-size: var(--type-lead) !important;
+    line-height: var(--lh-body) !important;
+    max-width: min(var(--measure-prose), 640px) !important;
+    font-weight: 400 !important;
+}
+
+.section-header h2 {
+    font-size: var(--type-section) !important;
+    line-height: var(--lh-heading) !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.035em !important;
+}
+
+.section-header p {
+    font-size: var(--type-lead) !important;
+    line-height: var(--lh-body) !important;
+    max-width: var(--measure-prose) !important;
+    font-weight: 400 !important;
+}
+
+.about-section h2 {
+    font-size: var(--type-subsection) !important;
+    line-height: var(--lh-heading) !important;
+    font-weight: 700 !important;
+}
+
+.brands-header h2 {
+    font-size: clamp(1.52rem, 1.12rem + 1.05vw, 2.15rem) !important;
+    line-height: var(--lh-heading) !important;
+    font-weight: 700 !important;
+}
+
+.step-card h3,
+.value-slide-body h3,
+.about-feature-card h3 {
+    font-size: var(--type-card-title) !important;
+    line-height: var(--lh-tight) !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.02em !important;
+}
+
+.step-card p,
+.value-slide-body p,
+.about-feature-card p {
+    font-size: var(--type-body) !important;
+    line-height: var(--lh-body) !important;
+}
+
+.pas-column h3 {
+    font-size: clamp(1.14rem, 1.02rem + 0.42vw, 1.38rem) !important;
+    line-height: var(--lh-tight) !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.022em !important;
+}
+
+.pas-point span {
+    font-size: var(--type-body) !important;
+    line-height: var(--lh-body) !important;
+}
+
+.faq-question h3 {
+    font-size: var(--type-card-title) !important;
+    line-height: var(--lh-tight) !important;
+    font-weight: 800 !important;
+}
+
+.closing-content h2 {
+    font-size: clamp(2.05rem, 1.4rem + 2.1vw, 3.2rem) !important;
+    line-height: var(--lh-display) !important;
+    font-weight: 700 !important;
+}
+
+.contact-section .section-header h2 {
+    font-size: var(--type-subsection) !important;
+    line-height: var(--lh-heading) !important;
+    font-weight: 700 !important;
 }
 
 /* ── 1. COLOR DISCIPLINE ───────────────────────────────── */
@@ -144,10 +256,18 @@
     gap: 0;
 }
 .hero-headline-editorial {
-    line-height: 1.1 !important;
+    line-height: var(--lh-display) !important;
     margin-bottom: clamp(14px, 1.5vw, 20px) !important;
 }
-.hero-headline-editorial .headline-no-break {
+.headline-no-break {
+    white-space: nowrap;
+}
+
+.local-cta h3 {
+    max-width: min(100%, 36ch) !important;
+    text-wrap: balance;
+}
+.local-cta h3 em.headline-no-break {
     white-space: nowrap;
 }
 .hero-subtitle {
@@ -175,11 +295,16 @@
     gap: 16px;
     background: var(--cream);
     color: var(--ink);
-    box-shadow: 0 14px 40px oklch(0.04 0.01 60 / .55);
+    box-shadow: none !important;
+    border: 1px solid var(--cta-edge) !important;
 }
 .hero-cta .btn-hero-cta:hover {
-    background: var(--amber);
+    background: var(--btn-cream-hover);
     color: var(--ink);
+    box-shadow: none !important;
+}
+.hero-cta .btn-hero-cta:active {
+    background: var(--btn-cream-press);
 }
 .cta-main { font-size: 15px; letter-spacing: -0.01em; }
 
@@ -298,7 +423,6 @@
     margin-bottom: 12px;
 }
 .pas-column h3 {
-    font-size: clamp(1.08rem, 1.7vw, 1.3rem);
     margin-bottom: 22px;
     max-width: 24ch;
 }
@@ -308,10 +432,6 @@
     border-bottom-color: rgba(255, 255, 255, .05);
 }
 .pas-point .lucide-icon { font-size: 1rem; opacity: .85; }
-.pas-section .section-header h2 {
-    font-size: clamp(1.9rem, 4vw, 2.6rem);
-}
-
 /* ── 5. PROCESS — bigger Roman numerals as hero ────────── */
 .step-card {
     padding: clamp(40px, 4.5vw, 60px) clamp(28px, 3vw, 38px);
@@ -331,13 +451,10 @@
     opacity: 0.94;
 }
 .step-card h3 {
-    font-size: clamp(1.15rem, 1.9vw, 1.4rem);
     margin-bottom: 14px;
 }
 .step-card p {
     color: var(--text-mid);
-    font-size: .96rem;
-    line-height: 1.65;
 }
 .step-time {
     margin-top: 24px;
@@ -369,7 +486,6 @@
 /* ── 7. CLOSING — poetic, two-button CTA ─────────────── */
 .closing-section { padding: clamp(96px, 11vw, 140px) 20px; }
 .closing-content h2 {
-    font-size: clamp(2.4rem, 5.4vw, 3.8rem);
     max-width: 16ch;
 }
 .closing-subtitle {
@@ -393,37 +509,18 @@
     justify-content: center;
     flex-wrap: wrap;
 }
-.closing-cta .btn-primary {
-    background: var(--cream);
-    color: var(--ink);
-    padding: 18px 32px;
-    font-size: 15.5px;
-    font-weight: 700;
-    border-radius: 999px;
+/* Kapanış birincil — boyut (yüzey rengi btn-cream-surface bloğunda) */
+.closing-cta .btn-primary:not([href*="wa.me"]) {
+    padding: 16px 26px;
+    font-size: 15px;
 }
-.closing-cta .btn-primary:hover {
-    background: var(--amber);
-    color: var(--ink);
-    transform: translateY(-2px);
-}
-.btn-secondary--light {
-    background: transparent !important;
-    border: 1px solid rgba(255, 255, 255, .22) !important;
-    color: var(--cream) !important;
-    border-radius: 999px !important;
-    padding: 18px 32px !important;
-    font-size: 15.5px !important;
-    font-weight: 600 !important;
-}
-.btn-secondary--light:hover {
-    background: rgba(255, 255, 255, .08) !important;
-    border-color: rgba(255, 255, 255, .35) !important;
-    color: var(--cream) !important;
+.closing-cta .btn-secondary--light {
+    padding: 16px 26px;
+    font-size: 15px;
 }
 
 /* ── 8. CONTACT — relaxed (no longer the "first ask") ─── */
 .contact-section .section-header h2 {
-    font-size: clamp(1.9rem, 4vw, 2.6rem);
     max-width: 20ch;
 }
 .contact-urgency {
@@ -638,17 +735,7 @@
     letter-spacing: .22em;
 }
 
-/* ── 14b. Contact phone CTA: deepen copper for WCAG-AA white text ─
-   --amber-deep (L .52) under white text was ~3.9:1. Scoped here so the
-   token stays intact for its other (icon/accent) uses. */
-.contact-buttons .btn-primary {
-    background: oklch(0.45 0.135 48) !important;
-    border-color: oklch(0.45 0.135 48) !important;
-}
-.contact-buttons .btn-primary:hover {
-    background: oklch(0.40 0.13 46) !important;
-    border-color: oklch(0.40 0.13 46) !important;
-}
+/* ── 14b. Contact phone CTA stilleri — WhatsApp/CTA bloğunun hemen altında (14b-taşındı) ─ */
 
 /* ── 15. Final: ensure h2 em color is consistent everywhere ─ */
 h2 em, h3 em {
@@ -767,7 +854,34 @@ h2 em, h3 em {
     filter: grayscale(.9) saturate(.7) invert(.9) hue-rotate(180deg) brightness(.58) contrast(1.05);
 }
 
-/* WhatsApp — tek tip: düz marka yeşili, renkli glow yok (tüm sayfa) */
+/* ── BUTONLAR — tutarlı hover / active (düz yüzey, lift yok) ── */
+.btn-primary,
+.btn-secondary,
+.btn-hero-cta,
+.btn-whatsapp,
+a[class*="btn-"] {
+    transition: var(--btn-ease) !important;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover,
+.btn-hero-cta:hover,
+.btn-whatsapp:hover,
+.btn-primary:active,
+.btn-secondary:active,
+.btn-hero-cta:active,
+.btn-whatsapp:active,
+a[class*="btn-"]:hover,
+a[class*="btn-"]:active {
+    transform: none !important;
+}
+
+a.cta-glow,
+a.cta-glow:hover {
+    box-shadow: none !important;
+}
+
+/* WhatsApp — dolu yeşil */
 a[href*="wa.me"].btn-primary,
 a[href*="wa.me"].btn-secondary,
 a[href*="wa.me"].btn-small,
@@ -796,13 +910,102 @@ a[href*="wa.me"].btn-primary:active,
 a[href*="wa.me"].btn-secondary:active,
 a[href*="wa.me"].btn-small:active,
 a[href*="wa.me"].btn-large:active,
+a[href*="wa.me"].btn-hero-cta:active,
 .btn-whatsapp:active {
     background: var(--whatsapp-press) !important;
+    border-color: rgba(0, 0, 0, 0.12) !important;
 }
 
-a[href*="wa.me"].cta-glow,
-a[href*="wa.me"].cta-glow:hover {
+/* Kalan birincil — premium.css hover/glow iptal (dolu tonlar aşağıda) */
+a.btn-primary:not([href*="wa.me"]):not(.btn-hero-cta):not([href^="tel"]) {
     box-shadow: none !important;
+}
+
+a.btn-primary:not([href*="wa.me"]):not(.btn-hero-cta):not([href^="tel"]):hover,
+a.btn-primary:not([href*="wa.me"]):not(.btn-hero-cta):not([href^="tel"]):active {
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+/* İkincil — koyu zemin: ince çerçeve, hafif dolgu (cream patlaması yok) */
+a.btn-secondary:not([href*="wa.me"]):not(.btn-secondary--light),
+button.btn-secondary:not([href*="wa.me"]):not(.btn-secondary--light) {
+    background: transparent !important;
+    border: 1px solid var(--btn-outline-border) !important;
+    color: var(--cream) !important;
+    box-shadow: none !important;
+}
+
+a.btn-secondary:not([href*="wa.me"]):not(.btn-secondary--light):hover,
+button.btn-secondary:not([href*="wa.me"]):not(.btn-secondary--light):hover,
+.faq-answer .btn-secondary:not([href*="wa.me"]):hover,
+.local-cta-buttons .btn-secondary:not([href*="wa.me"]):hover,
+.pas-cta .btn-secondary:not([href*="wa.me"]):hover {
+    background: var(--btn-outline-fill-hover) !important;
+    border-color: var(--btn-outline-border-hover) !important;
+    color: var(--cream) !important;
+    box-shadow: none !important;
+}
+
+a.btn-secondary:not([href*="wa.me"]):not(.btn-secondary--light):active,
+button.btn-secondary:not([href*="wa.me"]):not(.btn-secondary--light):active {
+    background: var(--btn-outline-fill-press) !important;
+}
+
+/* Krem CTA yüzeyi — hero ile aynı (son söz; outline’ın üstünde) */
+.hero-cta .btn-hero-cta,
+a.btn-hero-cta:not([href*="wa.me"]),
+.closing-cta .btn-primary:not([href*="wa.me"]),
+.closing-cta .btn-secondary--light,
+.how-it-works-cta .btn-primary:not([href*="wa.me"]),
+.local-cta-buttons .btn-primary:not([href*="wa.me"]),
+.contact-cards .contact-card > a.btn-secondary:not([href*="wa.me"]),
+.contact-section .contact-buttons a.btn-primary[href^="tel:"] {
+    background: var(--cream) !important;
+    color: var(--ink) !important;
+    border: 1px solid var(--cta-edge) !important;
+    box-shadow: none !important;
+    border-radius: 999px;
+    font-weight: 700;
+}
+
+.hero-cta .btn-hero-cta:hover,
+a.btn-hero-cta:not([href*="wa.me"]):hover,
+.closing-cta .btn-primary:not([href*="wa.me"]):hover,
+.closing-cta .btn-secondary--light:hover,
+.how-it-works-cta .btn-primary:not([href*="wa.me"]):hover,
+.local-cta-buttons .btn-primary:not([href*="wa.me"]):hover,
+.contact-cards .contact-card > a.btn-secondary:not([href*="wa.me"]):hover,
+.contact-section .contact-buttons a.btn-primary[href^="tel:"]:hover {
+    background: var(--btn-cream-hover) !important;
+    color: var(--ink) !important;
+    border-color: var(--btn-cream-border-hover) !important;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35) !important;
+    filter: brightness(1.04);
+}
+
+.hero-cta .btn-hero-cta:active,
+a.btn-hero-cta:not([href*="wa.me"]):active,
+.closing-cta .btn-primary:not([href*="wa.me"]):active,
+.closing-cta .btn-secondary--light:active,
+.how-it-works-cta .btn-primary:not([href*="wa.me"]):active,
+.local-cta-buttons .btn-primary:not([href*="wa.me"]):active,
+.contact-cards .contact-card > a.btn-secondary:not([href*="wa.me"]):active,
+.contact-section .contact-buttons a.btn-primary[href^="tel:"]:active {
+    background: var(--btn-cream-press) !important;
+    border-color: oklch(0.52 0.11 52 / 0.5) !important;
+    box-shadow: none !important;
+    filter: none;
+}
+
+.closing-cta .btn-secondary--light,
+.contact-cards .contact-card > a.btn-secondary:not([href*="wa.me"]),
+.contact-section .contact-buttons a.btn-primary[href^="tel:"],
+.local-cta-buttons .btn-primary[href^="tel:"] {
+    padding: 16px 26px !important;
+    font-size: 15px;
+    letter-spacing: -0.01em;
+    min-height: 48px;
 }
 
 .navbar .btn-whatsapp {
@@ -830,11 +1033,16 @@ a[href*="wa.me"].cta-glow:hover {
     border: 1px solid rgba(0, 0, 0, 0.08);
     text-decoration: none;
     font-weight: 700;
+    transition: var(--btn-ease);
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
 }
 .floating-whatsapp:hover {
     background: var(--whatsapp-hover);
     color: #fff;
+    transform: none;
+}
+.floating-whatsapp:active {
+    background: var(--whatsapp-press);
 }
 
 .testimonial-card { min-height: 280px; }

@@ -7,8 +7,12 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://ezgimuzik.com/guitar.png</image:loc>
-      <image:title>Gitar - Ezgi Müzik Bolu</image:title>
+      <image:loc>https://ezgimuzik.com/hero-instrument-poster.png</image:loc>
+      <image:title>Akustik gitar - Ezgi Müzik Bolu</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ezgimuzik.com/baglama.png</image:loc>
+      <image:title>Bağlama - Ezgi Müzik Bolu</image:title>
     </image:image>
     <image:image>
       <image:loc>https://ezgimuzik.com/piano.png</image:loc>
