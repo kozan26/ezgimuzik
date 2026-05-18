@@ -40,6 +40,18 @@ main {
     flex-direction: column;
 }
 
+html.section-transitions-enabled main > section {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 520ms ease, transform 520ms ease;
+    will-change: opacity, transform;
+}
+
+html.section-transitions-enabled main > section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .about-section { order: 1; }
 .trusted-brands { order: 2; }
 .pas-section { order: 3; }
@@ -2254,6 +2266,10 @@ html.site-loading body {
         animation-duration: .01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: .01ms !important;
+    }
+    html.section-transitions-enabled main > section {
+        opacity: 1 !important;
+        transform: none !important;
     }
 }
 

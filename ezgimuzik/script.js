@@ -197,5 +197,28 @@ document.addEventListener('DOMContentLoaded', function() {
         window.addEventListener('scroll', toggleBtn, { passive: true });
         backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
     }
+
+    // Slight section transition on scroll
+    const sections = Array.from(document.querySelectorAll('main > section'));
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (sections.length && !prefersReducedMotion && 'IntersectionObserver' in window) {
+        document.documentElement.classList.add('section-transitions-enabled');
+
+        const sectionObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            });
+        }, {
+            threshold: 0.14,
+            rootMargin: '0px 0px -8% 0px'
+        });
+
+        sections.forEach((section) => sectionObserver.observe(section));
+    } else {
+        sections.forEach((section) => section.classList.add('is-visible'));
+    }
 });
 
