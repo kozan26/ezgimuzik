@@ -142,6 +142,9 @@
 .hero-headline-editorial {
     margin-bottom: clamp(14px, 1.5vw, 20px) !important;
 }
+.hero-headline-editorial .headline-no-break {
+    white-space: nowrap;
+}
 .hero-subtitle {
     margin-bottom: clamp(22px, 2.6vw, 32px);
 }
@@ -156,7 +159,8 @@
     max-width: 720px;
 }
 .hero-top-section {
-    margin-top: clamp(56px, 9vh, 104px);
+    margin-top: clamp(64px, 10vh, 112px);
+    margin-bottom: clamp(10px, 1.4vw, 14px);
 }
 .hero-cta { width: auto; }
 .hero-cta .btn-hero-cta {
@@ -524,7 +528,8 @@
 
 @media (max-width: 768px) {
     .hero-top-section {
-        margin-top: clamp(44px, 8vh, 72px) !important;
+        margin-top: clamp(48px, 8vh, 76px) !important;
+        margin-bottom: 12px !important;
     }
     .hero-social-proof {
         width: 100%;
@@ -589,7 +594,8 @@
 
 @media (max-width: 480px) {
     .hero-top-section {
-        margin-top: clamp(38px, 7vh, 60px) !important;
+        margin-top: clamp(42px, 7vh, 64px) !important;
+        margin-bottom: 10px !important;
     }
     .social-proof-bar {
         padding: 12px 8px !important;
