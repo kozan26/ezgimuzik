@@ -144,7 +144,7 @@ html.site-loading body {
 
 .section-header p {
     font-size: 1.1rem;
-    color: var(--gray-600);
+    color: var(--gray-700);
     max-width: 700px;
     margin: 0 auto;
     line-height: 1.7;
@@ -304,9 +304,10 @@ html.site-loading body {
 }
 
 .nav-logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: auto;
+    row-gap: 4px;
+    align-items: start;
 }
 
 .logo-text {
@@ -316,31 +317,34 @@ html.site-loading body {
     color: var(--white);
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
 }
 .logo-icon {
     color: var(--primary-light);
     font-size: 24px;
 }
 .site-logo-mark {
-    width: 36px;
-    height: 36px;
+    width: 42px;
+    height: 42px;
     display: block;
     object-fit: contain;
     filter: drop-shadow(0 4px 14px oklch(0.10 0.02 58 / .34));
 }
 
 .logo-tagline {
-    font-size: 0.72rem;
-    font-weight: 500;
+    font-size: clamp(.8rem, .95vw, .9rem);
+    font-weight: 600;
+    line-height: 1.25;
     color: rgba(255,255,255,.9);
     background: rgba(255,255,255,.1);
     backdrop-filter: blur(8px);
     border: 1px solid rgba(255,255,255,.15);
     border-radius: 16px;
-    padding: 0.3rem 0.65rem;
+    padding: .38rem .8rem;
     white-space: nowrap;
     transition: var(--ease);
+    margin-left: 54px;
+    justify-self: start;
 }
 .logo-tagline:hover {
     background: rgba(255,255,255,.18);
@@ -574,8 +578,8 @@ html.site-loading body {
 }
 .proof-rating { min-width: 4.2ch; }
 .proof-number { min-width: 6.8ch; text-align: right; }
-.proof-reviews { min-width: 7ch; font-size: .7rem; color: rgba(255,255,255,.7); font-weight: 500; }
-.proof-label   { font-size: .7rem; color: rgba(255,255,255,.7); font-weight: 500; }
+.proof-reviews { min-width: 7ch; font-size: .7rem; color: rgba(255,255,255,.84); font-weight: 550; }
+.proof-label   { font-size: .7rem; color: rgba(255,255,255,.84); font-weight: 550; }
 .proof-icon {
     font-size: 1.02rem;
     filter: drop-shadow(0 0 10px oklch(0.84 0.16 82 / .32));
@@ -1874,7 +1878,7 @@ html.site-loading body {
     justify-content: center;
     gap: 8px;
     font-size: .9rem;
-    color: rgba(255,255,255,.7);
+    color: rgba(255,255,255,.86);
     margin-bottom: 32px;
 }
 .closing-social-proof .lucide-icon { color: var(--yellow-400); font-size: 18px; }
@@ -1908,12 +1912,13 @@ html.site-loading body {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: oklch(0.92 0.045 72);
-    color: oklch(0.28 0.060 54);
-    padding: 6px 14px;
+    background: oklch(0.95 0.052 72);
+    color: oklch(0.22 0.070 54);
+    border: 1px solid oklch(0.76 0.07 64 / .52);
+    padding: 7px 14px;
     border-radius: 20px;
-    font-weight: 600;
-    font-size: .82rem;
+    font-weight: 700;
+    font-size: .86rem;
     margin: 8px auto 0;
 }
 .contact-cards {
@@ -2156,7 +2161,7 @@ html.site-loading body {
 }
 .footer-tagline {
     font-size: .92rem;
-    color: oklch(0.78 0.014 72);
+    color: oklch(0.86 0.014 72);
     line-height: 1.55;
     margin: 0 0 14px;
     max-width: 38ch;
@@ -2175,7 +2180,7 @@ html.site-loading body {
     border: 1px solid rgba(255,255,255,.08);
     border-radius: 999px;
     text-decoration: none;
-    color: var(--gray-300);
+    color: oklch(0.90 0.010 72);
     font-size: .8rem;
     font-weight: 600;
     transition: var(--ease);
@@ -2212,15 +2217,15 @@ html.site-loading body {
     gap: 8px;
 }
 .footer-links li { font-size: .9rem; color: oklch(0.74 0.014 72); line-height: 1.45; }
-.footer-links a { color: var(--gray-400); text-decoration: none; transition: color .2s ease; }
+.footer-links a { color: oklch(0.86 0.012 72); text-decoration: none; transition: color .2s ease; }
 .footer-links a:hover { color: var(--white); }
 .footer-contact {
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
-.footer-contact p { font-size: .9rem; color: oklch(0.74 0.014 72); margin: 0; line-height: 1.45; }
-.footer-contact a { color: var(--gray-300); text-decoration: none; }
+.footer-contact p { font-size: .9rem; color: oklch(0.84 0.014 72); margin: 0; line-height: 1.45; }
+.footer-contact a { color: oklch(0.90 0.010 72); text-decoration: none; }
 .footer-contact a:hover { color: var(--primary-light); }
 .footer-bottom {
     display: flex;
@@ -2231,13 +2236,13 @@ html.site-loading body {
     flex-wrap: wrap;
     gap: 12px;
 }
-.footer-bottom p { font-size: .78rem; color: var(--gray-500); margin: 0; }
+.footer-bottom p { font-size: .78rem; color: oklch(0.76 0.010 72); margin: 0; }
 .footer-trust {
     display: flex;
     align-items: center;
     gap: 6px;
     font-size: .78rem;
-    color: var(--gray-500);
+    color: oklch(0.76 0.010 72);
 }
 .footer-trust .lucide-icon { color: var(--primary); font-size: 16px; }
 
