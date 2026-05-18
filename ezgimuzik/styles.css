@@ -84,6 +84,9 @@ html.site-loading body {
     --red-500:      oklch(0.62 0.19 28);
     --yellow-400:   oklch(0.82 0.15 78);
     --umber-600:    oklch(0.28 0.05 55);
+    --whatsapp: #25D366;
+    --whatsapp-hover: #20BA5A;
+    --whatsapp-press: #128C7E;
 
     /* Grays */
     --gray-50:  oklch(0.98 0.006 72);
@@ -206,10 +209,10 @@ html.site-loading body {
 .btn-small { padding: 8px 16px;  font-size: 13px; }
 
 .btn-whatsapp {
-    background: #25D366 !important;
+    background: var(--whatsapp) !important;
     color: var(--white) !important;
     border: none !important;
-    box-shadow: 0 4px 12px rgba(0,0,0,.2) !important;
+    box-shadow: none !important;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -230,12 +233,12 @@ html.site-loading body {
     flex: 0 0 auto;
 }
 .btn-whatsapp:hover {
-    background: #20BA5A !important;
+    background: var(--whatsapp-hover) !important;
     transform: translateY(-2px) !important;
-    box-shadow: 0 8px 20px rgba(0,0,0,.25) !important;
+    box-shadow: none !important;
 }
 .btn-whatsapp:focus-visible {
-    outline: 2px solid #25D366;
+    outline: 2px solid var(--white);
     outline-offset: 2px;
 }
 
@@ -1742,7 +1745,7 @@ html.site-loading body {
         linear-gradient(180deg, oklch(0.94 0.018 74), oklch(0.975 0.007 72));
 }
 .faq-container {
-    max-width: 680px;
+    max-width: min(640px, 100%);
     margin: 0 auto 40px;
     border-top: 1px solid oklch(0.78 0.035 72);
 }
@@ -1776,11 +1779,15 @@ html.site-loading body {
     font-weight: 800;
     color: oklch(0.18 0.020 58);
     margin: 0;
-    flex: 1;
+    flex: 1 1 0;
+    min-width: 0;
     padding-right: 16px;
-    line-height: 1.4;
-    max-width: 36ch;
-    text-wrap: balance;
+    line-height: 1.35;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
 }
 .faq-toggle {
     width: 32px;
@@ -2013,9 +2020,6 @@ html.site-loading body {
     font-size: 13px !important;
     padding: 9px 14px !important;
     font-weight: 700 !important;
-}
-.contact-buttons .btn-whatsapp {
-    box-shadow: 0 8px 18px rgba(37, 211, 102, .22) !important;
 }
 .contact-map {
     background: oklch(0.985 0.006 72);

@@ -1,0 +1,259 @@
+{
+  "generatedAt": "2026-05-18T10:00:52.783Z",
+  "useWikidata": false,
+  "count": 36,
+  "brands": [
+    {
+      "key": "YAMAHA",
+      "file": "yamaha",
+      "domain": "yamaha.com",
+      "officialUrl": "https://www.yamaha.com/",
+      "primaryUrl": "https://www.yamaha.com/"
+    },
+    {
+      "key": "KAWAI",
+      "file": "kawai",
+      "domain": "kawai-global.com",
+      "officialUrl": "https://www.kawai.com/",
+      "primaryUrl": "https://www.kawai.com/"
+    },
+    {
+      "key": "CASIO",
+      "file": "casio",
+      "domain": "casio.com",
+      "officialUrl": "https://www.casio.com/",
+      "primaryUrl": "https://www.casio.com/"
+    },
+    {
+      "key": "PEARL RIVER",
+      "file": "pearl-river",
+      "domain": "pearlriverpiano.com",
+      "officialUrl": "https://www.pearlriverpiano.com/",
+      "primaryUrl": "https://www.pearlriverpiano.com/"
+    },
+    {
+      "key": "IBANEZ",
+      "file": "ibanez",
+      "domain": "ibanez.com",
+      "officialUrl": "https://www.ibanez.com/",
+      "primaryUrl": "https://www.ibanez.com/"
+    },
+    {
+      "key": "MARSHALL",
+      "file": "marshall",
+      "domain": "marshall.com",
+      "officialUrl": "https://www.marshall.com/",
+      "primaryUrl": "https://www.marshall.com/"
+    },
+    {
+      "key": "TAKAMINE",
+      "file": "takamine",
+      "domain": "takamine.com",
+      "officialUrl": "https://www.takamine.com/",
+      "primaryUrl": "https://www.takamine.com/"
+    },
+    {
+      "key": "WASHBURN",
+      "file": "washburn",
+      "domain": "washburn.com",
+      "officialUrl": "https://washburn.com/",
+      "primaryUrl": "https://washburn.com/"
+    },
+    {
+      "key": "CÓRDOBA",
+      "file": "cordoba",
+      "domain": "cordobaguitars.com",
+      "officialUrl": "https://www.cordobaguitars.com/",
+      "primaryUrl": "https://www.cordobaguitars.com/"
+    },
+    {
+      "key": "PRS GUITARS",
+      "file": "prs-guitars",
+      "domain": "prsguitars.com",
+      "officialUrl": "https://www.prsguitars.com/",
+      "primaryUrl": "https://www.prsguitars.com/"
+    },
+    {
+      "key": "SCHECTER",
+      "file": "schecter",
+      "domain": "schecterguitars.com",
+      "officialUrl": "https://www.schecterguitars.com/",
+      "primaryUrl": "https://www.schecterguitars.com/"
+    },
+    {
+      "key": "BLACKSTAR",
+      "file": "blackstar",
+      "domain": "blackstaramps.com",
+      "officialUrl": "https://www.blackstaramps.com/",
+      "primaryUrl": "https://www.blackstaramps.com/"
+    },
+    {
+      "key": "ORANGE",
+      "file": "orange",
+      "domain": "orangeamps.com",
+      "officialUrl": "https://orangeamps.com/",
+      "primaryUrl": "https://orangeamps.com/"
+    },
+    {
+      "key": "GRETSCH",
+      "file": "gretsch",
+      "domain": "gretschguitars.com",
+      "officialUrl": "https://www.gretschguitars.com/",
+      "primaryUrl": "https://www.gretschguitars.com/"
+    },
+    {
+      "key": "AMPEG",
+      "file": "ampeg",
+      "domain": "ampeg.com",
+      "officialUrl": "https://ampeg.com/",
+      "primaryUrl": "https://ampeg.com/"
+    },
+    {
+      "key": "FISHMAN",
+      "file": "fishman",
+      "domain": "fishman.com",
+      "officialUrl": "https://www.fishman.com/",
+      "primaryUrl": "https://www.fishman.com/"
+    },
+    {
+      "key": "ERNIE BALL",
+      "file": "ernie-ball",
+      "domain": "ernieball.com",
+      "officialUrl": "https://www.ernieball.com/",
+      "primaryUrl": "https://www.ernieball.com/"
+    },
+    {
+      "key": "DUNLOP",
+      "file": "dunlop",
+      "domain": "jimdunlop.com",
+      "officialUrl": "https://www.jimdunlop.com/",
+      "primaryUrl": "https://www.jimdunlop.com/"
+    },
+    {
+      "key": "ZILDJIAN",
+      "file": "zildjian",
+      "domain": "zildjian.com",
+      "officialUrl": "https://zildjian.com/",
+      "primaryUrl": "https://zildjian.com/"
+    },
+    {
+      "key": "TOCA PERCUSSION",
+      "file": "toca-percussion",
+      "domain": "tocapercussion.com",
+      "officialUrl": "https://tocapercussion.com/",
+      "primaryUrl": "https://tocapercussion.com/"
+    },
+    {
+      "key": "SONOR",
+      "file": "sonor",
+      "domain": "sonor.com",
+      "officialUrl": "https://www.sonor.com/",
+      "primaryUrl": "https://www.sonor.com/"
+    },
+    {
+      "key": "HOHNER",
+      "file": "hohner",
+      "domain": "hohner.com",
+      "officialUrl": "https://www.hohner.de/",
+      "primaryUrl": "https://www.hohner.de/"
+    },
+    {
+      "key": "SUZUKI",
+      "file": "suzuki",
+      "domain": "suzukimusic.com",
+      "officialUrl": "https://www.suzukimusic.com/",
+      "primaryUrl": "https://www.suzukimusic.com/"
+    },
+    {
+      "key": "GODIN",
+      "file": "godin",
+      "domain": "godinguitars.com",
+      "officialUrl": "https://www.godinguitars.com/",
+      "primaryUrl": "https://www.godinguitars.com/"
+    },
+    {
+      "key": "GUILD",
+      "file": "guild",
+      "domain": "guildguitars.com",
+      "officialUrl": "https://guildguitars.com/",
+      "primaryUrl": "https://guildguitars.com/"
+    },
+    {
+      "key": "ZOOM",
+      "file": "zoom",
+      "domain": "zoomcorp.com",
+      "officialUrl": "https://www.zoomcorp.com/",
+      "primaryUrl": "https://www.zoomcorp.com/"
+    },
+    {
+      "key": "DIGITECH",
+      "file": "digitech",
+      "domain": "digitech.com",
+      "officialUrl": "https://www.digitech.com/",
+      "primaryUrl": "https://www.digitech.com/"
+    },
+    {
+      "key": "L&G",
+      "file": "l-and-g",
+      "domain": "lagguitars.com",
+      "officialUrl": "https://www.lagguitars.com/",
+      "primaryUrl": "https://www.lagguitars.com/"
+    },
+    {
+      "key": "RÖSLER",
+      "file": "rosler",
+      "domain": "roslerpiano.com",
+      "officialUrl": "https://www.roslerpiano.com/",
+      "primaryUrl": "https://www.roslerpiano.com/"
+    },
+    {
+      "key": "R RAIMUNDO",
+      "file": "r-raimundo",
+      "domain": "guitarrasraimundo.com",
+      "officialUrl": "https://guitarrasraimundo.com/",
+      "primaryUrl": "https://guitarrasraimundo.com/"
+    },
+    {
+      "key": "ASHTON",
+      "file": "ashton",
+      "domain": "ashtonmusic.com.au",
+      "officialUrl": "https://www.ashtonmusic.com.au/",
+      "primaryUrl": "https://www.ashtonmusic.com.au/"
+    },
+    {
+      "key": "TOLEDO GUITARRAS",
+      "file": "toledo-guitarras",
+      "domain": "guitarrastoledo.com",
+      "officialUrl": "https://guitarrastoledo.com/",
+      "primaryUrl": "https://guitarrastoledo.com/"
+    },
+    {
+      "key": "GIBRALTAR",
+      "file": "gibraltar",
+      "domain": "gibraltarhardware.com",
+      "officialUrl": "https://www.gibraltarhardware.com/",
+      "primaryUrl": "https://www.gibraltarhardware.com/"
+    },
+    {
+      "key": "SX",
+      "file": "sx",
+      "domain": "sx-guitars.com",
+      "officialUrl": "https://www.sx-guitars.com/",
+      "primaryUrl": "https://www.sx-guitars.com/"
+    },
+    {
+      "key": "JP JOHN PACKER",
+      "file": "jp-john-packer",
+      "domain": "johnpacker.co.uk",
+      "officialUrl": "https://www.johnpacker.co.uk/",
+      "primaryUrl": "https://www.johnpacker.co.uk/"
+    },
+    {
+      "key": "STENOR",
+      "file": "stenor",
+      "domain": "stentor-music.com",
+      "officialUrl": "https://www.stentor-music.com/",
+      "primaryUrl": "https://www.stentor-music.com/"
+    }
+  ]
+}

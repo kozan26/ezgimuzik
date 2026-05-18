@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="tr" class="site-loading">
+<html lang="tr" class="site-loading" data-brandfetch-cid="1id8xWYckfIJNeEa7XS" data-brandfetch-local-logos="true">
 <head>
+    <!-- Brandfetch Logo API client id (kamu). Yerel brand-logos-svg/ kullanacaksanız: data-brandfetch-local-logos="true" ekleyin (önce yerel, sonra CDN). -->
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CEE522S543"></script>
     <script>
@@ -12,6 +13,7 @@
     </script>
     
     <meta charset="UTF-8">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO Meta Tags -->
@@ -476,7 +478,7 @@
 
     <!-- Hero Section -->
     <header class="hero" role="banner">
-        <video class="hero-background-video" autoplay muted loop playsinline preload="metadata" poster="hero-instrument-poster.png" aria-hidden="true">
+        <video class="hero-background-video" autoplay muted playsinline preload="metadata" poster="guitar.png" data-start-time="2.4" aria-hidden="true">
             <source src="hero-instrument.mp4" type="video/mp4">
         </video>
         <div class="container">
@@ -608,10 +610,24 @@
         <section class="about-section">
             <div class="container">
                 <span class="section-eyebrow section-eyebrow--center">Hakkımızda</span>
-                <h2 style="text-align: center;">Bir mağazadan <em>fazlası.</em></h2>
-                <p style="font-size: 1.125rem; line-height: 1.7; max-width: 800px; margin: 0 auto; text-align: center; color: #4B5563;">
-                    <strong>Ezgi Müzik</strong>, Bolu'nun İzzet Baysal Caddesi'nde 25 yılı aşkın süredir müzik severlere hizmet veren köklü bir müzik mağazasıdır. <strong>Ezgi Müzik Bolu</strong> olarak Yamaha, Kawai, Marshall gibi dünya çapında ünlü markaların yetkili bayisi olarak gitar, piyano, keman, saz ve tüm müzik enstrümanlarını uygun fiyatlarla sunmaktadır. Ücretsiz deneme imkanı, uzman danışmanlık ve ömür boyu destek hizmetleriyle müzik tutkunlarının yanındayız.
-                </p>
+                <h2 style="text-align: center;">Bir mağazadan fazlası.</h2>
+                <div class="about-feature-grid" aria-label="Ezgi Müzik temel avantajları">
+                    <article class="about-feature-card">
+                        <i data-lucide="compass" class="lucide-icon" aria-hidden="true"></i>
+                        <h3>Uzman seçim</h3>
+                        <p>Seviyenize, bütçenize ve müzik hedefinize göre net, dürüst öneri sunuyoruz.</p>
+                    </article>
+                    <article class="about-feature-card">
+                        <i data-lucide="hand" class="lucide-icon" aria-hidden="true"></i>
+                        <h3>Mağazada deneme</h3>
+                        <p>Enstrümanı satın almadan önce deneyip sesini ve hissini yerinde karşılaştırın.</p>
+                    </article>
+                    <article class="about-feature-card">
+                        <i data-lucide="shield-check" class="lucide-icon" aria-hidden="true"></i>
+                        <h3>Ömür boyu destek</h3>
+                        <p>Satış sonrası akort, bakım ve yönlendirme ile müzik yolculuğunuzda yanınızdayız.</p>
+                    </article>
+                </div>
             </div>
         </section>
 
@@ -719,12 +735,12 @@
         <div class="container">
             <div class="section-header section-header--editorial">
                 <span class="section-eyebrow">Felsefemiz</span>
-                <h2>Sorunu anlıyor,<br><em>çözümü</em> net sunuyoruz.</h2>
+                <h2>Sorunu anlıyor,<br>çözümü net sunuyoruz.</h2>
                 <p>Yanlış enstrüman riskini netleştirelim, doğru seçimi birlikte hızlandıralım.</p>
             </div>
             <div class="pas-content">
                 <div class="pas-column pas-problem">
-                    <span class="pas-column-label">Problem</span>
+                    <span class="pas-column-label">Yaygın sorunlar</span>
                     <div class="pas-icon">
                         <i data-lucide="triangle-alert" class="lucide-icon" aria-hidden="true"></i>
                     </div>
@@ -776,7 +792,7 @@
                 </div>
                 
                 <div class="pas-column pas-solution">
-                    <span class="pas-column-label">Çözüm</span>
+                    <span class="pas-column-label">Bizim yaklaşımımız</span>
                     <div class="pas-icon">
                         <i data-lucide="circle-check" class="lucide-icon" aria-hidden="true"></i>
                     </div>
@@ -788,7 +804,7 @@
                 </div>
                         <div class="pas-point">
                             <i data-lucide="check" class="lucide-icon" aria-hidden="true"></i>
-                            <span>25+ yıllık uzman danışmanlığı</span>
+                            <span>Uzman danışmanlık ve yönlendirme</span>
                         </div>
                         <div class="pas-point">
                             <i data-lucide="check" class="lucide-icon" aria-hidden="true"></i>
@@ -812,7 +828,7 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-eyebrow section-eyebrow--center">Müşterilerimiz</span>
-                <h2>10.000+ müzisyen, <em>tek bir adres.</em></h2>
+                <h2>10.000+ müzisyen, tek bir adres.</h2>
                 <p>Gerçek deneyimler, gerçek müzisyenlerden. Neden Ezgi Müzik'i tercih ettiklerini okuyun.</p>
             </div>
 
@@ -827,7 +843,7 @@
                 </div>
                 <div class="metric-pill">
                     <i data-lucide="badge-check" class="lucide-icon" aria-hidden="true"></i>
-                    <span><strong>25+ yıl</strong> uzmanlık</span>
+                    <span><strong>Uzman</strong> danışmanlık</span>
                 </div>
             </div>
 
@@ -916,7 +932,7 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-eyebrow section-eyebrow--center">Koleksiyon & Fayda</span>
-                <h2>Her ses, <em>kendi sahnesinde.</em></h2>
+                <h2>Her ses, kendi sahnesinde.</h2>
                 <p>4 temel avantajımızı tek alanda inceleyin. Kaydırarak size en uygun çözümü görün.</p>
             </div>
 
@@ -1016,7 +1032,7 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-eyebrow section-eyebrow--center">Süreç</span>
-                <h2>Üç adımda, <em>doğru karar.</em></h2>
+                <h2>Üç adımda, doğru karar.</h2>
                 <p>Kısa bir süreçle ihtiyacınıza uygun enstrümanı birlikte netleştirelim.</p>
                     </div>
             
@@ -1066,7 +1082,7 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-eyebrow section-eyebrow--center">Sorularınız</span>
-                <h2>Aklınızda <em>soru kalmasın.</em></h2>
+                <h2>Aklınızda soru kalmasın.</h2>
                 <p>Sıkça sorulan her şeyi yanıtladık.</p>
             </div>
             
@@ -1106,12 +1122,12 @@
                 
                 <div class="faq-item">
                     <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-4">
-                        <h3>Ürünü denemeden almak zorunda mıyım?</h3>
+                        <h3>Bolu dışına kargo ile gönderim yapıyor musunuz?</h3>
                         <span class="faq-toggle" aria-hidden="true">+</span>
                     </button>
                     <div class="faq-answer" id="faq-answer-4">
-                        <p>Hayır, denemeden almak zorunda değilsiniz. Farklı modelleri mağazada karşılaştırıp sesi ve hissi görerek karar verebilirsiniz.</p>
-                        <a href="#contact" class="btn-secondary btn-small">Deneme Planla</a>
+                        <p>Evet. Bolu dışına güvenli paketleme ile kargo gönderimi yapıyoruz; teslim öncesi model ve kurulum detaylarını birlikte netleştiriyoruz.</p>
+                        <a href="https://wa.me/905332127432" class="btn-secondary btn-small">Kargo Sürecini Sor</a>
                     </div>
                 </div>
                 
@@ -1140,12 +1156,12 @@
 
                 <div class="faq-item">
                     <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-7">
-                        <h3>Mağazaya gelmeden online sipariş verebilir miyim?</h3>
+                        <h3>Müzik dersi de veriyor musunuz?</h3>
                         <span class="faq-toggle" aria-hidden="true">+</span>
                     </button>
                     <div class="faq-answer" id="faq-answer-7">
-                        <p>Evet, telefon veya WhatsApp üzerinden sipariş verebilirsiniz. Mümkünse önce mağazada denemenizi öneririz, uzaktaysanız kargo ile gönderim yaparız.</p>
-                        <a href="https://wa.me/905332127432" class="btn-secondary btn-small">WhatsApp'tan Sipariş Ver</a>
+                        <p>Doğrudan ders hizmeti vermiyoruz, fakat seviyenize uygun eğitmen ve kurum önerisi konusunda yönlendirme sağlıyoruz.</p>
+                        <a href="https://wa.me/905332127432" class="btn-secondary btn-small">Eğitmen Önerisi İçin Sor</a>
                     </div>
                 </div>
             </div>
@@ -1157,7 +1173,7 @@
         <div class="container">
             <div class="closing-content">
                 <span class="section-eyebrow section-eyebrow--center section-eyebrow--light">Son söz</span>
-                <h2>Doğru enstrümanı <em>birlikte</em> seçelim.</h2>
+                <h2>Hâlâ kararsız mısınız, <em>gelin birlikte çalalım.</em></h2>
                 <p class="closing-subtitle">Mağazaya gelin, deneyin, sorun. Bütçenize ve seviyenize en uygun enstrümanı birlikte bulalım.</p>
 
                 <div class="closing-benefits closing-benefits--condensed">
@@ -1193,7 +1209,7 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-eyebrow">Konum &amp; Saatler</span>
-                <h2 id="contact-heading">Bolu merkezinde, <em>İzzet Baysal'da.</em></h2>
+                <h2 id="contact-heading">Bolu merkezinde, İzzet Baysal'da.</h2>
                 <p class="contact-urgency">Pazartesi–Cumartesi · 09:30–19:00 · Pazar kapalı</p>
                         </div>
             
@@ -1239,7 +1255,7 @@
             
             <div class="contact-map">
                 <h3>Konumumuz</h3>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.438536408074!2d31.59845607591345!3d40.73037497139083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x409d3f6e8abb45b3%3A0xfdb528b2a8f731ae!2sEzgi%20M%C3%BCzik!5e0!3m2!1str!2str!4v1760192463003!5m2!1str!2str" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe class="contact-map-embed" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.438536408074!2d31.59845607591345!3d40.73037497139083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x409d3f6e8abb45b3%3A0xfdb528b2a8f731ae!2sEzgi%20M%C3%BCzik!5e0!3m2!1str!2str!4v1760192463003!5m2!1str!2str" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </section>
@@ -1251,7 +1267,7 @@
         <div class="container">
             <div class="local-content-header">
                 <span class="section-eyebrow">Hizmet Bölgelerimiz</span>
-                <h2>Bolu'dan başlayan, <em>tüm bölgeye</em> uzanan hizmet.</h2>
+                <h2>Bolu'dan başlayan, tüm bölgeye uzanan hizmet.</h2>
                 <p>İzzet Baysal Caddesi'ndeki mağazamızdan Bolu merkez, çevre ilçeler ve Düzce–Ankara hattına müzik enstrümanı, kurulum ve danışmanlık hizmeti sunuyoruz.</p>
             </div>
             
@@ -1293,36 +1309,10 @@
                 </article>
             </div>
             
-            <div class="local-directory">
-                <div class="local-directory-intro">
-                    <span class="section-eyebrow">Bolu'da Aradıklarınız</span>
-                    <h3>Mağazamızda neler var?</h3>
-                    <p>Bolu'da müzik mağazası ararken sıkça karşılaştığımız sorulara karşılık, mağazamızdaki başlıca enstrüman ailelerini, yetkili olduğumuz markaları ve verdiğimiz hizmetleri özetledik.</p>
-                </div>
-                <dl class="local-directory-list">
-                    <div class="local-directory-row">
-                        <dt>Enstrümanlar</dt>
-                        <dd><a href="#showcase">Gitar</a>, <a href="#showcase">piyano</a>, keman, saz, bağlama, davul, elektro &amp; akustik gitar. Bolu'da tek adresten.</dd>
-                    </div>
-                    <div class="local-directory-row">
-                        <dt>Markalar</dt>
-                        <dd>Yamaha, Kawai, Marshall, Ibanez, Takamine, Córdoba, PRS Guitars, Schecter, Casio, Zildjian yetkili bayisi.</dd>
-                    </div>
-                    <div class="local-directory-row">
-                        <dt>Hizmetler</dt>
-                        <dd>Enstrüman satışı, ücretsiz deneme, akort, ilk kurulum, bakım, uzaktan danışmanlık, kargo &amp; teslimat.</dd>
-                    </div>
-                    <div class="local-directory-row">
-                        <dt>Lokasyon</dt>
-                        <dd>İzzet Baysal Caddesi, Tabaklar Mahallesi, Meydan İşhanı No:6, Bolu merkezinin tam kalbinde.</dd>
-                    </div>
-                </dl>
-            </div>
-            
             <div class="local-cta">
                 <div class="local-cta-text">
                     <span class="section-eyebrow">Sıradaki adım</span>
-                    <h3>25+ yıllık tecrübeyle, <em>doğru ellerden.</em></h3>
+                    <h3>Yetkili bayi güvencesiyle, <em>doğru ellerden.</em></h3>
                     <p>Yamaha, Kawai, Marshall yetkili bayisi olarak Bolu ve çevresine hizmet veriyoruz. Mağazaya uğrayın veya bize ulaşın; birlikte doğru enstrümanı seçelim.</p>
                 </div>
                 <div class="local-cta-buttons">
@@ -1349,7 +1339,7 @@
                     <div class="footer-logo">
                         <span class="logo-text"><img src="logo-mark.png" alt="" class="site-logo-mark" width="34" height="34" loading="lazy" decoding="async">Ezgi Müzik</span>
                     </div>
-                    <p class="footer-tagline">Müziğiniz bizim işimiz. 25+ yıldır Bolu'nun güvenilir müzik adresi. Yamaha, Kawai &amp; Marshall yetkili bayisi.</p>
+                    <p class="footer-tagline">Müziğiniz bizim işimiz. Bolu'nun güvenilir müzik adresinde Yamaha, Kawai &amp; Marshall yetkili bayi güvencesi sunuyoruz.</p>
                     <div class="footer-social" aria-label="Sosyal medya">
                         <a href="https://www.facebook.com/ezgimuzikbolu" class="social-link" target="_blank" rel="noopener" aria-label="Facebook">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="social-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/></svg>
@@ -1406,7 +1396,7 @@
                 <div class="footer-bottom-meta">
                     <span class="footer-trust">
                         <i data-lucide="badge-check" class="lucide-icon" aria-hidden="true"></i>
-                        25+ yıllık güvenilir hizmet
+                        Güvenilir müzik danışmanlığı
                     </span>
                     <span class="footer-bottom-sep" aria-hidden="true">·</span>
                     <span class="footer-bottom-region">Bolu · Düzce · Ankara hattı</span>

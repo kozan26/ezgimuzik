@@ -24,6 +24,30 @@ if (document.readyState === 'complete') {
 
 const heroVideo = document.querySelector('.hero-background-video');
 
+if (heroVideo) {
+    const parseStartTime = () => {
+        const raw = parseFloat(heroVideo.getAttribute('data-start-time') || '0');
+        return Number.isFinite(raw) && raw >= 0 ? raw : 0;
+    };
+
+    const seekToStart = () => {
+        const startTime = parseStartTime();
+        if (heroVideo.duration && startTime < heroVideo.duration) {
+            heroVideo.currentTime = startTime;
+        }
+    };
+
+    heroVideo.addEventListener('loadedmetadata', () => {
+        seekToStart();
+        heroVideo.play().catch(() => {});
+    });
+
+    heroVideo.addEventListener('ended', () => {
+        seekToStart();
+        heroVideo.play().catch(() => {});
+    });
+}
+
 if (mobileMenuToggle) {
     mobileMenuToggle.addEventListener('click', () => {
         navActions.classList.toggle('active');
@@ -72,6 +96,179 @@ document.addEventListener('keydown', (e) => {
 
 // FAQ Accordion Functionality
 document.addEventListener('DOMContentLoaded', function() {
+    const brandLogoMap = {
+        'YAMAHA': 'yamaha.com',
+        'KAWAI': 'kawai-global.com',
+        'CASIO': 'casio.com',
+        'PEARL RIVER': 'pearlriverpiano.com',
+        'IBANEZ': 'ibanez.com',
+        'MARSHALL': 'marshall.com',
+        'TAKAMINE': 'takamine.com',
+        'WASHBURN': 'washburn.com',
+        'CÓRDOBA': 'cordobaguitars.com',
+        'PRS GUITARS': 'prsguitars.com',
+        'SCHECTER': 'schecterguitars.com',
+        'BLACKSTAR': 'blackstaramps.com',
+        'ORANGE': 'orangeamps.com',
+        'GRETSCH': 'gretschguitars.com',
+        'AMPEG': 'ampeg.com',
+        'FISHMAN': 'fishman.com',
+        'ERNIE BALL': 'ernieball.com',
+        'DUNLOP': 'jimdunlop.com',
+        'ZILDJIAN': 'zildjian.com',
+        'TOCA PERCUSSION': 'tocapercussion.com',
+        'SONOR': 'sonor.com',
+        'HOHNER': 'hohner.com',
+        'SUZUKI': 'suzukimusic.com',
+        'GODIN': 'godinguitars.com',
+        'GUILD': 'guildguitars.com',
+        'ZOOM': 'zoomcorp.com',
+        'DIGITECH': 'digitech.com',
+        /* İkinci marquee — Brandfetch için resmi / güçlü domain */
+        'L&G': 'lagguitars.com',
+        'RÖSLER': 'roslerpiano.com',
+        'R RAIMUNDO': 'guitarrasraimundo.com',
+        'ASHTON': 'ashtonmusic.com.au',
+        'TOLEDO GUITARRAS': 'guitarrastoledo.com',
+        'GIBRALTAR': 'gibraltarhardware.com',
+        'SX': 'sx-guitars.com',
+        'JP JOHN PACKER': 'johnpacker.co.uk',
+        'STENOR': 'stentor-music.com',
+    };
+
+    /** Brandfetch Logo API CDN. Client ID: index.html data-brandfetch-cid
+     *  Yerel SVG öncelikli olsun derseniz: data-brandfetch-local-logos="true"
+     *  @see https://docs.brandfetch.com/logo-api/guidelines */
+    const brandfetchCid = document.documentElement.getAttribute('data-brandfetch-cid')?.trim() || '';
+    const brandfetchLocalLogosFirst =
+        document.documentElement.getAttribute('data-brandfetch-local-logos') === 'true';
+
+    const brandfetchLogoCdnUrls = (hostname) => {
+        if (!brandfetchCid || !hostname) return [];
+        const d = encodeURIComponent(hostname);
+        const c = encodeURIComponent(brandfetchCid);
+        return [
+            `https://cdn.brandfetch.io/domain/${d}/theme/light/logo.svg?c=${c}`,
+            `https://cdn.brandfetch.io/${d}?c=${c}`,
+        ];
+    };
+
+    /* Yerel logolar — brand-logos-all/light/ (beyaz monochrome, dark theme)
+     * SVG: 18 marka | PNG: 18 marka */
+    const brandSvgMap = {
+        'YAMAHA':           'yamaha.svg',
+        'KAWAI':            'kawai.svg',
+        'CASIO':            'casio.svg',
+        'PEARL RIVER':      'pearl-river.png',
+        'IBANEZ':           'ibanez.svg',
+        'MARSHALL':         'marshall.svg',
+        'TAKAMINE':         'takamine.png',
+        'WASHBURN':         'washburn.svg',
+        'CÓRDOBA':          'cordoba.png',
+        'PRS GUITARS':      'prs-guitars.svg',
+        'SCHECTER':         'schecter.svg',
+        'BLACKSTAR':        'blackstar.svg',
+        'ORANGE':           'orange.svg',
+        'GRETSCH':          'gretsch.png',
+        'AMPEG':            'ampeg.svg',
+        'FISHMAN':          'fishman.svg',
+        'ERNIE BALL':       'ernie-ball.svg',
+        'DUNLOP':           'dunlop.png',
+        'ZILDJIAN':         'zildjian.svg',
+        'TOCA PERCUSSION':  'toca-percussion.png',
+        'SONOR':            'sonor.png',
+        'HOHNER':           'hohner.png',
+        'SUZUKI':           'suzuki.svg',
+        'GODIN':            'godin.png',
+        'GUILD':            'guild.png',
+        'ZOOM':             'zoom.svg',
+        'DIGITECH':         'digitech.svg',
+        'L&G':              'l-and-g.png',
+        'RÖSLER':           'rosler.png',
+        'R RAIMUNDO':       'r-raimundo.svg',
+        'ASHTON':           'ashton.png',
+        'TOLEDO GUITARRAS': 'toledo-guitarras.png',
+        'GIBRALTAR':        'gibraltar.png',
+        'SX':               'sx.png',
+        'JP JOHN PACKER':   'jp-john-packer.png',
+        'STENOR':           'stenor.png',
+    };
+
+    const domainSlug = (d) => d.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase();
+
+    const domainToRasterPaths = (domain) => {
+        const slug = domainSlug(domain);
+        return [`brand-logos/${slug}.png`, `brand-logos/${slug}.webp`, `brand-logos/${slug}.jpg`];
+    };
+
+    // Process only original (non-duplicate) items; rebuild clones after all loads settle
+    const originalBrandEls = [...document.querySelectorAll('.brand-item:not([aria-hidden]) .brand-name')];
+    let pendingLoads = originalBrandEls.length;
+
+    const onItemSettled = () => {
+        if (--pendingLoads > 0) return;
+        // All originals done — rebuild duplicates so both halves are identical
+        document.querySelectorAll('.brands-track').forEach(track => {
+            // Freeze animation, swap duplicates, restart
+            const savedAnim = track.style.animation;
+            track.style.animation = 'none';
+            track.querySelectorAll('[aria-hidden="true"]').forEach(el => el.remove());
+            [...track.children].forEach(orig => {
+                const clone = orig.cloneNode(true);
+                clone.setAttribute('aria-hidden', 'true');
+                track.appendChild(clone);
+            });
+            track.offsetWidth; // force reflow before re-enabling
+            track.style.animation = savedAnim;
+        });
+    };
+
+    originalBrandEls.forEach((nameEl) => {
+        const brandName = nameEl.textContent.trim().toUpperCase();
+        const domain = brandLogoMap[brandName];
+        const item = nameEl.closest('.brand-item');
+        if (!item) { onItemSettled(); return; }
+
+        if (!domain) {
+            item.style.display = 'none';
+            onItemSettled();
+            return;
+        }
+
+        const logo = document.createElement('img');
+        logo.className = 'brand-logo-img';
+        logo.alt = `${brandName} logo`;
+        logo.loading = 'lazy';
+        logo.decoding = 'async';
+        logo.referrerPolicy = 'strict-origin-when-cross-origin';
+
+        const svgPath = brandSvgMap[brandName] ? `brand-logos-all/light/${brandSvgMap[brandName]}` : null;
+        const cdnPaths = brandfetchLogoCdnUrls(domain);
+        const paths = [];
+        if (brandfetchLocalLogosFirst) {
+            if (svgPath) paths.push(svgPath);
+            paths.push(...cdnPaths);
+        } else {
+            paths.push(...cdnPaths);
+            if (svgPath) paths.push(svgPath);
+        }
+        paths.push(...domainToRasterPaths(domain));
+        let pathIndex = 0;
+        const loadNext = () => {
+            if (pathIndex >= paths.length) {
+                item.style.display = 'none';
+                onItemSettled();
+                return;
+            }
+            logo.src = paths[pathIndex++];
+        };
+        logo.onerror = loadNext;
+        logo.onload = onItemSettled;
+        loadNext();
+
+        nameEl.replaceWith(logo);
+    });
+
     const faqItems = document.querySelectorAll('.faq-item');
 
     const setExpandedState = (targetItem, isExpanded) => {
@@ -264,6 +461,28 @@ document.addEventListener('DOMContentLoaded', function() {
         window.addEventListener('scroll', toggleBtn, { passive: true });
         backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
     }
+
+    /** Ana bölüm h2 başlıklarında amber vurgu (<em>); stiller: premium-v2 — .section-header h2 em, .about-section h2 em */
+    const headingAccentPairs = [
+        ['.about-section > .container > h2', 'fazlası.'],
+        ['.pas-section .section-header h2', 'çözümü net sunuyoruz.'],
+        ['.love-wall-section .section-header h2', 'tek bir adres.'],
+        ['.how-it-works .section-header h2', 'doğru karar.'],
+        ['#instrument-guide .section-header h2', 'kendi sahnesinde.'],
+        ['.faq-section .section-header h2', 'soru kalmasın.'],
+    ];
+
+    const wrapHeadingAccent = (h2, phrase) => {
+        if (!h2 || !phrase || h2.querySelector('em')) return;
+        const html = h2.innerHTML;
+        const idx = html.indexOf(phrase);
+        if (idx === -1) return;
+        h2.innerHTML = `${html.slice(0, idx)}<em>${phrase}</em>${html.slice(idx + phrase.length)}`;
+    };
+
+    headingAccentPairs.forEach(([selector, phrase]) => {
+        wrapHeadingAccent(document.querySelector(selector), phrase);
+    });
 
     // Slight section transition on scroll
     const sections = Array.from(document.querySelectorAll('main > section'));

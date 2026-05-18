@@ -142,16 +142,13 @@ html::-webkit-scrollbar-thumb { background: var(--hair); border-radius: 3px; }
 }
 .phone-link .lucide-icon { color: var(--amber-soft); }
 
-/* Refine WhatsApp button to match boutique tone (slightly smaller, less shadow) */
+/* Refine WhatsApp button — düz marka yeşili (glow yok); ayrıntı premium-v2 */
 .btn-whatsapp {
-    background: oklch(0.65 0.16 152) !important;
-    padding: 9px 16px !important;
-    font-size: 13.5px !important;
-    box-shadow: 0 6px 18px oklch(0.50 0.14 152 / .26) !important;
-    letter-spacing: .005em !important;
+    background: #25D366 !important;
+    box-shadow: none !important;
 }
 .btn-whatsapp:hover {
-    background: oklch(0.58 0.18 152) !important;
+    background: #20BA5A !important;
 }
 
 /* ── Hero refinements ────────────────────────────────────── */
@@ -744,7 +741,7 @@ html::-webkit-scrollbar-thumb { background: var(--hair); border-radius: 3px; }
     margin-inline: auto;
 }
 .faq-container {
-    max-width: 880px;
+    max-width: 640px;
     border-top: 1px solid var(--hair);
 }
 .faq-item { border-bottom: 1px solid var(--hair); }
