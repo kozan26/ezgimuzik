@@ -851,7 +851,7 @@ h2 em, h3 em {
 }
 
 .contact-map-embed {
-    filter: grayscale(.9) saturate(.7) invert(.9) hue-rotate(180deg) brightness(.58) contrast(1.05);
+    filter: none;
 }
 
 /* ── BUTONLAR — tutarlı hover / active (düz yüzey, lift yok) ── */
@@ -1048,15 +1048,6 @@ a.btn-hero-cta:not([href*="wa.me"]):active,
 .testimonial-card { min-height: 280px; }
 .testimonial-card-featured { min-height: 320px; }
 
-.faq-section .section-header h2 em,
-.contact-section .section-header h2 em,
-.local-content-header h2 em {
-    font-style: normal !important;
-    color: var(--text-hi) !important;
-    font-family: var(--font-display) !important;
-    font-weight: 700 !important;
-}
-
 .footer {
     padding-top: clamp(56px, 7vw, 84px);
     padding-bottom: 24px;
@@ -1074,5 +1065,81 @@ a.btn-hero-cta:not([href*="wa.me"]):active,
         bottom: 12px;
         padding: 9px 12px;
         font-size: .86rem;
+    }
+}
+
+/* Header style repair for dark editorial sections */
+.section-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 0 28px;
+    color: rgba(255, 255, 255, .62);
+    font-size: .78rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+}
+
+.section-eyebrow::before {
+    display: none;
+    content: none;
+}
+
+.about-section .container {
+    text-align: center;
+}
+
+.about-section .section-eyebrow {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.about-section h2,
+.contact-section .section-header h2,
+.local-content-header h2 {
+    margin: 0;
+    color: var(--text-hi) !important;
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 1.45rem + 1.7vw, 3rem) !important;
+    font-weight: 800 !important;
+    line-height: 1.08 !important;
+    letter-spacing: 0 !important;
+}
+
+.about-section h2 {
+    max-width: none;
+    margin-right: auto;
+    margin-bottom: clamp(32px, 4vw, 48px) !important;
+    margin-left: auto;
+}
+
+.contact-section .section-header,
+.local-content-header {
+    max-width: 760px;
+}
+
+.contact-section .section-header h2,
+.local-content-header h2 {
+    max-width: 16ch;
+    margin-bottom: 26px !important;
+}
+
+.contact-urgency,
+.local-content-header p {
+    margin-top: 0 !important;
+}
+
+@media (max-width: 768px) {
+    .section-eyebrow {
+        margin-bottom: 20px;
+        font-size: .72rem;
+        letter-spacing: .14em;
+    }
+
+    .about-section h2,
+    .contact-section .section-header h2,
+    .local-content-header h2 {
+        font-size: clamp(1.9rem, 8vw, 2.45rem) !important;
     }
 }
