@@ -25,25 +25,8 @@ if (document.readyState === 'complete') {
 const heroVideo = document.querySelector('.hero-background-video');
 
 if (heroVideo) {
-    const parseStartTime = () => {
-        const raw = parseFloat(heroVideo.getAttribute('data-start-time') || '0');
-        return Number.isFinite(raw) && raw >= 0 ? raw : 0;
-    };
-
-    const seekToStart = () => {
-        const startTime = parseStartTime();
-        if (heroVideo.duration && startTime < heroVideo.duration) {
-            heroVideo.currentTime = startTime;
-        }
-    };
-
-    heroVideo.addEventListener('loadedmetadata', () => {
-        seekToStart();
-        heroVideo.play().catch(() => {});
-    });
-
     heroVideo.addEventListener('ended', () => {
-        seekToStart();
+        heroVideo.currentTime = 0;
         heroVideo.play().catch(() => {});
     });
 }
