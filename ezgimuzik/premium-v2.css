@@ -1143,3 +1143,24 @@ a.btn-hero-cta:not([href*="wa.me"]):active,
         font-size: clamp(1.9rem, 8vw, 2.45rem) !important;
     }
 }
+
+/* FAQ question width repair: avoid horizontal scroll on longer questions */
+.faq-container {
+    max-width: min(100%, 920px);
+}
+
+.faq-question {
+    align-items: flex-start;
+    gap: 18px;
+}
+
+.faq-question h3 {
+    white-space: normal;
+    overflow: visible;
+    overflow-wrap: anywhere;
+    padding-right: 0;
+}
+
+.faq-toggle {
+    margin-top: -2px;
+}
