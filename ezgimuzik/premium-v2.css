@@ -435,22 +435,31 @@
 /* ── 5. PROCESS — bigger Roman numerals as hero ────────── */
 .step-card {
     padding: clamp(40px, 4.5vw, 60px) clamp(28px, 3vw, 38px);
+    position: relative;
+    min-height: clamp(300px, 27vw, 360px);
 }
 .step-number {
-    margin-bottom: 24px;
+    position: absolute;
+    top: clamp(30px, 3vw, 42px);
+    right: clamp(26px, 3vw, 38px);
+    margin: 0;
     line-height: 1;
+    pointer-events: none;
 }
 .step-number[data-roman]::after {
     font-family: var(--font-serif);
     font-style: italic;
     font-weight: 400;
-    font-size: clamp(3.4rem, 5.5vw, 4.8rem);
+    font-size: clamp(3rem, 5vw, 4.35rem);
     color: var(--amber-soft);
     letter-spacing: -0.03em;
     line-height: 1;
-    opacity: 0.94;
+    opacity: 0.9;
 }
 .step-card h3 {
+    max-width: 18ch;
+    min-height: 2.35em;
+    padding-right: clamp(78px, 7vw, 112px);
     margin-bottom: 14px;
 }
 .step-card p {
@@ -662,6 +671,12 @@
     }
     .step-number[data-roman]::after {
         font-size: 3rem;
+    }
+    .step-card {
+        min-height: 0;
+    }
+    .step-card h3 {
+        padding-right: 76px;
     }
     /* Reconcile value-slider: premium.css keeps the slide body dark on all
        breakpoints, but styles.css's 768px block colored the text for a light
@@ -1166,6 +1181,60 @@ a.btn-hero-cta:not([href*="wa.me"]):active,
 }
 
 /* Break repeated card rhythm in the early story sections */
+.service-strip {
+    position: relative;
+    background: oklch(0.075 0.012 58);
+    border-top: 1px solid rgba(255, 255, 255, .08);
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+}
+
+.service-strip-inner {
+    display: grid;
+    grid-template-columns: minmax(160px, 240px) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(18px, 3vw, 42px);
+    padding: clamp(18px, 2.4vw, 28px) 0;
+}
+
+.service-strip-kicker {
+    color: rgba(255, 255, 255, .58);
+    font-size: .76rem;
+    font-weight: 700;
+    letter-spacing: .16em;
+    line-height: 1.35;
+    text-transform: uppercase;
+}
+
+.service-strip-list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-left: 1px solid rgba(255, 255, 255, .11);
+}
+
+.service-strip-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+    padding: 8px clamp(12px, 1.8vw, 22px);
+    color: var(--text-hi);
+    font-size: clamp(.9rem, .86rem + .15vw, .98rem);
+    font-weight: 700;
+    line-height: 1.25;
+    border-right: 1px solid rgba(255, 255, 255, .11);
+}
+
+.service-strip-list .lucide-icon {
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
+    color: var(--amber-soft);
+}
+
 .about-feature-grid {
     display: block;
     max-width: 980px;
@@ -1286,6 +1355,25 @@ a.btn-hero-cta:not([href*="wa.me"]):active,
 }
 
 @media (max-width: 900px) {
+    .service-strip-inner {
+        grid-template-columns: 1fr;
+        align-items: start;
+    }
+
+    .service-strip-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        border-top: 1px solid rgba(255, 255, 255, .11);
+    }
+
+    .service-strip-list li {
+        border-top: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .service-strip-list li:nth-child(2n) {
+        border-right: 0;
+    }
+
     .about-feature-card {
         grid-template-columns: 44px minmax(0, 1fr);
     }
@@ -1321,6 +1409,30 @@ a.btn-hero-cta:not([href*="wa.me"]):active,
 }
 
 @media (max-width: 560px) {
+    .service-strip-list {
+        grid-template-columns: 1fr;
+        border-left: 0;
+    }
+
+    .service-strip-list li {
+        padding-right: 0;
+        padding-left: 0;
+        border-right: 0;
+    }
+
+    .step-number {
+        top: 26px;
+        right: 24px;
+    }
+
+    .step-number[data-roman]::after {
+        font-size: 2.65rem;
+    }
+
+    .step-card h3 {
+        padding-right: 62px;
+    }
+
     .about-feature-card {
         grid-template-columns: 40px minmax(0, 1fr);
         gap: 14px 16px;
