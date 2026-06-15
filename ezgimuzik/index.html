@@ -485,8 +485,9 @@
     </script>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">İçeriğe geç</a>
     <!-- Navigation -->
-    <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <nav class="navbar" role="navigation" aria-label="Ana navigasyon">
         <div class="container">
             <div class="nav-content">
                 <div class="nav-logo">
@@ -496,7 +497,7 @@
                         <span class="logo-tagline">Müzik yapmanıza yardım ediyoruz</span>
                     </div>
                 </div>
-                <div class="nav-actions">
+                <div class="nav-actions" id="primary-nav-actions">
                         <a href="tel:+905332127432" class="phone-link"><i data-lucide="phone" class="lucide-icon" aria-hidden="true"></i>0533 212 74 32</a>
                         <a href="https://wa.me/905332127432" class="btn-primary btn-large btn-whatsapp">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="brand-icon whatsapp-icon" viewBox="0 0 16 16" aria-hidden="true">
@@ -505,7 +506,7 @@
                             WhatsApp
                         </a>
                 </div>
-                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <button class="mobile-menu-toggle" type="button" aria-label="Menüyü aç" aria-controls="primary-nav-actions" aria-expanded="false">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -557,7 +558,7 @@
                        <!-- Social Proof -->
                        <div class="hero-social-proof">
                            <div class="social-proof-bar">
-                               <a href="https://www.google.com/search?q=Ezgi+M%C3%BCzik+Bolu+reviews" target="_blank" class="proof-item proof-item-link">
+                               <a href="https://www.google.com/search?q=Ezgi+M%C3%BCzik+Bolu+reviews" target="_blank" rel="noopener" class="proof-item proof-item-link">
                                    <i data-lucide="star" class="lucide-icon proof-icon" aria-hidden="true"></i>
                                    <span class="proof-copy">
                                        <span class="proof-rating" data-target="4.3">4.3/5</span>
@@ -643,39 +644,40 @@
     </header>
 
     <!-- Main Content -->
-    <main role="main">
-        <section class="service-strip" aria-label="Ezgi Müzik hizmetleri">
+    <main id="main-content">
+        <section class="service-strip service-strip--landing" aria-labelledby="service-strip-title">
             <div class="container">
-                <div class="service-strip-inner">
-                    <div class="service-strip-kicker">Mağazada bulabilecekleriniz</div>
-                    <ul class="service-strip-list">
-                        <li>
-                            <i data-lucide="music-2" class="lucide-icon" aria-hidden="true"></i>
-                            <span>Enstrüman satışı</span>
+                <div class="service-strip__inner service-strip-inner">
+                    <h2 class="service-strip__title sr-only" id="service-strip-title">Ezgi Müzik hizmetleri</h2>
+                    <p class="service-strip__eyebrow service-strip-kicker">Mağazada bulabilecekleriniz</p>
+                    <ul class="service-strip__list service-strip-list">
+                        <li class="service-strip__item">
+                            <i data-lucide="music-2" class="service-strip__icon lucide-icon" aria-hidden="true"></i>
+                            <span class="service-strip__label">Enstrüman satışı</span>
                         </li>
-                        <li>
-                            <i data-lucide="wrench" class="lucide-icon" aria-hidden="true"></i>
-                            <span>Tamir ve bakım</span>
+                        <li class="service-strip__item">
+                            <i data-lucide="wrench" class="service-strip__icon lucide-icon" aria-hidden="true"></i>
+                            <span class="service-strip__label">Tamir ve bakım</span>
                         </li>
-                        <li>
-                            <i data-lucide="package-check" class="lucide-icon" aria-hidden="true"></i>
-                            <span>Aksesuarlar</span>
+                        <li class="service-strip__item">
+                            <i data-lucide="package-check" class="service-strip__icon lucide-icon" aria-hidden="true"></i>
+                            <span class="service-strip__label">Aksesuarlar</span>
                         </li>
-                        <li>
-                            <i data-lucide="book-open" class="lucide-icon" aria-hidden="true"></i>
-                            <span>Eğitim kitapları</span>
+                        <li class="service-strip__item">
+                            <i data-lucide="book-open" class="service-strip__icon lucide-icon" aria-hidden="true"></i>
+                            <span class="service-strip__label">Eğitim kitapları</span>
                         </li>
-                        <li>
-                            <i data-lucide="guitar" class="lucide-icon" aria-hidden="true"></i>
-                            <span>Teller</span>
+                        <li class="service-strip__item">
+                            <i data-lucide="guitar" class="service-strip__icon lucide-icon" aria-hidden="true"></i>
+                            <span class="service-strip__label">Teller</span>
                         </li>
-                        <li>
-                            <i data-lucide="drum" class="lucide-icon" aria-hidden="true"></i>
-                            <span>Davul aksesuarları</span>
+                        <li class="service-strip__item">
+                            <i data-lucide="drum" class="service-strip__icon lucide-icon" aria-hidden="true"></i>
+                            <span class="service-strip__label">Davul aksesuarları</span>
                         </li>
-                        <li>
-                            <i data-lucide="settings-2" class="lucide-icon" aria-hidden="true"></i>
-                            <span>Akort ve kurulum</span>
+                        <li class="service-strip__item">
+                            <i data-lucide="settings-2" class="service-strip__icon lucide-icon" aria-hidden="true"></i>
+                            <span class="service-strip__label">Akort ve kurulum</span>
                         </li>
                     </ul>
                 </div>
@@ -1487,7 +1489,7 @@
         <i data-lucide="arrow-up" class="lucide-icon" aria-hidden="true"></i>
     </button>
 
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-    <script src="script.js"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
