@@ -148,38 +148,38 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     /* Yerel logolar — brand-logos-all/light/ (beyaz monochrome, dark theme)
-     * SVG: 18 marka | PNG: 18 marka */
-    const brandSvgMap = {
-        'YAMAHA':           'yamaha.svg',
-        'KAWAI':            'kawai.svg',
-        'CASIO':            'casio.svg',
+     * Tum markalar PNG fallback ile servis edilir. */
+    const brandLocalLogoMap = {
+        'YAMAHA':           'yamaha.png',
+        'KAWAI':            'kawai.png',
+        'CASIO':            'casio.png',
         'PEARL RIVER':      'pearl-river.png',
-        'IBANEZ':           'ibanez.svg',
-        'MARSHALL':         'marshall.svg',
+        'IBANEZ':           'ibanez.png',
+        'MARSHALL':         'marshall.png',
         'TAKAMINE':         'takamine.png',
-        'WASHBURN':         'washburn.svg',
+        'WASHBURN':         'washburn.png',
         'CÓRDOBA':          'cordoba.png',
-        'PRS GUITARS':      'prs-guitars.svg',
-        'SCHECTER':         'schecter.svg',
-        'BLACKSTAR':        'blackstar.svg',
-        'ORANGE':           'orange.svg',
+        'PRS GUITARS':      'prs-guitars.png',
+        'SCHECTER':         'schecter.png',
+        'BLACKSTAR':        'blackstar.png',
+        'ORANGE':           'orange.png',
         'GRETSCH':          'gretsch.png',
-        'AMPEG':            'ampeg.svg',
-        'FISHMAN':          'fishman.svg',
-        'ERNIE BALL':       'ernie-ball.svg',
+        'AMPEG':            'ampeg.png',
+        'FISHMAN':          'fishman.png',
+        'ERNIE BALL':       'ernie-ball.png',
         'DUNLOP':           'dunlop.png',
-        'ZILDJIAN':         'zildjian.svg',
+        'ZILDJIAN':         'zildjian.png',
         'TOCA PERCUSSION':  'toca-percussion.png',
         'SONOR':            'sonor.png',
         'HOHNER':           'hohner.png',
-        'SUZUKI':           'suzuki.svg',
+        'SUZUKI':           'suzuki.png',
         'GODIN':            'godin.png',
         'GUILD':            'guild.png',
-        'ZOOM':             'zoom.svg',
-        'DIGITECH':         'digitech.svg',
+        'ZOOM':             'zoom.png',
+        'DIGITECH':         'digitech.png',
         'L&G':              'l-and-g.png',
         'RÖSLER':           'rosler.png',
-        'R RAIMUNDO':       'r-raimundo.svg',
+        'R RAIMUNDO':       'r-raimundo.png',
         'ASHTON':           'ashton.png',
         'TOLEDO GUITARRAS': 'toledo-guitarras.png',
         'GIBRALTAR':        'gibraltar.png',
@@ -199,6 +199,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const originalBrandEls = [...document.querySelectorAll('.brand-item:not([aria-hidden]) .brand-name')];
     let pendingLoads = originalBrandEls.length;
 
+    const updateBrandMarqueeDistance = (track) => {
+        const firstItem = track.querySelector('.brand-item');
+        const firstClone = track.querySelector('.brand-item[aria-hidden="true"]');
+        if (!firstItem || !firstClone) return;
+
+        const distance = firstClone.offsetLeft - firstItem.offsetLeft;
+        if (distance > 0) {
+            track.style.setProperty('--marquee-translate', `-${distance}px`);
+        }
+    };
+
     const onItemSettled = () => {
         if (--pendingLoads > 0) return;
         // All originals done — rebuild duplicates so both halves are identical
@@ -212,10 +223,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 clone.setAttribute('aria-hidden', 'true');
                 track.appendChild(clone);
             });
+            updateBrandMarqueeDistance(track);
             track.offsetWidth; // force reflow before re-enabling
             track.style.animation = savedAnim;
         });
     };
+
+    window.addEventListener('resize', () => {
+        document.querySelectorAll('.brands-track').forEach(updateBrandMarqueeDistance);
+    }, { passive: true });
 
     originalBrandEls.forEach((nameEl) => {
         const brandName = nameEl.textContent.trim().toUpperCase();
@@ -223,44 +239,43 @@ document.addEventListener('DOMContentLoaded', function() {
         const item = nameEl.closest('.brand-item');
         if (!item) { onItemSettled(); return; }
 
-        if (!domain) {
-            item.style.display = 'none';
-            onItemSettled();
-            return;
-        }
-
         const logo = document.createElement('img');
         logo.className = 'brand-logo-img';
         logo.alt = `${brandName} logo`;
-        logo.loading = 'lazy';
+        logo.loading = 'eager';
         logo.decoding = 'async';
+        logo.fetchPriority = 'low';
         logo.referrerPolicy = 'strict-origin-when-cross-origin';
 
-        const svgPath = brandSvgMap[brandName] ? `brand-logos-all/light/${brandSvgMap[brandName]}` : null;
-        const cdnPaths = brandfetchLogoCdnUrls(domain);
+        const localLogoPath = brandLocalLogoMap[brandName] ? `brand-logos-all/light/${brandLocalLogoMap[brandName]}` : null;
+        const cdnPaths = domain ? brandfetchLogoCdnUrls(domain) : [];
         const paths = [];
         if (brandfetchLocalLogosFirst) {
-            if (svgPath) paths.push(svgPath);
+            if (localLogoPath) paths.push(localLogoPath);
             paths.push(...cdnPaths);
         } else {
             paths.push(...cdnPaths);
-            if (svgPath) paths.push(svgPath);
+            if (localLogoPath) paths.push(localLogoPath);
         }
-        paths.push(...domainToRasterPaths(domain));
+        if (domain) paths.push(...domainToRasterPaths(domain));
         let pathIndex = 0;
+        const keepTextFallback = () => {
+            item.classList.add('brand-item--text-fallback');
+            onItemSettled();
+        };
         const loadNext = () => {
             if (pathIndex >= paths.length) {
-                item.style.display = 'none';
-                onItemSettled();
+                keepTextFallback();
                 return;
             }
             logo.src = paths[pathIndex++];
         };
         logo.onerror = loadNext;
-        logo.onload = onItemSettled;
+        logo.onload = () => {
+            nameEl.replaceWith(logo);
+            onItemSettled();
+        };
         loadNext();
-
-        nameEl.replaceWith(logo);
     });
 
     const faqItems = document.querySelectorAll('.faq-item');
